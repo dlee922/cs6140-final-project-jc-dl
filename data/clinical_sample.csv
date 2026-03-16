@@ -1,0 +1,567 @@
+sampleId,ANEUPLOIDY_SCORE,CANCER_TYPE,CANCER_TYPE_DETAILED,FRACTION_GENOME_ALTERED,MSI_SCORE_MANTIS,MSI_SENSOR_SCORE,MUTATION_COUNT,ONCOTREE_CODE,SAMPLE_TYPE,SOMATIC_STATUS,TBL_SCORE,TISSUE_PROSPECTIVE_COLLECTION_INDICATOR,TISSUE_RETROSPECTIVE_COLLECTION_INDICATOR,TISSUE_SOURCE_SITE,TISSUE_SOURCE_SITE_CODE,TMB_NONSYNONYMOUS,TUMOR_TISSUE_SITE,TUMOR_TYPE
+TCGA-05-4244-01,17,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4565,0.2886,0.03,192,LUAD,Primary,Matched,98,No,Yes,Indivumed,5,6.4,Lung,Lung Adenocarcinoma (NOS)
+TCGA-05-4249-01,24,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2221,0.2807,0.07,300,LUAD,Primary,Matched,29,No,Yes,Indivumed,5,10,Lung,Lung Adenocarcinoma (NOS)
+TCGA-05-4250-01,17,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2362,0.3059,0.28,312,LUAD,Primary,Matched,81,No,Yes,Indivumed,5,10.5,Lung,Lung Adenocarcinoma (NOS)
+TCGA-05-4382-01,22,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0854,0.3193,0.05,1547,LUAD,Primary,Matched,226,No,Yes,Indivumed,5,51.73333333,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-05-4384-01,1,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0661,0.285,0,117,LUAD,Primary,Matched,6,No,Yes,Indivumed,5,3.966666667,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-05-4389-01,20,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4579,0.2907,0.05,211,LUAD,Primary,Matched,155,No,Yes,Indivumed,5,7.033333333,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-05-4390-01,21,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3056,0.2876,0.01,517,LUAD,Primary,Matched,229,No,Yes,Indivumed,5,17.33333333,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-05-4395-01,25,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.5598,0.2956,0.35,231,LUAD,Primary,Matched,108,No,Yes,Indivumed,5,7.7,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-05-4396-01,11,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2340,0.2819,0.21,1287,LUAD,Primary,Matched,123,No,Yes,Indivumed,5,43.26666667,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-05-4397-01,7,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2784,0.2886,0.18,749,LUAD,Primary,Matched,120,No,Yes,Indivumed,5,24.86666667,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-05-4398-01,23,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3046,0.3117,0.11,665,LUAD,Primary,Matched,239,No,Yes,Indivumed,5,22.36666667,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-05-4402-01,31,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2949,0.2803,0.01,122,LUAD,Primary,Matched,70,No,Yes,Indivumed,5,4.033333333,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-05-4403-01,1,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0272,0.2921,0.02,125,LUAD,Primary,Matched,14,No,Yes,Indivumed,5,4.166666667,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-05-4405-01,24,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3903,0.3071,0.02,362,LUAD,Primary,Matched,77,No,Yes,Indivumed,5,12.16666667,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-05-4410-01,18,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3183,0.3034,0,1014,LUAD,Primary,Matched,51,No,Yes,Indivumed,5,33.8,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-05-4415-01,20,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1563,0.3033,0,187,LUAD,Primary,Matched,126,No,Yes,Indivumed,5,6.233333333,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-05-4417-01,19,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2699,0.3033,0,284,LUAD,Primary,Matched,84,No,Yes,Indivumed,5,9.633333333,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-05-4418-01,6,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1433,0.2744,0.01,245,LUAD,Primary,Matched,29,No,Yes,Indivumed,5,8.233333333,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-05-4420-01,22,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4499,0.291,0.09,255,LUAD,Primary,Matched,218,No,Yes,Indivumed,5,8.566666667,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-05-4422-01,7,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2305,0.2843,0.02,39,LUAD,Primary,Matched,139,No,Yes,Indivumed,5,1.333333333,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-05-4424-01,19,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2161,0.3012,0,673,LUAD,Primary,Matched,90,No,Yes,Indivumed,5,22.53333333,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-05-4425-01,10,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2352,0.3179,0.01,40,LUAD,Primary,Matched,10,No,Yes,Indivumed,5,1.333333333,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-05-4426-01,4,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1445,0.2836,0.05,43,LUAD,Primary,Matched,83,No,Yes,Indivumed,5,1.466666667,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-05-4427-01,20,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3950,0.3043,0.09,952,LUAD,Primary,Matched,241,No,Yes,Indivumed,5,31.66666667,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-05-4430-01,20,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0992,0.2825,0,261,LUAD,Primary,Matched,148,No,Yes,Indivumed,5,8.733333333,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-05-4432-01,21,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4286,0.2759,0,535,LUAD,Primary,Matched,197,No,Yes,Indivumed,5,17.83333333,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-05-4433-01,6,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1589,0.3053,0,32,LUAD,Primary,Matched,57,No,Yes,Indivumed,5,1.1,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-05-4434-01,2,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1237,0.2715,0,44,LUAD,Primary,Matched,206,No,Yes,Indivumed,5,1.466666667,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-05-5423-01,15,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3749,0.3204,0.04,140,LUAD,Primary,Matched,55,No,Yes,Indivumed,5,4.6,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-05-5425-01,2,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2551,0.3001,0,536,LUAD,Primary,Matched,207,No,Yes,Indivumed,5,17.96666667,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-05-5428-01,20,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.5655,0.298,0.02,351,LUAD,Primary,Matched,107,No,Yes,Indivumed,5,11.7,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-05-5429-01,8,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2466,0.3031,0.06,34,LUAD,Primary,Matched,32,No,Yes,Indivumed,5,1.133333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-05-5715-01,10,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3200,0.3207,0,105,LUAD,Primary,Matched,123,No,Yes,Indivumed,5,3.533333333,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-17-Z000-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.3029,0.02,115,LUAD,Primary,Matched,,,,Washington University,17,3.866666667,,Lung Adenocarcinoma
+TCGA-17-Z001-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.2714,0.04,201,LUAD,Primary,Matched,,,,Washington University,17,6.7,,Lung Adenocarcinoma
+TCGA-17-Z002-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.2771,0,13,LUAD,Primary,Matched,,,,Washington University,17,0.433333333,,Lung Adenocarcinoma
+TCGA-17-Z003-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.2927,0,234,LUAD,Primary,Matched,,,,Washington University,17,7.833333333,,Lung Adenocarcinoma
+TCGA-17-Z004-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.2794,0,19,LUAD,Primary,Matched,,,,Washington University,17,0.666666667,,Lung Adenocarcinoma
+TCGA-17-Z005-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.2924,0,100,LUAD,Primary,Matched,,,,Washington University,17,3.3,,Lung Adenocarcinoma
+TCGA-17-Z007-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.2722,0.08,72,LUAD,Primary,Matched,,,,Washington University,17,2.366666667,,Lung Adenocarcinoma
+TCGA-17-Z009-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.2654,0,50,LUAD,Primary,Matched,,,,Washington University,17,1.666666667,,Lung Adenocarcinoma
+TCGA-17-Z010-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.2971,0,245,LUAD,Primary,Matched,,,,Washington University,17,8.2,,Lung Adenocarcinoma
+TCGA-17-Z011-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.2688,0.02,103,LUAD,Primary,Matched,,,,Washington University,17,3.466666667,,Lung Adenocarcinoma
+TCGA-17-Z013-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.2772,0.04,57,LUAD,Primary,Matched,,,,Washington University,17,1.933333333,,Lung Adenocarcinoma
+TCGA-17-Z014-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.3044,0.05,346,LUAD,Primary,Matched,,,,Washington University,17,11.5,,Lung Adenocarcinoma
+TCGA-17-Z015-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.3096,0,468,LUAD,Primary,Matched,,,,Washington University,17,15.63333333,,Lung Adenocarcinoma
+TCGA-17-Z016-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.2764,0.06,270,LUAD,Primary,Matched,,,,Washington University,17,9.033333333,,Lung Adenocarcinoma
+TCGA-17-Z017-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.2736,0.12,199,LUAD,Primary,Matched,,,,Washington University,17,6.7,,Lung Adenocarcinoma
+TCGA-17-Z018-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.3053,0,235,LUAD,Primary,Matched,,,,Washington University,17,7.8,,Lung Adenocarcinoma
+TCGA-17-Z019-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.2737,0,3,LUAD,Primary,Matched,,,,Washington University,17,0.1,,Lung Adenocarcinoma
+TCGA-17-Z020-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.2747,0.04,121,LUAD,Primary,Matched,,,,Washington University,17,4.066666667,,Lung Adenocarcinoma
+TCGA-17-Z021-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.2784,0.01,148,LUAD,Primary,Matched,,,,Washington University,17,5,,Lung Adenocarcinoma
+TCGA-17-Z022-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.2615,0.49,1077,LUAD,Primary,Matched,,,,Washington University,17,36.1,,Lung Adenocarcinoma
+TCGA-17-Z023-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.2911,0.01,361,LUAD,Primary,Matched,,,,Washington University,17,12.06666667,,Lung Adenocarcinoma
+TCGA-17-Z025-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.259,0,227,LUAD,Primary,Matched,,,,Washington University,17,7.666666667,,Lung Adenocarcinoma
+TCGA-17-Z026-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.288,0.06,872,LUAD,Primary,Matched,,,,Washington University,17,29.16666667,,Lung Adenocarcinoma
+TCGA-17-Z027-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.3179,1.7,82,LUAD,Primary,Matched,,,,Washington University,17,2.733333333,,Lung Adenocarcinoma
+TCGA-17-Z028-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.2933,0,445,LUAD,Primary,Matched,,,,Washington University,17,14.86666667,,Lung Adenocarcinoma
+TCGA-17-Z030-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.2764,0,525,LUAD,Primary,Matched,,,,Washington University,17,17.5,,Lung Adenocarcinoma
+TCGA-17-Z031-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.3022,0.55,2080,LUAD,Primary,Matched,,,,Washington University,17,69.53333333,,Lung Adenocarcinoma
+TCGA-17-Z032-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.2772,0.03,103,LUAD,Primary,Matched,,,,Washington University,17,3.466666667,,Lung Adenocarcinoma
+TCGA-17-Z033-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.2725,0.05,147,LUAD,Primary,Matched,,,,Washington University,17,4.9,,Lung Adenocarcinoma
+TCGA-17-Z036-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.3114,0,70,LUAD,Primary,Matched,,,,Washington University,17,2.333333333,,Lung Adenocarcinoma
+TCGA-17-Z037-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.2805,0.02,122,LUAD,Primary,Matched,,,,Washington University,17,4.1,,Lung Adenocarcinoma
+TCGA-17-Z041-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.2922,0.26,63,LUAD,Primary,Matched,,,,Washington University,17,2.1,,Lung Adenocarcinoma
+TCGA-17-Z042-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.2752,0,415,LUAD,Primary,Matched,,,,Washington University,17,13.86666667,,Lung Adenocarcinoma
+TCGA-17-Z043-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.2896,0.02,176,LUAD,Primary,Matched,,,,Washington University,17,6,,Lung Adenocarcinoma
+TCGA-17-Z044-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.3067,0.01,100,LUAD,Primary,Matched,,,,Washington University,17,3.333333333,,Lung Adenocarcinoma
+TCGA-17-Z045-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.302,0,605,LUAD,Primary,Matched,,,,Washington University,17,20.2,,Lung Adenocarcinoma
+TCGA-17-Z047-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.2801,0,28,LUAD,Primary,Matched,,,,Washington University,17,0.9,,Lung Adenocarcinoma
+TCGA-17-Z048-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.2868,0.08,34,LUAD,Primary,Matched,,,,Washington University,17,1.2,,Lung Adenocarcinoma
+TCGA-17-Z049-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.2793,0.19,495,LUAD,Primary,Matched,,,,Washington University,17,16.43333333,,Lung Adenocarcinoma
+TCGA-17-Z050-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.279,0.07,168,LUAD,Primary,Matched,,,,Washington University,17,5.566666667,,Lung Adenocarcinoma
+TCGA-17-Z051-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.2864,0.52,169,LUAD,Primary,Matched,,,,Washington University,17,5.6,,Lung Adenocarcinoma
+TCGA-17-Z052-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.2731,0,144,LUAD,Primary,Matched,,,,Washington University,17,4.8,,Lung Adenocarcinoma
+TCGA-17-Z053-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.2798,0.17,266,LUAD,Primary,Matched,,,,Washington University,17,9.033333333,,Lung Adenocarcinoma
+TCGA-17-Z054-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.281,0.03,13,LUAD,Primary,Matched,,,,Washington University,17,0.433333333,,Lung Adenocarcinoma
+TCGA-17-Z055-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.2893,0,699,LUAD,Primary,Matched,,,,Washington University,17,23.5,,Lung Adenocarcinoma
+TCGA-17-Z056-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.2753,0.01,482,LUAD,Primary,Matched,,,,Washington University,17,16.06666667,,Lung Adenocarcinoma
+TCGA-17-Z057-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.295,0.06,383,LUAD,Primary,Matched,,,,Washington University,17,12.66666667,,Lung Adenocarcinoma
+TCGA-17-Z058-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.3054,1,91,LUAD,Primary,Matched,,,,Washington University,17,3.066666667,,Lung Adenocarcinoma
+TCGA-17-Z059-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.2881,0,145,LUAD,Primary,Matched,,,,Washington University,17,4.866666667,,Lung Adenocarcinoma
+TCGA-17-Z060-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.2807,0.05,215,LUAD,Primary,Matched,,,,Washington University,17,7.266666667,,Lung Adenocarcinoma
+TCGA-17-Z061-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.2854,0.65,151,LUAD,Primary,Matched,,,,Washington University,17,5.033333333,,Lung Adenocarcinoma
+TCGA-17-Z062-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.2768,0,444,LUAD,Primary,Matched,,,,Washington University,17,14.86666667,,Lung Adenocarcinoma
+TCGA-35-3615-01,5,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1795,0.2804,0.06,103,LUAD,Primary,Matched,37,No,Yes,Cureline,35,3.433333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-35-4122-01,23,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0597,0.2776,0,293,LUAD,Primary,Matched,147,No,Yes,Cureline,35,9.733333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-35-4123-01,14,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3119,0.2877,0.01,245,LUAD,Primary,Matched,79,No,Yes,Cureline,35,8.2,Lung,Lung Adenocarcinoma (NOS)
+TCGA-35-5375-01,26,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.5996,0.3281,0.08,387,LUAD,Primary,Matched,195,No,Yes,Cureline,35,12.9,Lung,Lung Adenocarcinoma (NOS)
+TCGA-38-4625-01,16,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.5261,0.2801,0.07,540,LUAD,Primary,Matched,63.5,No,Yes,UNC,38,17.96666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-38-4626-01,2,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0190,0.2787,0,238,LUAD,Primary,Matched,14.5,No,Yes,UNC,38,8.033333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-38-4627-01,9,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0002,0.2806,0,29,LUAD,Primary,Matched,37.5,No,Yes,UNC,38,0.966666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-38-4628-01,24,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4864,0.3118,0.49,112,LUAD,Primary,Matched,215,No,Yes,UNC,38,3.733333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-38-4631-01,20,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4032,0.3091,0.06,689,LUAD,Primary,Matched,314,No,Yes,UNC,38,23.06666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-38-4632-01,23,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4325,0.2967,0.06,497,LUAD,Primary,Matched,200,No,Yes,UNC,38,16.73333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-38-6178-01,22,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3904,0.2925,0.02,65,LUAD,Primary,Matched,188,Yes,No,UNC,38,2.233333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-38-7271-01,2,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0439,0.3598,0.34,87,LUAD,Primary,Matched,1,No,Yes,UNC,38,2.9,Lung,Lung Adenocarcinoma (NOS)
+TCGA-38-A44F-01,1,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0000,0.3275,0,11,LUAD,Primary,Matched,2,Yes,No,UNC,38,0.366666667,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-44-2655-01,4,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0648,0.2747,0,164,LUAD,Primary,Matched,22,Yes,No,Christiana Healthcare,44,5.5,Lung,Lung Adenocarcinoma (NOS)
+TCGA-44-2656-01,19,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.2996,0.01,765,LUAD,Primary,Matched,59.3,Yes,No,Christiana Healthcare,44,50.7,Lung,Lung Adenocarcinoma (NOS)
+TCGA-44-2657-01,10,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0447,0.2817,0.01,366,LUAD,Primary,Matched,78.5,Yes,No,Christiana Healthcare,44,23.76666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-44-2659-01,25,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2823,0.2806,0.2,395,LUAD,Primary,Matched,63,Yes,No,Christiana Healthcare,44,25.86666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-44-2662-01,24,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.2713,0,189,LUAD,Primary,Matched,128.8,Yes,No,Christiana Healthcare,44,12.43333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-44-2665-01,7,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.3006,0.18,43,LUAD,Primary,Matched,45.8,Yes,No,Christiana Healthcare,44,2.733333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-44-2666-01,2,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.3003,0.07,37,LUAD,Primary,Matched,24,Yes,No,Christiana Healthcare,44,2.4,Lung,Lung Adenocarcinoma (NOS)
+TCGA-44-2668-01,11,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.2747,0.02,318,LUAD,Primary,Matched,72,Yes,No,Christiana Healthcare,44,21.06666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-44-3396-01,6,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0548,0.3466,0.05,184,LUAD,Primary,Matched,52.5,Yes,No,Christiana Healthcare,44,12.2,Lung,Lung Adenocarcinoma (NOS)
+TCGA-44-3398-01,2,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0012,0.281,0,173,LUAD,Primary,Matched,8,Yes,No,Christiana Healthcare,44,11.43333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-44-3917-01,19,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.3142,0.09,199,LUAD,Primary,Matched,136,Yes,No,Christiana Healthcare,44,6.666666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-44-3918-01,12,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.3106,0,881,LUAD,Primary,Matched,176.3,Yes,No,Christiana Healthcare,44,58.33333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-44-3919-01,6,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1658,0.2725,0.01,51,LUAD,Primary,Matched,37,Yes,No,Christiana Healthcare,44,3.366666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-44-4112-01,6,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.2866,0.1,434,LUAD,Primary,Matched,70.7,Yes,No,Christiana Healthcare,44,29,Lung,Lung Adenocarcinoma (NOS)
+TCGA-44-5643-01,19,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.5689,0.321,0.08,114,LUAD,Primary,Matched,64,Yes,No,Christiana Healthcare,44,7.433333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-44-5644-01,16,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.6632,0.3216,0.45,907,LUAD,Primary,Matched,508,Yes,No,Christiana Healthcare,44,60.2,Lung,Lung Adenocarcinoma (NOS)
+TCGA-44-5645-01,10,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.3481,0,36,LUAD,Primary,Matched,66.3,Yes,No,Christiana Healthcare,44,2.366666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-44-6144-01,8,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3806,0.2976,0,196,LUAD,Primary,Matched,90,Yes,No,Christiana Healthcare,44,13.1,Lung,Lung Adenocarcinoma (NOS)
+TCGA-44-6145-01,16,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0270,0.3023,0,299,LUAD,Primary,Matched,74,Yes,No,Christiana Healthcare,44,19.56666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-44-6146-01,5,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.3286,0.01,38,LUAD,Primary,Matched,18,Yes,No,Christiana Healthcare,44,2.5,Lung,Lung Mucinous Adenocarcinoma
+TCGA-44-6148-01,2,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0276,0.2964,0,7,LUAD,Primary,Matched,0,Yes,No,Christiana Healthcare,44,0.433333333,Lung,Lung Mucinous Adenocarcinoma
+TCGA-44-6774-01,4,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2030,0.2954,0.01,276,LUAD,Primary,Matched,95,Yes,No,Christiana Healthcare,44,18.5,Lung,Lung Adenocarcinoma (NOS)
+TCGA-44-6775-01,26,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.3101,0,60,LUAD,Primary,Matched,34.7,Yes,No,Christiana Healthcare,44,4.166666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-44-6776-01,4,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1665,0.3029,0,187,LUAD,Primary,Matched,11,No,Yes,Christiana Healthcare,44,12.46666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-44-6777-01,19,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1046,0.3033,0,351,LUAD,Primary,Matched,32,No,Yes,Christiana Healthcare,44,22.53333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-44-6778-01,25,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3992,0.3067,0,358,LUAD,Primary,Matched,313,No,Yes,Christiana Healthcare,44,23.43333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-44-6779-01,17,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.5993,0.2979,0,91,LUAD,Primary,Matched,88,No,Yes,Christiana Healthcare,44,3.033333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-44-7659-01,4,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1598,0.3019,0,139,LUAD,Primary,Matched,23,Yes,No,Christiana Healthcare,44,9.2,Lung,Lung Adenocarcinoma (NOS)
+TCGA-44-7660-01,25,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.6653,0.3098,0.05,336,LUAD,Primary,Matched,279,Yes,No,Christiana Healthcare,44,22.26666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-44-7661-01,5,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0147,0.3087,0,276,LUAD,Primary,Matched,15,Yes,No,Christiana Healthcare,44,18.16666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-44-7662-01,25,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2739,0.3017,0.01,541,LUAD,Primary,Matched,112,Yes,No,Christiana Healthcare,44,36.23333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-44-7667-01,23,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3866,0.3057,0.01,428,LUAD,Primary,Matched,253,Yes,No,Christiana Healthcare,44,28.46666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-44-7669-01,22,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4144,0.3312,0.07,422,LUAD,Primary,Matched,248,Yes,No,Christiana Healthcare,44,27.83333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-44-7670-01,27,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.6345,0.3216,0.11,1014,LUAD,Primary,Matched,617,Yes,No,Christiana Healthcare,44,67.2,Lung,Lung Adenocarcinoma (NOS)
+TCGA-44-7671-01,16,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3154,0.3047,0.08,200,LUAD,Primary,Matched,32,Yes,No,Christiana Healthcare,44,13.3,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-44-7672-01,22,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0681,0.3068,0.03,156,LUAD,Primary,Matched,115,Yes,No,Christiana Healthcare,44,10.26666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-44-8117-01,20,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.6349,0.3512,0.06,678,LUAD,Primary,Matched,163,Yes,No,Christiana Healthcare,44,22.7,Lung,Lung Adenocarcinoma (NOS)
+TCGA-44-8119-01,25,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4008,0.3525,0.2,579,LUAD,Primary,Matched,264,Yes,No,Christiana Healthcare,44,19.36666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-44-8120-01,13,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3716,0.3347,0.07,543,LUAD,Primary,Matched,56,Yes,No,Christiana Healthcare,44,18.13333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-44-A479-01,8,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0803,0.3191,0,279,LUAD,Primary,Matched,102,Yes,No,Christiana Healthcare,44,9.333333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-44-A47A-01,23,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1272,0.3226,0,210,LUAD,Primary,Matched,15,Yes,No,Christiana Healthcare,44,6.966666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-44-A47B-01,18,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3063,0.3287,0.13,39,LUAD,Primary,Matched,150,Yes,No,Christiana Healthcare,44,1.333333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-44-A47F-01,27,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3026,0.3397,0,78,LUAD,Primary,Matched,19,Yes,No,Christiana Healthcare,44,2.633333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-44-A47G-01,3,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0003,0.3181,0,78,LUAD,Primary,Matched,12,Yes,No,Christiana Healthcare,44,2.633333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-44-A4SS-01,16,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0109,0.3039,0.01,443,LUAD,Primary,Matched,50,Yes,No,Christiana Healthcare,44,14.9,Lung,Lung Adenocarcinoma (NOS)
+TCGA-44-A4SU-01,12,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3113,0.3233,0.01,133,LUAD,Primary,Matched,90,Yes,No,Christiana Healthcare,44,4.433333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-49-4486-01,2,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1116,0.278,0.01,142,LUAD,Primary,Matched,45,No,Yes,Johns Hopkins,49,4.8,Lung,Lung Adenocarcinoma (NOS)
+TCGA-49-4487-01,27,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1177,0.295,0,345,LUAD,Primary,Matched,107,No,Yes,Johns Hopkins,49,11.46666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-49-4488-01,25,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4138,0.2967,0.13,271,LUAD,Primary,Matched,314,No,Yes,Johns Hopkins,49,9.033333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-49-4490-01,29,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2916,0.3009,0.01,48,LUAD,Primary,Matched,161,No,Yes,Johns Hopkins,49,1.6,Lung,Lung Adenocarcinoma (NOS)
+TCGA-49-4494-01,3,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1473,0.2794,0.02,171,LUAD,Primary,Matched,46,No,Yes,Johns Hopkins,49,5.733333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-49-4501-01,19,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3168,0.2866,0.04,47,LUAD,Primary,Matched,182,No,Yes,Johns Hopkins,49,1.6,Lung,Lung Adenocarcinoma (NOS)
+TCGA-49-4505-01,21,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4730,0.3359,0.1,188,LUAD,Primary,Matched,148,No,Yes,Johns Hopkins,49,6.3,Lung,Lung Adenocarcinoma (NOS)
+TCGA-49-4506-01,20,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0386,0.2991,0,117,LUAD,Primary,Matched,22,No,Yes,Johns Hopkins,49,3.9,Lung,Lung Adenocarcinoma (NOS)
+TCGA-49-4507-01,12,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2054,0.2769,0.02,184,LUAD,Primary,Matched,117,No,Yes,Johns Hopkins,49,6.133333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-49-4510-01,23,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4297,0.2923,0.32,56,LUAD,Primary,Matched,60,No,Yes,Johns Hopkins,49,1.9,Lung,Lung Adenocarcinoma (NOS)
+TCGA-49-4512-01,31,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3116,0.307,0.01,41,LUAD,Primary,Matched,69,No,Yes,Johns Hopkins,49,1.4,Lung,Lung Adenocarcinoma (NOS)
+TCGA-49-4514-01,8,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2725,0.3006,0,293,LUAD,Primary,Matched,223,No,Yes,Johns Hopkins,49,9.8,Lung,Lung Papillary Adenocarcinoma
+TCGA-49-6742-01,19,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1343,0.3036,0.05,237,LUAD,Primary,Matched,51,No,Yes,Johns Hopkins,49,7.8,Lung,Mucinous (Colloid) Carcinoma
+TCGA-49-6743-01,23,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1102,0.2849,0,690,LUAD,Primary,Matched,127,No,Yes,Johns Hopkins,49,23.06666667,Lung,Lung Clear Cell Adenocarcinoma
+TCGA-49-6744-01,5,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0901,0.2967,0,222,LUAD,Primary,Matched,62,No,Yes,Johns Hopkins,49,7.433333333,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-49-6745-01,10,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0919,0.3083,0,128,LUAD,Primary,Matched,93,No,Yes,Johns Hopkins,49,4.3,Lung,Lung Adenocarcinoma (NOS)
+TCGA-49-6761-01,16,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1291,0.2932,0.01,281,LUAD,Primary,Matched,46,No,Yes,Johns Hopkins,49,9.433333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-49-6767-01,23,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3350,0.3133,0,423,LUAD,Primary,Matched,124,No,Yes,Johns Hopkins,49,14.06666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-49-AAQV-01,10,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1747,0.3294,0,67,LUAD,Primary,Matched,80,No,Yes,Johns Hopkins,49,2.233333333,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-49-AAR0-01,15,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1428,0.3252,0,121,LUAD,Primary,Matched,117,No,Yes,Johns Hopkins,49,4.066666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-49-AAR2-01,9,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2466,0.3355,0,364,LUAD,Primary,Matched,81,No,Yes,Johns Hopkins,49,12.13333333,Lung,Lung Acinar Adenocarcinoma
+TCGA-49-AAR3-01,10,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0086,0.3164,0,127,LUAD,Primary,Matched,10,No,Yes,Johns Hopkins,49,4.266666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-49-AAR4-01,8,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0166,0.3241,0,534,LUAD,Primary,Matched,29,No,Yes,Johns Hopkins,49,17.56666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-49-AAR9-01,11,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4853,0.3436,0.37,564,LUAD,Primary,Matched,258,No,Yes,Johns Hopkins,49,18.86666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-49-AARE-01,19,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2988,0.3338,0.03,1194,LUAD,Primary,Matched,286,No,Yes,Johns Hopkins,49,40,Lung,Lung Adenocarcinoma (NOS)
+TCGA-49-AARN-01,7,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1842,0.3164,0,690,LUAD,Primary,Matched,43,No,Yes,Johns Hopkins,49,23.1,Lung,Lung Adenocarcinoma (NOS)
+TCGA-49-AARO-01,21,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1686,0.3115,0.02,541,LUAD,Primary,Matched,147,No,Yes,Johns Hopkins,49,18.03333333,Lung,Lung Papillary Adenocarcinoma
+TCGA-49-AARQ-01,17,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3585,0.3256,0.09,639,LUAD,Primary,Matched,117,No,Yes,Johns Hopkins,49,21.43333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-49-AARR-01,0,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0001,0.3245,0.03,2,LUAD,Primary,Matched,1,No,Yes,Johns Hopkins,49,0.066666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-4B-A93V-01,26,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4531,0.3475,0.24,122,LUAD,Primary,Matched,102,Yes,No,Mary Bird Perkins Cancer Center - Our Lady of the Lake,4B,4.1,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-50-5044-01,1,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0003,0.313,0,122,LUAD,Primary,Matched,12,No,Yes,University of Pittsburgh,50,4.066666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-50-5045-01,3,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0850,0.305,0,294,LUAD,Primary,Matched,54,No,Yes,University of Pittsburgh,50,9.866666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-50-5049-01,15,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0468,0.3052,0,745,LUAD,Primary,Matched,92,No,Yes,University of Pittsburgh,50,24.83333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-50-5051-01,22,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.5353,0.3028,0,103,LUAD,Primary,Matched,28,No,Yes,University of Pittsburgh,50,3.466666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-50-5055-01,1,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0342,0.3077,0,21,LUAD,Primary,Matched,76,No,Yes,University of Pittsburgh,50,0.7,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-50-5066-01,11,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0599,0.2919,3.45,264,LUAD,Primary,Matched,104,No,Yes,University of Pittsburgh,50,8.833333333,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-50-5068-01,32,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0115,0.3108,0,85,LUAD,Primary,Matched,30,No,Yes,University of Pittsburgh,50,2.866666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-50-5072-01,27,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1721,0.2997,0.02,155,LUAD,Primary,Matched,20,No,Yes,University of Pittsburgh,50,5.2,Lung,Lung Adenocarcinoma (NOS)
+TCGA-50-5930-01,2,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1503,0.2831,0,1030,LUAD,Primary,Matched,226,No,Yes,University of Pittsburgh,50,34.5,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-50-5931-01,12,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4539,0.3013,0.33,276,LUAD,Primary,Matched,99,No,Yes,University of Pittsburgh,50,9.266666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-50-5932-01,11,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3516,0.3033,0.19,70,LUAD,Primary,Matched,82,No,Yes,University of Pittsburgh,50,2.3,Lung,Lung Adenocarcinoma (NOS)
+TCGA-50-5933-01,24,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1504,0.2962,0.03,495,LUAD,Primary,Matched,111,No,Yes,University of Pittsburgh,50,16.5,Lung,Lung Adenocarcinoma (NOS)
+TCGA-50-5935-01,21,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4163,0.3089,0.04,90,LUAD,Primary,Matched,67,No,Yes,University of Pittsburgh,50,3.033333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-50-5936-01,14,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3737,0.3083,0,106,LUAD,Primary,Matched,95,No,Yes,University of Pittsburgh,50,3.6,Lung,Mucinous (Colloid) Carcinoma
+TCGA-50-5939-01,7,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0732,0.3341,0,74,LUAD,Primary,Matched,66,No,Yes,University of Pittsburgh,50,2.466666667,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-50-5941-01,32,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1134,0.292,0,366,LUAD,Primary,Matched,139,No,Yes,University of Pittsburgh,50,12.23333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-50-5942-01,2,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0483,0.2881,0,59,LUAD,Primary,Matched,6,No,Yes,University of Pittsburgh,50,1.966666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-50-5944-01,17,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4060,0.2843,0.04,54,LUAD,Primary,Matched,242,No,Yes,University of Pittsburgh,50,1.866666667,Lung,Lung Acinar Adenocarcinoma
+TCGA-50-5946-01,21,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.5612,0.2901,0.03,584,LUAD,Primary,Matched,124,No,Yes,University of Pittsburgh,50,19.56666667,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-50-6590-01,19,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1035,0.2995,0.05,827,LUAD,Primary,Matched,68,No,Yes,University of Pittsburgh,50,27.63333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-50-6591-01,28,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.5794,0.3244,0.79,55,LUAD,Primary,Matched,167,No,Yes,University of Pittsburgh,50,1.866666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-50-6592-01,14,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0987,0.2877,0,267,LUAD,Primary,Matched,270,No,Yes,University of Pittsburgh,50,8.833333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-50-6593-01,29,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2090,0.2839,0,287,LUAD,Primary,Matched,99,No,Yes,University of Pittsburgh,50,9.566666667,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-50-6594-01,17,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4787,0.3083,0.26,488,LUAD,Primary,Matched,170,No,Yes,University of Pittsburgh,50,16.33333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-50-6595-01,12,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0248,0.3005,0,98,LUAD,Primary,Matched,45,No,Yes,University of Pittsburgh,50,3.3,Lung,Lung Adenocarcinoma (NOS)
+TCGA-50-6597-01,15,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2670,0.3029,0.01,51,LUAD,Primary,Matched,287,No,Yes,University of Pittsburgh,50,1.733333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-50-6673-01,18,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2202,0.2908,0.02,83,LUAD,Primary,Matched,153,No,Yes,University of Pittsburgh,50,2.866666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-50-7109-01,21,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.5497,0.3035,0.03,233,LUAD,Primary,Matched,223,No,Yes,University of Pittsburgh,50,8,Lung,Lung Adenocarcinoma (NOS)
+TCGA-50-8457-01,3,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0581,0.3402,0,53,LUAD,Primary,Matched,6,Yes,No,University of Pittsburgh,50,1.766666667,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-50-8459-01,4,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0065,0.3327,0.12,76,LUAD,Primary,Matched,33,Yes,No,University of Pittsburgh,50,2.533333333,Lung,Mucinous (Colloid) Carcinoma
+TCGA-50-8460-01,8,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2005,0.3409,0.19,31,LUAD,Primary,Matched,18,Yes,No,University of Pittsburgh,50,1.033333333,Lung,Lung Papillary Adenocarcinoma
+TCGA-53-7624-01,18,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.6673,0.317,0.42,743,LUAD,Primary,Matched,232,No,Yes,University of Miami,53,24.8,Lung,Lung Adenocarcinoma (NOS)
+TCGA-53-7626-01,10,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2535,0.3176,0,1048,LUAD,Primary,Matched,74,No,Yes,University of Miami,53,35.06666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-53-7813-01,20,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2515,0.3387,0.08,149,LUAD,Primary,Matched,44,No,Yes,University of Miami,53,4.866666667,Lung,"Lung Bronchioloalveolar Carcinoma, Non-Mucinous"
+TCGA-53-A4EZ-01,23,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.6586,0.3105,0,453,LUAD,Primary,Matched,173,Yes,No,University of Miami,53,15.13333333,Lung,Lung Acinar Adenocarcinoma
+TCGA-55-1592-01,22,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.5835,0.2803,0.1,487,LUAD,Primary,Matched,267,No,Yes,International Genomics Consortium,55,16.36666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-1594-01,23,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.6566,0.2912,0.34,169,LUAD,Primary,Matched,156,No,Yes,International Genomics Consortium,55,5.6,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-1595-01,25,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.6128,0.2662,0.88,297,LUAD,Primary,Matched,187,,,International Genomics Consortium,55,9.933333333,Lung,Lung Clear Cell Adenocarcinoma
+TCGA-55-1596-01,28,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.7496,0.2772,0.29,178,LUAD,Primary,Matched,81,No,Yes,International Genomics Consortium,55,5.866666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-5899-01,19,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.6014,0.3053,0.07,386,LUAD,Primary,Matched,228,No,Yes,International Genomics Consortium,55,12.86666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-6543-01,10,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2923,0.3,0.14,23,LUAD,Primary,Matched,28,No,Yes,International Genomics Consortium,55,0.766666667,Lung,"Lung Bronchioloalveolar Carcinoma, Mucinous"
+TCGA-55-6642-01,15,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1444,0.3046,0,122,LUAD,Primary,Matched,103,No,Yes,International Genomics Consortium,55,4.066666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-6712-01,21,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3129,0.3013,0,129,LUAD,Primary,Matched,134,No,Yes,International Genomics Consortium,55,4.3,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-6968-01,12,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3815,0.3192,0.02,460,LUAD,Primary,Matched,139,No,Yes,International Genomics Consortium,55,15.4,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-6969-01,24,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0772,0.2795,0.01,427,LUAD,Primary,Matched,150,No,Yes,International Genomics Consortium,55,14.3,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-6970-01,13,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2406,0.3069,0,175,LUAD,Primary,Matched,34,No,Yes,International Genomics Consortium,55,5.866666667,Lung,Lung Papillary Adenocarcinoma
+TCGA-55-6971-01,22,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0622,0.293,0,202,LUAD,Primary,Matched,137,No,Yes,International Genomics Consortium,55,6.8,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-6972-01,18,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4609,0.2864,0.63,265,LUAD,Primary,Matched,158,No,Yes,International Genomics Consortium,55,8.8,Lung,Lung Papillary Adenocarcinoma
+TCGA-55-6975-01,13,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1960,0.2973,0,85,LUAD,Primary,Matched,118,No,Yes,International Genomics Consortium,55,2.866666667,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-55-6978-01,4,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0102,0.279,0,54,LUAD,Primary,Matched,85,No,Yes,International Genomics Consortium,55,1.866666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-6979-01,13,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0568,0.2926,0,535,LUAD,Primary,Matched,75,No,Yes,International Genomics Consortium,55,17.86666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-6980-01,15,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1855,0.2955,0,30,LUAD,Primary,Matched,43,No,Yes,International Genomics Consortium,55,1,Lung,"Lung Bronchioloalveolar Carcinoma, Non-Mucinous"
+TCGA-55-6981-01,24,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2902,0.275,0,203,LUAD,Primary,Matched,72,No,Yes,International Genomics Consortium,55,6.733333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-6982-01,22,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0799,0.2939,0.01,214,LUAD,Primary,Matched,146,No,Yes,International Genomics Consortium,55,7.2,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-6983-01,6,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0996,0.3045,0,105,LUAD,Primary,Matched,6,No,Yes,International Genomics Consortium,55,3.5,Lung,Mucinous (Colloid) Carcinoma
+TCGA-55-6984-01,6,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1609,0.3082,0,32,LUAD,Primary,Matched,38,No,Yes,International Genomics Consortium,55,1.066666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-6985-01,13,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2000,0.3005,0,438,LUAD,Primary,Matched,81,No,Yes,International Genomics Consortium,55,14.53333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-6986-01,0,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0410,0.2868,0,23,LUAD,Primary,Matched,30,No,Yes,International Genomics Consortium,55,0.766666667,Lung,"Lung Bronchioloalveolar Carcinoma, Non-Mucinous"
+TCGA-55-6987-01,7,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0706,0.3051,0,214,LUAD,Primary,Matched,80,No,Yes,International Genomics Consortium,55,7.133333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-7227-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.294,0,150,LUAD,Primary,Matched,7,Yes,No,International Genomics Consortium,55,5,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-7281-01,18,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4215,0.2873,0.02,438,LUAD,Primary,Matched,35,Yes,No,International Genomics Consortium,55,28.83333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-7283-01,18,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2525,0.3037,0,209,LUAD,Primary,Matched,192,Yes,No,International Genomics Consortium,55,14.06666667,Lung,"Lung Bronchioloalveolar Carcinoma, Non-Mucinous"
+TCGA-55-7284-01,10,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0259,0.3198,0,40,LUAD,Primary,Matched,11,Yes,No,International Genomics Consortium,55,1.333333333,Lung,"Lung Bronchioloalveolar Carcinoma, Non-Mucinous"
+TCGA-55-7570-01,10,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2514,0.3006,0,354,LUAD,Primary,Matched,71,Yes,No,International Genomics Consortium,55,23.56666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-7573-01,16,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3445,0.3036,0,50,LUAD,Primary,Matched,85,Yes,No,International Genomics Consortium,55,1.666666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-7574-01,11,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0385,0.3064,0,247,LUAD,Primary,Matched,116,Yes,No,International Genomics Consortium,55,16.43333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-7576-01,19,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4404,0.3078,0.01,371,LUAD,Primary,Matched,256,Yes,No,International Genomics Consortium,55,24.26666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-7724-01,11,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0190,0.3507,0,214,LUAD,Primary,Matched,19,Yes,No,International Genomics Consortium,55,7.2,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-7725-01,6,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1388,0.3117,0.08,116,LUAD,Primary,Matched,47,Yes,No,International Genomics Consortium,55,3.933333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-7726-01,23,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2587,0.3484,0,110,LUAD,Primary,Matched,54,Yes,No,International Genomics Consortium,55,3.7,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-7727-01,12,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2006,0.3554,0.08,221,LUAD,Primary,Matched,115,Yes,No,International Genomics Consortium,55,7.366666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-7728-01,1,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0590,0.3474,0,87,LUAD,Primary,Matched,31,Yes,No,International Genomics Consortium,55,2.9,Lung,Mucinous (Colloid) Carcinoma
+TCGA-55-7815-01,25,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1318,0.337,0,126,LUAD,Primary,Matched,82,Yes,No,International Genomics Consortium,55,4.233333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-7816-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.2941,0.27,2,LUAD,Primary,Matched,,Yes,No,International Genomics Consortium,55,0.066666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-7903-01,7,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2587,0.3455,0,142,LUAD,Primary,Matched,104,Yes,No,International Genomics Consortium,55,4.666666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-7907-01,24,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3482,0.3314,0.05,1067,LUAD,Primary,Matched,148,Yes,No,International Genomics Consortium,55,35.53333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-7910-01,20,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.5284,0.3415,0,287,LUAD,Primary,Matched,181,Yes,No,International Genomics Consortium,55,9.566666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-7911-01,14,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0964,0.3558,0.02,211,LUAD,Primary,Matched,45,Yes,No,International Genomics Consortium,55,7,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-7913-01,19,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2153,0.3381,0.24,310,LUAD,Primary,Matched,131,Yes,No,International Genomics Consortium,55,10.33333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-7914-01,9,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2550,0.3043,0.06,161,LUAD,Primary,Matched,50,Yes,No,International Genomics Consortium,55,5.366666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-7994-01,16,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.5861,0.3527,0.04,1390,LUAD,Primary,Matched,201,Yes,No,International Genomics Consortium,55,46.63333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-7995-01,23,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3208,0.3538,0.02,606,LUAD,Primary,Matched,187,Yes,No,International Genomics Consortium,55,20.2,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-8085-01,6,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2779,0.3109,0,224,LUAD,Primary,Matched,258,Yes,No,International Genomics Consortium,55,7.5,Lung,Lung Papillary Adenocarcinoma
+TCGA-55-8087-01,5,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0996,0.3177,0.08,34,LUAD,Primary,Matched,31,Yes,No,International Genomics Consortium,55,1.133333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-8089-01,11,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0325,0.3445,0,1096,LUAD,Primary,Matched,80,Yes,No,International Genomics Consortium,55,36.33333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-8090-01,14,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0643,0.3169,0.02,77,LUAD,Primary,Matched,20,Yes,No,International Genomics Consortium,55,2.566666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-8091-01,13,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4845,0.3272,0.06,30,LUAD,Primary,Matched,18,Yes,No,International Genomics Consortium,55,0.966666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-8092-01,16,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3084,0.319,0.02,493,LUAD,Primary,Matched,107,Yes,No,International Genomics Consortium,55,16.43333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-8094-01,18,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.6613,0.3206,0.24,394,LUAD,Primary,Matched,178,Yes,No,International Genomics Consortium,55,13.23333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-8096-01,24,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0908,0.3506,0.02,132,LUAD,Primary,Matched,74,Yes,No,International Genomics Consortium,55,4.4,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-8097-01,6,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2133,0.3278,0,100,LUAD,Primary,Matched,45,Yes,No,International Genomics Consortium,55,3.333333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-8203-01,20,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2835,0.3099,0.07,386,LUAD,Primary,Matched,53,Yes,No,International Genomics Consortium,55,12.86666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-8204-01,10,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2783,0.3441,0.02,193,LUAD,Primary,Matched,28,Yes,No,International Genomics Consortium,55,6.433333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-8205-01,22,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1046,0.3331,0.15,474,LUAD,Primary,Matched,55,Yes,No,International Genomics Consortium,55,15.8,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-8206-01,20,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1614,0.345,0,27,LUAD,Primary,Matched,69,Yes,No,International Genomics Consortium,55,0.9,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-8207-01,15,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4614,0.3312,0.1,277,LUAD,Primary,Matched,24,Yes,No,International Genomics Consortium,55,9.266666667,Lung,Lung Acinar Adenocarcinoma
+TCGA-55-8208-01,9,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0439,0.2956,0.02,318,LUAD,Primary,Matched,26,Yes,No,International Genomics Consortium,55,10.6,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-8299-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0000,0.329,0.02,195,LUAD,Primary,Matched,4,Yes,No,International Genomics Consortium,55,12.16666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-8301-01,8,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0758,0.3329,0.24,262,LUAD,Primary,Matched,45,Yes,No,International Genomics Consortium,55,8.7,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-8302-01,12,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1708,0.3126,0.52,613,LUAD,Primary,Matched,35,Yes,No,International Genomics Consortium,55,20.63333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-8505-01,6,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0096,0.3302,0.07,27,LUAD,Primary,Matched,61,Yes,No,International Genomics Consortium,55,0.933333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-8506-01,13,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3267,0.5316,6.82,1582,LUAD,Primary,Matched,358,Yes,No,International Genomics Consortium,55,52.9,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-8507-01,22,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.5642,0.3629,0.23,874,LUAD,Primary,Matched,218,Yes,No,International Genomics Consortium,55,29.26666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-8508-01,13,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1802,0.3292,0,165,LUAD,Primary,Matched,60,Yes,No,International Genomics Consortium,55,5.5,Lung,Mucinous (Colloid) Carcinoma
+TCGA-55-8510-01,25,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1246,0.3384,0.1,273,LUAD,Primary,Matched,102,Yes,No,International Genomics Consortium,55,9.1,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-8511-01,20,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1225,0.3413,0.85,511,LUAD,Primary,Matched,220,Yes,No,International Genomics Consortium,55,17.16666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-8512-01,9,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1895,0.318,0,35,LUAD,Primary,Matched,66,Yes,No,International Genomics Consortium,55,1.166666667,Lung,"Lung Bronchioloalveolar Carcinoma, Non-Mucinous"
+TCGA-55-8513-01,0,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0,0.3194,0,5,LUAD,Primary,Matched,0,Yes,No,International Genomics Consortium,55,0.166666667,Lung,Mucinous (Colloid) Carcinoma
+TCGA-55-8514-01,26,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.8013,0.3151,0.45,249,LUAD,Primary,Matched,58,Yes,No,International Genomics Consortium,55,8.333333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-8614-01,23,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3320,0.3412,0.01,202,LUAD,Primary,Matched,54,Yes,No,International Genomics Consortium,55,6.8,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-8615-01,23,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.6786,0.3269,0.17,99,LUAD,Primary,Matched,185,Yes,No,International Genomics Consortium,55,3.333333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-8616-01,22,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3848,0.3503,0.12,431,LUAD,Primary,Matched,77,Yes,No,International Genomics Consortium,55,14.5,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-8619-01,1,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0000,0.323,0,20,LUAD,Primary,Matched,6,Yes,No,International Genomics Consortium,55,0.666666667,Lung,Mucinous (Colloid) Carcinoma
+TCGA-55-8620-01,15,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3493,0.3391,1.13,437,LUAD,Primary,Matched,202,Yes,No,International Genomics Consortium,55,14.53333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-8621-01,1,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0000,0.3078,0.19,68,LUAD,Primary,Matched,2,Yes,No,International Genomics Consortium,55,2.266666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-A48X-01,13,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0066,0.3152,0,364,LUAD,Primary,Matched,15,Yes,No,International Genomics Consortium,55,12.1,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-A48Y-01,6,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1886,0.3259,0,313,LUAD,Primary,Matched,302,Yes,No,International Genomics Consortium,55,10.43333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-A48Z-01,17,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3205,0.3062,0.03,44,LUAD,Primary,Matched,85,Yes,No,International Genomics Consortium,55,1.5,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-55-A490-01,18,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.5419,0.3394,0.12,1191,LUAD,Primary,Matched,238,Yes,No,International Genomics Consortium,55,39.76666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-A491-01,26,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4770,0.3009,0.05,334,LUAD,Primary,Matched,139,Yes,No,International Genomics Consortium,55,11.23333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-A492-01,12,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2069,0.3293,0.32,261,LUAD,Primary,Matched,22,Yes,No,International Genomics Consortium,55,8.633333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-A493-01,16,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0981,0.3235,0.25,237,LUAD,Primary,Matched,85,Yes,No,International Genomics Consortium,55,7.9,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-A494-01,28,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3316,0.3189,0.11,212,LUAD,Primary,Matched,64,Yes,No,International Genomics Consortium,55,7.066666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-A4DF-01,13,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3667,0.3092,0.22,676,LUAD,Primary,Matched,163,Yes,No,International Genomics Consortium,55,22.73333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-A4DG-01,22,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4264,0.335,0.31,625,LUAD,Primary,Matched,91,Yes,No,International Genomics Consortium,55,20.9,Lung,Lung Adenocarcinoma (NOS)
+TCGA-55-A57B-01,21,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2150,0.3221,0,39,LUAD,Primary,Matched,26,Yes,No,International Genomics Consortium,55,1.3,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-62-8394-01,17,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4188,0.3238,0.4,117,LUAD,Primary,Matched,102,No,Yes,Thoraxklinik at University Hospital Heidelberg,62,3.933333333,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-62-8395-01,6,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2137,0.3261,0.04,73,LUAD,Primary,Matched,73,No,Yes,Thoraxklinik at University Hospital Heidelberg,62,2.433333333,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-62-8397-01,23,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2308,0.3149,0.27,24,LUAD,Primary,Matched,26,No,Yes,Thoraxklinik at University Hospital Heidelberg,62,0.8,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-62-8398-01,24,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3034,0.3196,0.36,74,LUAD,Primary,Matched,55,No,Yes,Thoraxklinik at University Hospital Heidelberg,62,2.466666667,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-62-8399-01,13,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4884,0.3201,0.35,466,LUAD,Primary,Matched,81,No,Yes,Thoraxklinik at University Hospital Heidelberg,62,15.53333333,Lung,Lung Papillary Adenocarcinoma
+TCGA-62-8402-01,31,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3729,0.335,0.95,41,LUAD,Primary,Matched,59,No,Yes,Thoraxklinik at University Hospital Heidelberg,62,1.366666667,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-62-A46O-01,14,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.6086,0.3242,0.43,798,LUAD,Primary,Matched,207,No,Yes,Thoraxklinik at University Hospital Heidelberg,62,26.53333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-62-A46P-01,6,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2250,0.3373,0,249,LUAD,Primary,Matched,55,No,Yes,Thoraxklinik at University Hospital Heidelberg,62,8.4,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-62-A46R-01,24,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3944,0.3214,0,170,LUAD,Primary,Matched,66,No,Yes,Thoraxklinik at University Hospital Heidelberg,62,5.666666667,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-62-A46S-01,17,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2331,0.3163,0,106,LUAD,Primary,Matched,89,No,Yes,Thoraxklinik at University Hospital Heidelberg,62,3.633333333,Lung,Lung Papillary Adenocarcinoma
+TCGA-62-A46U-01,16,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1571,0.3108,0,40,LUAD,Primary,Matched,75,No,Yes,Thoraxklinik at University Hospital Heidelberg,62,1.333333333,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-62-A46V-01,6,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2920,0.326,0,54,LUAD,Primary,Matched,53,No,Yes,Thoraxklinik at University Hospital Heidelberg,62,1.766666667,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-62-A46Y-01,6,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1431,0.3295,0,35,LUAD,Primary,Matched,25,No,Yes,Thoraxklinik at University Hospital Heidelberg,62,1.166666667,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-62-A470-01,23,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.5991,0.3313,0.18,105,LUAD,Primary,Matched,101,No,Yes,Thoraxklinik at University Hospital Heidelberg,62,3.533333333,Lung,Lung Acinar Adenocarcinoma
+TCGA-62-A471-01,24,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4409,0.3326,0.01,90,LUAD,Primary,Matched,104,No,Yes,Thoraxklinik at University Hospital Heidelberg,62,3.033333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-62-A472-01,21,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2944,0.3272,0.19,53,LUAD,Primary,Matched,17,No,Yes,Thoraxklinik at University Hospital Heidelberg,62,1.766666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-64-1676-01,16,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.5188,0.2746,0.04,530,LUAD,Primary,Matched,167,No,Yes,Fox Chase,64,17.83333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-64-1677-01,21,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1277,0.2728,0.04,195,LUAD,Primary,Matched,84,No,Yes,Fox Chase,64,6.533333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-64-1678-01,12,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.5476,0.2919,1.05,,LUAD,Primary,Matched,136,No,Yes,Fox Chase,64,0,Lung,Lung Adenocarcinoma (NOS)
+TCGA-64-1679-01,25,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1979,0.3127,0,480,LUAD,Primary,Matched,63,No,Yes,Fox Chase,64,16.03333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-64-1680-01,18,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3404,0.2725,1.04,54,LUAD,Primary,Matched,30,No,Yes,Fox Chase,64,1.833333333,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-64-1681-01,26,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3458,0.3243,0.01,77,LUAD,Primary,Matched,113,No,Yes,Fox Chase,64,2.566666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-64-5774-01,19,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.6034,0.3093,0.18,123,LUAD,Primary,Matched,111,No,Yes,Fox Chase,64,4.133333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-64-5775-01,14,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3238,0.2952,0.27,434,LUAD,Primary,Matched,90,No,Yes,Fox Chase,64,14.4,Lung,Lung Adenocarcinoma (NOS)
+TCGA-64-5778-01,10,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3264,0.3135,0.03,420,LUAD,Primary,Matched,69,No,Yes,Fox Chase,64,14.26666667,Lung,"Lung Bronchioloalveolar Carcinoma, Non-Mucinous"
+TCGA-64-5779-01,19,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.6682,0.3101,0,325,LUAD,Primary,Matched,246,No,Yes,Fox Chase,64,10.8,Lung,Lung Acinar Adenocarcinoma
+TCGA-64-5781-01,11,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1808,0.2985,0.02,1022,LUAD,Primary,Matched,26,No,Yes,Fox Chase,64,34.16666667,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-64-5815-01,8,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1850,0.2793,0,147,LUAD,Primary,Matched,59,No,Yes,Fox Chase,64,4.933333333,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-67-3770-01,16,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3918,0.2832,0.36,187,LUAD,Primary,Matched,145,Yes,No,St Joseph's Medical Center (MD),67,6.266666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-67-3771-01,21,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.6308,0.3208,0.6,948,LUAD,Primary,Matched,207,Yes,No,St Joseph's Medical Center (MD),67,31.63333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-67-3772-01,10,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3283,0.2699,0,59,LUAD,Primary,Matched,78,Yes,No,St Joseph's Medical Center (MD),67,2,Lung,Lung Adenocarcinoma (NOS)
+TCGA-67-3773-01,5,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1224,0.2811,0.1,95,LUAD,Primary,Matched,100,Yes,No,St Joseph's Medical Center (MD),67,3.233333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-67-3774-01,7,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2154,0.2771,0,95,LUAD,Primary,Matched,106,Yes,No,St Joseph's Medical Center (MD),67,3.166666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-67-4679-01,2,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1694,0.2885,0,262,LUAD,Primary,Matched,12,Yes,No,St Joseph's Medical Center (MD),67,8.8,Lung,Lung Adenocarcinoma (NOS)
+TCGA-67-6215-01,7,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2122,0.2956,0.01,103,LUAD,Primary,Matched,36,Yes,No,St Joseph's Medical Center (MD),67,3.4,Lung,Lung Adenocarcinoma (NOS)
+TCGA-67-6216-01,2,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0855,0.2921,0,40,LUAD,Primary,Matched,35,Yes,No,St Joseph's Medical Center (MD),67,1.333333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-67-6217-01,22,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4314,0.2965,0.01,177,LUAD,Primary,Matched,285,Yes,No,St Joseph's Medical Center (MD),67,5.9,Lung,Lung Adenocarcinoma (NOS)
+TCGA-69-7760-01,20,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.5582,0.3473,0.09,63,LUAD,Primary,Matched,148,Yes,No,Washington University - Cleveland Clinic,69,2.133333333,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-69-7761-01,15,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0782,0.3157,0,29,LUAD,Primary,Matched,51,No,Yes,Washington University - Cleveland Clinic,69,0.966666667,Lung,Lung Acinar Adenocarcinoma
+TCGA-69-7763-01,24,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1675,0.3202,0,65,LUAD,Primary,Matched,96,No,Yes,Washington University - Cleveland Clinic,69,2.2,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-69-7764-01,8,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4944,0.3472,0,81,LUAD,Primary,Matched,84,No,Yes,Washington University - Cleveland Clinic,69,2.7,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-69-7765-01,9,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1408,0.3239,0.03,547,LUAD,Primary,Matched,15,Yes,No,Washington University - Cleveland Clinic,69,18.26666667,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-69-7973-01,23,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4716,0.3631,0,240,LUAD,Primary,Matched,57,No,Yes,Washington University - Cleveland Clinic,69,8,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-69-7974-01,21,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1959,0.3588,0,482,LUAD,Primary,Matched,80,No,Yes,Washington University - Cleveland Clinic,69,16.1,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-69-7978-01,16,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0369,0.3431,0,542,LUAD,Primary,Matched,183,No,Yes,Washington University - Cleveland Clinic,69,18.26666667,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-69-7979-01,23,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.6272,0.351,0.06,1322,LUAD,Primary,Matched,962,No,Yes,Washington University - Cleveland Clinic,69,44.13333333,Lung,Lung Acinar Adenocarcinoma
+TCGA-69-7980-01,22,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4262,0.3681,0.22,736,LUAD,Primary,Matched,201,Yes,No,Washington University - Cleveland Clinic,69,24.56666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-69-8253-01,16,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2314,0.3411,0.25,133,LUAD,Primary,Matched,36,Yes,No,Washington University - Cleveland Clinic,69,4.366666667,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-69-8254-01,1,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0322,0.3148,0.03,75,LUAD,Primary,Matched,10,Yes,No,Washington University - Cleveland Clinic,69,2.533333333,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-69-8255-01,20,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4081,0.3363,0.17,270,LUAD,Primary,Matched,229,Yes,No,Washington University - Cleveland Clinic,69,9.166666667,Lung,Lung Solid Pattern Predominant Adenocarcinoma
+TCGA-69-8453-01,6,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1046,,,,LUAD,Primary,Matched,78,Yes,No,Washington University - Cleveland Clinic,69,0,Lung,Mucinous (Colloid) Carcinoma
+TCGA-69-A59K-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4943,0.3272,0.01,439,LUAD,Primary,Matched,253,Yes,No,Washington University - Cleveland Clinic,69,14.6,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-71-6725-01,21,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.6934,0.3174,0.34,51,LUAD,Primary,Matched,140,Yes,No,ILSBio,71,1.7,Lung,Lung Papillary Adenocarcinoma
+TCGA-71-8520-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,,0.311,0.64,80,LUAD,Primary,Matched,68,Yes,No,ILSBio,71,2.666666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-73-4658-01,8,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0648,0.3074,0,322,LUAD,Primary,Matched,40,No,Yes,Roswell Park,73,10.66666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-73-4659-01,24,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2490,0.2919,0,192,LUAD,Primary,Matched,99,No,Yes,Roswell Park,73,6.4,Lung,Lung Adenocarcinoma (NOS)
+TCGA-73-4662-01,14,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4929,0.2984,0.01,205,LUAD,Primary,Matched,97,No,Yes,Roswell Park,73,6.833333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-73-4666-01,22,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3709,0.2944,0.22,342,LUAD,Primary,Matched,66,No,Yes,Roswell Park,73,11.43333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-73-4668-01,24,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4990,0.2789,0.03,485,LUAD,Primary,Matched,175,No,Yes,Roswell Park,73,16.23333333,Lung,Lung Micropapillary Adenocarcinoma
+TCGA-73-4670-01,26,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.6786,0.2934,0.38,330,LUAD,Primary,Matched,137,No,Yes,Roswell Park,73,10.96666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-73-4675-01,24,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2590,0.2958,0.01,63,LUAD,Primary,Matched,51,No,Yes,Roswell Park,73,2.133333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-73-4676-01,9,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2108,0.3162,0.02,85,LUAD,Primary,Matched,45,No,Yes,Roswell Park,73,2.833333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-73-4677-01,14,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1813,0.2761,0.05,224,LUAD,Primary,Matched,15,No,Yes,Roswell Park,73,7.466666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-73-7498-01,7,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1769,0.3439,0,99,LUAD,Primary,Matched,27,No,Yes,Roswell Park,73,3.3,Lung,"Lung Bronchioloalveolar Carcinoma, Non-Mucinous"
+TCGA-73-7499-01,23,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.5723,0.3566,0.15,65,LUAD,Primary,Matched,91,No,Yes,Roswell Park,73,2.166666667,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-73-A9RS-01,18,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.6599,0.35,0.02,844,LUAD,Primary,Matched,144,No,Yes,Roswell Park,73,28.3,Lung,Lung Adenocarcinoma (NOS)
+TCGA-75-5122-01,9,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0707,0.2898,0.02,120,LUAD,Primary,Matched,99,No,Yes,Ontario Institute for Cancer Research (OICR),75,3.966666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-75-5125-01,20,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3035,0.3003,0,164,LUAD,Primary,Matched,43,No,Yes,Ontario Institute for Cancer Research (OICR),75,5.5,Lung,Lung Adenocarcinoma (NOS)
+TCGA-75-5126-01,7,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0549,0.2958,0,584,LUAD,Primary,Matched,44,No,Yes,Ontario Institute for Cancer Research (OICR),75,19.63333333,Lung,Lung Papillary Adenocarcinoma
+TCGA-75-5146-01,9,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3219,0.3033,0,168,LUAD,Primary,Matched,123,No,Yes,Ontario Institute for Cancer Research (OICR),75,5.633333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-75-5147-01,15,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4140,0.2962,0.02,39,LUAD,Primary,Matched,80,No,Yes,Ontario Institute for Cancer Research (OICR),75,1.3,Lung,Lung Adenocarcinoma (NOS)
+TCGA-75-6203-01,10,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0169,0.2893,0,11,LUAD,Primary,Matched,12,No,Yes,Ontario Institute for Cancer Research (OICR),75,0.366666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-75-6205-01,24,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1084,0.2866,0,47,LUAD,Primary,Matched,94,No,Yes,Ontario Institute for Cancer Research (OICR),75,1.566666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-75-6206-01,16,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4203,0.2995,0,81,LUAD,Primary,Matched,30,No,Yes,Ontario Institute for Cancer Research (OICR),75,2.7,Lung,Lung Adenocarcinoma (NOS)
+TCGA-75-6207-01,11,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3714,0.2953,0.18,60,LUAD,Primary,Matched,181,No,Yes,Ontario Institute for Cancer Research (OICR),75,2,Lung,Lung Adenocarcinoma (NOS)
+TCGA-75-6211-01,17,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.5311,0.2992,0.05,341,LUAD,Primary,Matched,589,No,Yes,Ontario Institute for Cancer Research (OICR),75,11.33333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-75-6212-01,19,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2365,0.2999,0,20,LUAD,Primary,Matched,2,No,Yes,Ontario Institute for Cancer Research (OICR),75,0.7,Lung,Lung Micropapillary Adenocarcinoma
+TCGA-75-6214-01,21,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.5190,0.2991,0.2,642,LUAD,Primary,Matched,170,No,Yes,Ontario Institute for Cancer Research (OICR),75,21.5,Lung,Lung Adenocarcinoma (NOS)
+TCGA-75-7025-01,19,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2153,0.296,0.15,31,LUAD,Primary,Matched,14,No,Yes,Ontario Institute for Cancer Research (OICR),75,1.033333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-75-7027-01,23,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.6570,0.3008,0.3,213,LUAD,Primary,Matched,57,No,Yes,Ontario Institute for Cancer Research (OICR),75,7.133333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-75-7030-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0000,0.2875,0.07,15,LUAD,Primary,Matched,0,No,Yes,Ontario Institute for Cancer Research (OICR),75,0.5,Lung,Lung Adenocarcinoma (NOS)
+TCGA-75-7031-01,18,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3691,0.3033,0.24,186,LUAD,Primary,Matched,262,No,Yes,Ontario Institute for Cancer Research (OICR),75,6.3,Lung,Lung Adenocarcinoma (NOS)
+TCGA-78-7143-01,26,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1974,,0,,LUAD,Primary,Matched,66,No,Yes,Prince Charles Hospital,78,0,Lung,"Lung Bronchioloalveolar Carcinoma, Non-Mucinous"
+TCGA-78-7145-01,20,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.5585,0.296,0,185,LUAD,Primary,Matched,202,No,Yes,Prince Charles Hospital,78,6.266666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-78-7146-01,17,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.5733,0.2965,4.5,347,LUAD,Primary,Matched,321,No,Yes,Prince Charles Hospital,78,11.56666667,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-78-7147-01,21,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.5989,0.3081,0.03,305,LUAD,Primary,Matched,313,No,Yes,Prince Charles Hospital,78,10.16666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-78-7148-01,6,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2875,0.3143,0.02,212,LUAD,Primary,Matched,47,No,Yes,Prince Charles Hospital,78,7.133333333,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-78-7149-01,21,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2501,0.3146,0.03,137,LUAD,Primary,Matched,93,No,Yes,Prince Charles Hospital,78,4.566666667,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-78-7150-01,15,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4589,0.312,0.26,363,LUAD,Primary,Matched,293,No,Yes,Prince Charles Hospital,78,12.26666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-78-7152-01,6,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1601,0.3139,0,177,LUAD,Primary,Matched,56,No,Yes,Prince Charles Hospital,78,6,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-78-7153-01,16,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2107,0.2986,0,115,LUAD,Primary,Matched,209,No,Yes,Prince Charles Hospital,78,3.833333333,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-78-7154-01,22,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3566,0.3163,0.44,210,LUAD,Primary,Matched,246,No,Yes,Prince Charles Hospital,78,7.066666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-78-7155-01,18,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4353,0.3151,1.05,1403,LUAD,Primary,Matched,289,No,Yes,Prince Charles Hospital,78,47.06666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-78-7156-01,4,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1115,0.2956,1.28,309,LUAD,Primary,Matched,29,No,Yes,Prince Charles Hospital,78,10.36666667,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-78-7158-01,4,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1432,0.3136,0,249,LUAD,Primary,Matched,17,No,Yes,Prince Charles Hospital,78,8.3,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-78-7159-01,22,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2440,0.3248,0,304,LUAD,Primary,Matched,108,No,Yes,Prince Charles Hospital,78,10.2,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-78-7160-01,16,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0345,0.2959,0,49,LUAD,Primary,Matched,17,No,Yes,Prince Charles Hospital,78,1.666666667,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-78-7161-01,9,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4864,0.2989,0,175,LUAD,Primary,Matched,342,No,Yes,Prince Charles Hospital,78,5.8,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-78-7162-01,5,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0574,0.3088,0,73,LUAD,Primary,Matched,27,No,Yes,Prince Charles Hospital,78,2.433333333,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-78-7163-01,27,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3872,0.3124,0.06,49,LUAD,Primary,Matched,44,No,Yes,Prince Charles Hospital,78,1.666666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-78-7166-01,3,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0935,0.3093,0,194,LUAD,Primary,Matched,13,No,Yes,Prince Charles Hospital,78,6.466666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-78-7167-01,17,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4895,0.2999,0.1,103,LUAD,Primary,Matched,121,No,Yes,Prince Charles Hospital,78,3.5,Lung,Lung Papillary Adenocarcinoma
+TCGA-78-7220-01,28,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.5333,0.317,0.21,740,LUAD,Primary,Matched,180,No,Yes,Prince Charles Hospital,78,24.86666667,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-78-7535-01,30,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.7843,0.3105,0.34,146,LUAD,Primary,Matched,59,No,Yes,Prince Charles Hospital,78,4.9,Lung,Lung Adenocarcinoma (NOS)
+TCGA-78-7536-01,16,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.7212,0.3287,0.72,595,LUAD,Primary,Matched,395,No,Yes,Prince Charles Hospital,78,19.83333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-78-7537-01,2,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1285,0.2959,0,133,LUAD,Primary,Matched,21,Yes,No,Prince Charles Hospital,78,4.466666667,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-78-7539-01,13,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3206,0.3056,0,430,LUAD,Primary,Matched,234,No,Yes,Prince Charles Hospital,78,14.43333333,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-78-7540-01,6,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1948,0.3011,0.06,227,LUAD,Primary,Matched,23,No,Yes,Prince Charles Hospital,78,7.566666667,Lung,"Lung Bronchioloalveolar Carcinoma, Mucinous"
+TCGA-78-7542-01,28,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4019,0.324,0.06,326,LUAD,Primary,Matched,128,No,Yes,Prince Charles Hospital,78,11,Lung,Lung Adenocarcinoma (NOS)
+TCGA-78-7633-01,9,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3107,0.3017,0,145,LUAD,Primary,Matched,12,No,Yes,Prince Charles Hospital,78,4.933333333,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-78-8640-01,15,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1728,0.323,0.01,648,LUAD,Primary,Matched,179,No,Yes,Prince Charles Hospital,78,21.7,Lung,Lung Adenocarcinoma (NOS)
+TCGA-78-8648-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0000,0.3313,0.07,15,LUAD,Primary,Matched,0,No,Yes,Prince Charles Hospital,78,0.466666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-78-8655-01,10,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2619,0.3318,0.29,97,LUAD,Primary,Matched,51,No,Yes,Prince Charles Hospital,78,3.233333333,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-78-8660-01,8,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0071,0.3233,0.42,221,LUAD,Primary,Matched,141,No,Yes,Prince Charles Hospital,78,7.366666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-78-8662-01,19,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.7394,0.3528,1.32,1014,LUAD,Primary,Matched,249,No,Yes,Prince Charles Hospital,78,33.73333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-80-5607-01,3,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0990,0.3103,0.06,112,LUAD,Primary,Matched,26,No,Yes,Ontario Institute for Cancer Research (OICR)/Ottawa,80,3.733333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-80-5608-01,15,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4499,0.2893,0.1,341,LUAD,Primary,Matched,44,No,Yes,Ontario Institute for Cancer Research (OICR)/Ottawa,80,11.36666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-80-5611-01,14,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.5728,0.2913,0.04,190,LUAD,Primary,Matched,206,No,Yes,Ontario Institute for Cancer Research (OICR)/Ottawa,80,6.333333333,Lung,Lung Solid Pattern Predominant Adenocarcinoma
+TCGA-83-5908-01,15,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0276,0.3239,0.21,214,LUAD,Primary,Matched,79,Yes,No,CHI-Penrose Colorado,83,7.2,Lung,Lung Adenocarcinoma (NOS)
+TCGA-86-6562-01,17,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3789,0.2982,0,52,LUAD,Primary,Matched,48,Yes,No,Asterand,86,1.733333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-86-6851-01,18,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1787,0.3143,0,836,LUAD,Primary,Matched,111,Yes,No,Asterand,86,27.93333333,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-86-7701-01,19,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1685,0.3447,0.02,376,LUAD,Primary,Matched,166,Yes,No,Asterand,86,12.7,Lung,Lung Adenocarcinoma (NOS)
+TCGA-86-7711-01,16,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4361,0.3021,0,208,LUAD,Primary,Matched,124,Yes,No,Asterand,86,13.6,Lung,Lung Adenocarcinoma (NOS)
+TCGA-86-7713-01,14,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3677,0.3155,0.1,150,LUAD,Primary,Matched,123,Yes,No,Asterand,86,10,Lung,Lung Adenocarcinoma (NOS)
+TCGA-86-7714-01,3,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0639,0.3042,0,67,LUAD,Primary,Matched,3,Yes,No,Asterand,86,2.266666667,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-86-7953-01,24,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3506,0.3435,0,49,LUAD,Primary,Matched,130,Yes,No,Asterand,86,1.633333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-86-7954-01,27,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2595,0.3267,0,186,LUAD,Primary,Matched,199,Yes,No,Asterand,86,6.2,Lung,"Lung Bronchioloalveolar Carcinoma, Non-Mucinous"
+TCGA-86-7955-01,22,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.6063,0.3329,0.21,276,LUAD,Primary,Matched,234,Yes,No,Asterand,86,9.233333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-86-8054-01,19,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.6000,0.3127,0.23,199,LUAD,Primary,Matched,154,Yes,No,Asterand,86,6.633333333,Lung,Lung Acinar Adenocarcinoma
+TCGA-86-8055-01,20,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1831,0.3385,0.02,41,LUAD,Primary,Matched,104,Yes,No,Asterand,86,1.4,Lung,Lung Adenocarcinoma (NOS)
+TCGA-86-8056-01,3,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1241,0.3353,0,257,LUAD,Primary,Matched,121,Yes,No,Asterand,86,8.633333333,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-86-8073-01,9,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2307,0.3277,0.04,1334,LUAD,Primary,Matched,87,Yes,No,Asterand,86,44.56666667,Lung,"Lung Bronchioloalveolar Carcinoma, Non-Mucinous"
+TCGA-86-8074-01,18,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4639,0.3273,0.36,63,LUAD,Primary,Matched,165,Yes,No,Asterand,86,2.1,Lung,Lung Adenocarcinoma (NOS)
+TCGA-86-8075-01,27,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2397,0.2979,0.14,50,LUAD,Primary,Matched,154,Yes,No,Asterand,86,1.666666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-86-8076-01,1,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0339,0.3188,0,64,LUAD,Primary,Matched,4,Yes,No,Asterand,86,2.133333333,Lung,Lung Papillary Adenocarcinoma
+TCGA-86-8278-01,8,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2129,0.3248,0.09,91,LUAD,Primary,Matched,48,Yes,No,Asterand,86,3.1,Lung,Lung Adenocarcinoma (NOS)
+TCGA-86-8279-01,28,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.5986,0.341,0.56,455,LUAD,Primary,Matched,94,Yes,No,Asterand,86,15.2,Lung,Lung Adenocarcinoma (NOS)
+TCGA-86-8280-01,23,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2915,0.3218,0.27,43,LUAD,Primary,Matched,133,Yes,No,Asterand,86,1.466666667,Lung,"Lung Bronchioloalveolar Carcinoma, Non-Mucinous"
+TCGA-86-8281-01,3,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1486,0.3249,0.32,226,LUAD,Primary,Matched,13,Yes,No,Asterand,86,7.566666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-86-8358-01,21,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.5293,0.3391,0.45,951,LUAD,Primary,Matched,386,Yes,No,Asterand,86,31.83333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-86-8359-01,16,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3875,0.3167,0.21,143,LUAD,Primary,Matched,92,Yes,No,Asterand,86,4.8,Lung,Lung Adenocarcinoma (NOS)
+TCGA-86-8585-01,21,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0820,0.3245,0,531,LUAD,Primary,Matched,112,Yes,No,Asterand,86,17.73333333,Lung,Lung Solid Pattern Predominant Adenocarcinoma
+TCGA-86-8668-01,10,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1890,0.3259,0,33,LUAD,Primary,Matched,71,Yes,No,Asterand,86,1.1,Lung,"Lung Bronchioloalveolar Carcinoma, Mucinous"
+TCGA-86-8669-01,20,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2898,0.3342,0.12,118,LUAD,Primary,Matched,109,Yes,No,Asterand,86,3.933333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-86-8671-01,0,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0023,0.3378,0.22,34,LUAD,Primary,Matched,35,Yes,No,Asterand,86,1.133333333,Lung,Lung Papillary Adenocarcinoma
+TCGA-86-8672-01,21,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0475,0.3472,0.33,262,LUAD,Primary,Matched,77,Yes,No,Asterand,86,8.766666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-86-8673-01,30,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2147,0.3382,0.49,437,LUAD,Primary,Matched,245,Yes,No,Asterand,86,14.73333333,Lung,"Lung Bronchioloalveolar Carcinoma, Non-Mucinous"
+TCGA-86-8674-01,5,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1477,0.334,0.63,270,LUAD,Primary,Matched,17,Yes,No,Asterand,86,8.966666667,Lung,Lung Papillary Adenocarcinoma
+TCGA-86-A456-01,8,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0300,0.3277,0,327,LUAD,Primary,Matched,81,Yes,No,Asterand,86,10.96666667,Lung,Lung Papillary Adenocarcinoma
+TCGA-86-A4D0-01,10,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3059,0.3385,0.26,,LUAD,Primary,Matched,146,Yes,No,Asterand,86,0,Lung,Lung Adenocarcinoma (NOS)
+TCGA-86-A4JF-01,18,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1097,0.5047,4.4,1226,LUAD,Primary,Matched,25,Yes,No,Asterand,86,41.16666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-86-A4P7-01,6,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0145,0.3312,0,66,LUAD,Primary,Matched,28,Yes,No,Asterand,86,2.2,Lung,Lung Adenocarcinoma (NOS)
+TCGA-86-A4P8-01,0,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0001,0.3062,0.01,,LUAD,Primary,Matched,0,Yes,No,Asterand,86,0,Lung,Lung Adenocarcinoma (NOS)
+TCGA-91-6828-01,30,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2487,0.299,0.02,276,LUAD,Primary,Matched,74,Yes,No,ABS - IUPUI,91,18.23333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-91-6829-01,17,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4020,0.3066,0.09,588,LUAD,Primary,Matched,106,No,Yes,ABS - IUPUI,91,19.6,Lung,"Lung Bronchioloalveolar Carcinoma, Non-Mucinous"
+TCGA-91-6830-01,11,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0451,0.3068,0,243,LUAD,Primary,Matched,32,No,Yes,ABS - IUPUI,91,8.1,Lung,Lung Adenocarcinoma (NOS)
+TCGA-91-6831-01,16,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4590,0.3197,0.04,257,LUAD,Primary,Matched,231,No,Yes,ABS - IUPUI,91,8.633333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-91-6835-01,13,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0486,0.2993,0,78,LUAD,Primary,Matched,31,No,Yes,ABS - IUPUI,91,2.633333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-91-6836-01,20,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.5486,0.3153,0.47,457,LUAD,Primary,Matched,297,No,Yes,ABS - IUPUI,91,15.33333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-91-6840-01,21,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.6193,0.2902,0.37,128,LUAD,Primary,Matched,245,Yes,No,ABS - IUPUI,91,4.233333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-91-6847-01,25,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.5998,0.3373,1.12,67,LUAD,Primary,Matched,178,No,Yes,ABS - IUPUI,91,2.266666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-91-6848-01,15,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2565,0.2978,0,561,LUAD,Primary,Matched,272,No,Yes,ABS - IUPUI,91,18.73333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-91-6849-01,4,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1555,0.3012,0,108,LUAD,Primary,Matched,21,No,Yes,ABS - IUPUI,91,3.6,Lung,Lung Adenocarcinoma (NOS)
+TCGA-91-7771-01,20,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2558,0.3602,0.11,185,LUAD,Primary,Matched,273,Yes,No,ABS - IUPUI,91,6.233333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-91-8496-01,4,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2102,0.3433,0,31,LUAD,Primary,Matched,53,Yes,No,ABS - IUPUI,91,1.033333333,Lung,"Lung Bronchioloalveolar Carcinoma, Non-Mucinous"
+TCGA-91-8497-01,1,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0872,0.3523,0.43,39,LUAD,Primary,Matched,79,Yes,No,ABS - IUPUI,91,1.333333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-91-8499-01,16,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.6447,0.3308,0.55,284,LUAD,Primary,Matched,375,Yes,No,ABS - IUPUI,91,9.433333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-91-A4BC-01,24,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0734,0.3357,0.05,401,LUAD,Primary,Matched,87,Yes,No,ABS - IUPUI,91,13.5,Lung,Lung Adenocarcinoma (NOS)
+TCGA-91-A4BD-01,6,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1370,0.3219,0,17,LUAD,Primary,Matched,2,Yes,No,ABS - IUPUI,91,0.533333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-93-7347-01,6,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0160,0.3343,0,107,LUAD,Primary,Matched,30,Yes,No,Washington University - St. Louis,93,3.566666667,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-93-7348-01,12,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0547,0.3085,0,103,LUAD,Primary,Matched,22,Yes,No,Washington University - St. Louis,93,6.733333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-93-8067-01,19,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3251,0.3262,0.14,450,LUAD,Primary,Matched,295,Yes,No,Washington University - St. Louis,93,15.06666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-93-A4JN-01,25,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2203,0.3078,0.01,73,LUAD,Primary,Matched,26,Yes,No,Washington University - St. Louis,93,2.433333333,Lung,Lung Acinar Adenocarcinoma
+TCGA-93-A4JO-01,16,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0324,0.3048,0,53,LUAD,Primary,Matched,32,Yes,No,Washington University - St. Louis,93,1.766666667,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-93-A4JP-01,10,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0381,0.2995,0.01,54,LUAD,Primary,Matched,35,Yes,No,Washington University - St. Louis,93,1.833333333,Lung,Lung Papillary Adenocarcinoma
+TCGA-93-A4JQ-01,21,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0418,0.3075,0.04,104,LUAD,Primary,Matched,47,Yes,No,Washington University - St. Louis,93,3.533333333,Lung,Lung Acinar Adenocarcinoma
+TCGA-95-7039-01,19,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4482,0.32,0,1207,LUAD,Primary,Matched,327,Yes,No,Washington University - Emory,95,40.36666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-95-7043-01,15,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.5315,0.3486,1.02,1022,LUAD,Primary,Matched,147,Yes,No,Washington University - Emory,95,34.16666667,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-95-7562-01,27,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4101,0.3409,0.12,391,LUAD,Primary,Matched,83,Yes,No,Washington University - Emory,95,13.1,Lung,Lung Adenocarcinoma (NOS)
+TCGA-95-7567-01,15,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3249,0.4503,1.94,846,LUAD,Primary,Matched,202,Yes,No,Washington University - Emory,95,28.16666667,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-95-7944-01,13,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0624,0.3321,0,208,LUAD,Primary,Matched,57,Yes,No,Washington University - Emory,95,7.033333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-95-7947-01,11,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4074,0.3598,0.04,476,LUAD,Primary,Matched,60,Yes,No,Washington University - Emory,95,16,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-95-7948-01,17,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3733,0.3546,0.21,141,LUAD,Primary,Matched,56,Yes,No,Washington University - Emory,95,4.833333333,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-95-8039-01,9,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1139,0.3217,0,87,LUAD,Primary,Matched,65,Yes,No,Washington University - Emory,95,2.933333333,Lung,Lung Acinar Adenocarcinoma
+TCGA-95-8494-01,21,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4034,0.3051,0.95,90,LUAD,Primary,Matched,90,Yes,No,Washington University - Emory,95,3,Lung,Lung Adenocarcinoma (NOS)
+TCGA-95-A4VK-01,7,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1907,0.3282,0,223,LUAD,Primary,Matched,124,Yes,No,Washington University - Emory,95,7.4,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-95-A4VN-01,27,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1669,0.3233,0,422,LUAD,Primary,Matched,25,Yes,No,Washington University - Emory,95,14.06666667,Lung,Lung Solid Pattern Predominant Adenocarcinoma
+TCGA-95-A4VP-01,21,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1430,0.3285,0,114,LUAD,Primary,Matched,52,Yes,No,Washington University - Emory,95,3.766666667,Lung,Lung Acinar Adenocarcinoma
+TCGA-97-7546-01,6,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0936,0.3147,0,253,LUAD,Primary,Matched,62,No,Yes,Washington University - NYU,97,8.433333333,Lung,Lung Acinar Adenocarcinoma
+TCGA-97-7547-01,17,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3480,0.3077,0.04,158,LUAD,Primary,Matched,66,No,Yes,Washington University - NYU,97,5.3,Lung,Lung Papillary Adenocarcinoma
+TCGA-97-7552-01,3,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0037,0.3059,0,35,LUAD,Primary,Matched,13,No,Yes,Washington University - NYU,97,1.166666667,Lung,"Lung Bronchioloalveolar Carcinoma, Mucinous"
+TCGA-97-7553-01,15,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0369,0.2731,0.05,42,LUAD,Primary,Matched,26,No,Yes,Washington University - NYU,97,1.4,Lung,"Lung Bronchioloalveolar Carcinoma, Non-Mucinous"
+TCGA-97-7554-01,27,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3163,0.305,0,415,LUAD,Primary,Matched,147,No,Yes,Washington University - NYU,97,13.83333333,Lung,Lung Papillary Adenocarcinoma
+TCGA-97-7937-01,26,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4496,0.3257,0.03,445,LUAD,Primary,Matched,129,Yes,No,Washington University - NYU,97,14.83333333,Lung,Lung Micropapillary Adenocarcinoma
+TCGA-97-7938-01,7,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2176,0.3584,0.02,363,LUAD,Primary,Matched,26,Yes,No,Washington University - NYU,97,12.23333333,Lung,"Lung Bronchioloalveolar Carcinoma, Non-Mucinous"
+TCGA-97-7941-01,2,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0268,0.3364,0,87,LUAD,Primary,Matched,14,Yes,No,Washington University - NYU,97,2.9,Lung,Lung Acinar Adenocarcinoma
+TCGA-97-8171-01,6,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2181,0.3261,0.61,54,LUAD,Primary,Matched,223,Yes,No,Washington University - NYU,97,1.866666667,Lung,Lung Papillary Adenocarcinoma
+TCGA-97-8172-01,13,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1214,0.3222,0.12,247,LUAD,Primary,Matched,17,Yes,No,Washington University - NYU,97,8.2,Lung,Lung Acinar Adenocarcinoma
+TCGA-97-8174-01,20,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2982,0.3258,0.07,158,LUAD,Primary,Matched,156,Yes,No,Washington University - NYU,97,5.266666667,Lung,Lung Papillary Adenocarcinoma
+TCGA-97-8175-01,8,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1336,0.3039,0.72,28,LUAD,Primary,Matched,74,Yes,No,Washington University - NYU,97,0.9,Lung,Lung Solid Pattern Predominant Adenocarcinoma
+TCGA-97-8176-01,8,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1748,0.3459,0,137,LUAD,Primary,Matched,64,Yes,No,Washington University - NYU,97,4.6,Lung,Lung Acinar Adenocarcinoma
+TCGA-97-8177-01,19,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1677,0.3372,0.07,32,LUAD,Primary,Matched,159,Yes,No,Washington University - NYU,97,1.066666667,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-97-8179-01,30,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4389,0.333,0.45,151,LUAD,Primary,Matched,54,Yes,No,Washington University - NYU,97,5.033333333,Lung,Lung Acinar Adenocarcinoma
+TCGA-97-8547-01,10,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3273,0.3431,0.23,54,LUAD,Primary,Matched,140,Yes,No,Washington University - NYU,97,1.833333333,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-97-8552-01,21,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3121,0.3635,0,22,LUAD,Primary,Matched,45,Yes,No,Washington University - NYU,97,0.766666667,Lung,"Lung Bronchioloalveolar Carcinoma, Non-Mucinous"
+TCGA-97-A4LX-01,14,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0346,0.3137,0,150,LUAD,Primary,Matched,58,Yes,No,Washington University - NYU,97,5,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-97-A4M0-01,16,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2992,0.33,0,344,LUAD,Primary,Matched,75,Yes,No,Washington University - NYU,97,11.6,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-97-A4M1-01,20,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2459,0.3065,0,39,LUAD,Primary,Matched,154,Yes,No,Washington University - NYU,97,1.3,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-97-A4M2-01,1,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0002,0.2987,0,26,LUAD,Primary,Matched,16,Yes,No,Washington University - NYU,97,0.866666667,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-97-A4M3-01,5,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2370,0.306,0,193,LUAD,Primary,Matched,200,Yes,No,Washington University - NYU,97,6.433333333,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-97-A4M5-01,6,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0418,0.2956,0.01,144,LUAD,Primary,Matched,34,Yes,No,Washington University - NYU,97,4.8,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-97-A4M6-01,9,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3427,0.3076,0.04,29,LUAD,Primary,Matched,63,Yes,No,Washington University - NYU,97,0.966666667,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-97-A4M7-01,9,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2386,0.313,0,278,LUAD,Primary,Matched,23,Yes,No,Washington University - NYU,97,9.233333333,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-99-7458-01,13,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0061,0.2904,0,437,LUAD,Primary,Matched,43,No,Yes,Washington University - Alabama,99,14.66666667,Lung,"Lung Bronchioloalveolar Carcinoma, Non-Mucinous"
+TCGA-99-8025-01,20,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.5108,0.3262,0.1,436,LUAD,Primary,Matched,138,No,Yes,Washington University - Alabama,99,14.63333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-99-8028-01,3,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0181,0.3429,0,394,LUAD,Primary,Matched,25,No,Yes,Washington University - Alabama,99,13.13333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-99-8032-01,18,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1856,0.3283,0,370,LUAD,Primary,Matched,60,Yes,No,Washington University - Alabama,99,12.26666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-99-8033-01,21,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0930,0.3357,0.11,168,LUAD,Primary,Matched,63,Yes,No,Washington University - Alabama,99,5.6,Lung,Lung Adenocarcinoma (NOS)
+TCGA-99-AA5R-01,0,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0007,0.3341,0,53,LUAD,Primary,Matched,17,Yes,No,Washington University - Alabama,99,1.8,Lung,Lung Adenocarcinoma (NOS)
+TCGA-J2-8192-01,16,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0667,0.3327,0,67,LUAD,Primary,Matched,73,Yes,No,ABS - Lahey Clinic,J2,2.3,Lung,Lung Adenocarcinoma (NOS)
+TCGA-J2-8194-01,15,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2740,0.313,0.02,138,LUAD,Primary,Matched,22,Yes,No,ABS - Lahey Clinic,J2,4.833333333,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-J2-A4AD-01,8,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3196,0.3088,0,292,LUAD,Primary,Matched,126,Yes,No,ABS - Lahey Clinic,J2,9.9,Lung,Lung Adenocarcinoma (NOS)
+TCGA-J2-A4AE-01,7,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1859,0.3188,0,41,LUAD,Primary,Matched,68,Yes,No,ABS - Lahey Clinic,J2,1.366666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-J2-A4AG-01,4,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0236,0.32,0,82,LUAD,Primary,Matched,36,Yes,No,ABS - Lahey Clinic,J2,2.733333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-L4-A4E5-01,17,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.5246,0.3166,0.01,297,LUAD,Primary,Matched,124,No,Yes,Gundersen Lutheran Health System,L4,9.933333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-L4-A4E6-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0000,0.3258,0,10,LUAD,Primary,Matched,1,No,Yes,Gundersen Lutheran Health System,L4,0.333333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-L9-A443-01,22,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3508,0.3265,0,233,LUAD,Primary,Matched,63,Yes,No,Candler,L9,7.833333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-L9-A444-01,30,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3499,0.3278,0,493,LUAD,Primary,Matched,230,Yes,No,Candler,L9,16.36666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-L9-A50W-01,10,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2589,0.3098,0,31,LUAD,Primary,Matched,48,Yes,No,Candler,L9,1.066666667,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-L9-A5IP-01,26,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2286,0.3419,0.33,259,LUAD,Primary,Matched,73,Yes,No,Candler,L9,8.733333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-L9-A743-01,16,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0135,0.3215,0,117,LUAD,Primary,Matched,23,Yes,No,Candler,L9,3.9,Lung,Lung Adenocarcinoma (NOS)
+TCGA-L9-A7SV-01,19,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.6218,0.3574,0.22,1390,LUAD,Primary,Matched,217,Yes,No,Candler,L9,46.63333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-L9-A8F4-01,23,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1304,0.3245,0,691,LUAD,Primary,Matched,188,Yes,No,Candler,L9,23.2,Lung,Lung Adenocarcinoma (NOS)
+TCGA-MN-A4N1-01,23,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4939,0.3314,0.09,406,LUAD,Primary,Matched,209,No,Yes,BLN - Baylor,MN,13.7,Lung,Lung Adenocarcinoma (NOS)
+TCGA-MN-A4N4-01,19,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3552,0.3073,0.01,1340,LUAD,Primary,Matched,111,No,Yes,BLN - Baylor,MN,44.86666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-MN-A4N5-01,19,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4335,0.3204,0.06,401,LUAD,Primary,Matched,170,No,Yes,BLN - Baylor,MN,13.5,Lung,Lung Adenocarcinoma (NOS)
+TCGA-MP-A4SV-01,21,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1932,0.3118,0,298,LUAD,Primary,Matched,85,No,Yes,Washington University - Mayo Clinic,MP,9.933333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-MP-A4SW-01,7,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2806,0.3122,0,60,LUAD,Primary,Matched,116,No,Yes,Washington University - Mayo Clinic,MP,2.066666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-MP-A4SY-01,9,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0944,0.3095,0,158,LUAD,Primary,Matched,14,No,Yes,Washington University - Mayo Clinic,MP,5.266666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-MP-A4T2-01,19,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3007,0.3179,0.04,73,LUAD,Primary,Matched,13,No,Yes,Washington University - Mayo Clinic,MP,2.466666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-MP-A4T4-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0677,0.3216,0,353,LUAD,Primary,Matched,92,No,Yes,Washington University - Mayo Clinic,MP,11.83333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-MP-A4T6-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.7107,0.3441,0.01,58,LUAD,Primary,Matched,101,No,Yes,Washington University - Mayo Clinic,MP,1.933333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-MP-A4T7-01,19,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2738,0.3288,0,125,LUAD,Primary,Matched,16,No,Yes,Washington University - Mayo Clinic,MP,4.166666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-MP-A4T8-01,13,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.3599,0.3315,0.03,108,LUAD,Primary,Matched,152,No,Yes,Washington University - Mayo Clinic,MP,3.6,Lung,Lung Adenocarcinoma (NOS)
+TCGA-MP-A4T9-01,10,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0198,0.307,0,31,LUAD,Primary,Matched,18,No,Yes,Washington University - Mayo Clinic,MP,1.033333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-MP-A4TA-01,11,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0176,0.3176,0,315,LUAD,Primary,Matched,74,No,Yes,Washington University - Mayo Clinic,MP,10.5,Lung,Lung Adenocarcinoma (NOS)
+TCGA-MP-A4TC-01,12,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1356,0.3095,0,227,LUAD,Primary,Matched,31,No,Yes,Washington University - Mayo Clinic,MP,7.6,Lung,Lung Adenocarcinoma (NOS)
+TCGA-MP-A4TD-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2191,0.3054,0.03,70,LUAD,Primary,Matched,35,No,Yes,Washington University - Mayo Clinic,MP,2.333333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-MP-A4TE-01,18,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4476,0.3258,0.13,124,LUAD,Primary,Matched,70,No,Yes,Washington University - Mayo Clinic,MP,4.166666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-MP-A4TF-01,28,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4141,0.3514,0.01,375,LUAD,Primary,Matched,177,No,Yes,Washington University - Mayo Clinic,MP,12.63333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-MP-A4TH-01,6,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1862,0.3143,0,108,LUAD,Primary,Matched,60,Yes,No,Washington University - Mayo Clinic,MP,3.6,Lung,Lung Adenocarcinoma (NOS)
+TCGA-MP-A4TI-01,8,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0114,0.3151,0,205,LUAD,Primary,Matched,48,No,Yes,Washington University - Mayo Clinic,MP,6.866666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-MP-A4TJ-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0474,0.3186,0,84,LUAD,Primary,Matched,61,No,Yes,Washington University - Mayo Clinic,MP,2.833333333,Lung,Lung Signet Ring Adenocarcinoma
+TCGA-MP-A4TK-01,18,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1971,0.31,0,314,LUAD,Primary,Matched,326,No,Yes,Washington University - Mayo Clinic,MP,10.5,Lung,Lung Adenocarcinoma (NOS)
+TCGA-MP-A5C7-01,6,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2166,0.3234,0,58,LUAD,Primary,Matched,64,No,Yes,Washington University - Mayo Clinic,MP,1.966666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-NJ-A4YF-01,18,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.6545,0.3395,0.2,546,LUAD,Primary,Matched,598,No,Yes,Washington University - Rush University,NJ,18.26666667,Lung,"Lung Adenocarcinoma, Mixed Subtype"
+TCGA-NJ-A4YG-01,8,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1185,0.3188,0,132,LUAD,Primary,Matched,17,No,Yes,Washington University - Rush University,NJ,4.433333333,Lung,Lung Adenocarcinoma (NOS)
+TCGA-NJ-A4YI-01,18,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.2579,0.3335,0.04,394,LUAD,Primary,Matched,43,No,Yes,Washington University - Rush University,NJ,13.16666667,Lung,Lung Papillary Adenocarcinoma
+TCGA-NJ-A4YP-01,8,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1272,0.3221,0,465,LUAD,Primary,Matched,19,,,Washington University - Rush University,NJ,15.66666667,Lung,Lung Papillary Adenocarcinoma
+TCGA-NJ-A4YQ-01,15,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.1044,0.32,0.01,995,LUAD,Primary,Matched,83,,,Washington University - Rush University,NJ,33.46666667,Lung,Lung Adenocarcinoma (NOS)
+TCGA-NJ-A55A-01,1,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0004,0.3278,0,100,LUAD,Primary,Matched,5,,,Washington University - Rush University,NJ,3.3,Lung,Lung Adenocarcinoma (NOS)
+TCGA-NJ-A55O-01,,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0194,0.321,0,124,LUAD,Primary,Matched,37,,,Washington University - Rush University,NJ,4.133333333,Lung,Mucinous (Colloid) Carcinoma
+TCGA-NJ-A55R-01,21,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0760,0.3064,0,232,LUAD,Primary,Matched,11,,,Washington University - Rush University,NJ,7.7,Lung,Lung Adenocarcinoma (NOS)
+TCGA-NJ-A7XG-01,16,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.4205,0.3235,0,27,LUAD,Primary,Matched,29,,,Washington University - Rush University,NJ,0.9,Lung,Lung Adenocarcinoma (NOS)
+TCGA-O1-A52J-01,29,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.5443,0.322,0.02,153,LUAD,Primary,Matched,240,No,Yes,Washington University - CALGB,O1,5.1,Lung,Lung Adenocarcinoma (NOS)
+TCGA-S2-AA1A-01,16,Non-Small Cell Lung Cancer,Lung Adenocarcinoma,0.0598,0.3278,0,102,LUAD,Primary,Matched,16,Yes,No,Albert Einstein Medical Center,S2,3.433333333,Lung,"Lung Bronchioloalveolar Carcinoma, Mucinous"
