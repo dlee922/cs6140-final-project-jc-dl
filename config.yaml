@@ -1,0 +1,39 @@
+# Cancer Genomics Analysis Pipeline Configuration
+# ================================================
+# Modify this file to analyze different cancer types from TCGA
+
+# Study Configuration
+study:
+  # Study ID from cBioPortal (find IDs at: https://www.cbioportal.org/datasets)
+  # Examples:
+  #   - luad_tcga_pan_can_atlas_2018 (Lung Adenocarcinoma)
+  #   - brca_tcga_pan_can_atlas_2018 (Breast Cancer)
+  #   - coadread_tcga_pan_can_atlas_2018 (Colorectal Cancer)
+  #   - gbm_tcga_pan_can_atlas_2018 (Glioblastoma)
+  study_id: "luad_mskcc_2023_met_organotropism""
+  
+  # Cancer type name (for display in plots)
+  cancer_name: "Lung Adenocarcinoma"
+  cancer_abbreviation: "LUAD"
+
+# Analysis Parameters
+analysis:
+  # Number of top genes to analyze
+  top_genes: 20
+  
+  # TMB clinical cutoff (mutations per megabase)
+  tmb_cutoff: 10
+  
+  # Exome size for TMB calculation (megabases)
+  exome_size_mb: 38
+  
+  # Number of genes to display in visualizations
+  genes_to_plot: 15
+
+# Output Configuration
+output:
+  # DPI for saved figures (higher = better quality, larger file)
+  figure_dpi: 300
+  
+  # Create timestamped output folders
+  use_timestamp: false
