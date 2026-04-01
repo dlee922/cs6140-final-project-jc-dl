@@ -10,7 +10,7 @@ study:
   #   - brca_tcga_pan_can_atlas_2018 (Breast Cancer)
   #   - coadread_tcga_pan_can_atlas_2018 (Colorectal Cancer)
   #   - gbm_tcga_pan_can_atlas_2018 (Glioblastoma)
-  study_id: "luad_mskcc_2023_met_organotropism""
+  study_id: "luad_mskcc_2023_met_organotropism"
   
   # Cancer type name (for display in plots)
   cancer_name: "Lung Adenocarcinoma"
