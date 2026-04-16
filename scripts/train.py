@@ -4,7 +4,7 @@ run via CLI: python -m scripts.train -f [clinical/genomic/combined]
 to train single model: python -m scripts.train -f genomic -m logistic_ridge
 '''
 from sklearn.metrics import accuracy_score, f1_score
-from utils.model_utils import nested_cv, load_train_test, train_model, scale_features
+from utils.model_utils import nested_cv, load_train_test, train_model
 from utils.display import print_step, print_success, print_info
 from models.clinical_models import dummy, logistic_regression, logistic_regression_no_penalty, LDA, SVM, random_forest, MLP
 from models.genomic_models import (
