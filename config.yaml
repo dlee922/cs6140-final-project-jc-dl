@@ -37,3 +37,64 @@ output:
   
   # Create timestamped output folders
   use_timestamp: false
+
+############# Model Configuration ############
+clinical:
+  hyperparameters:
+    logistic_ridge:
+      C: [0.001, 0.01, 0.1, 1, 10, 100, 1000]
+    logistic_lasso:
+      C: [0.001, 0.01, 0.1, 1, 10, 100, 1000]
+    logistic:
+      {}
+    LDA:
+      {}
+    random_forest:
+      # n_estimators: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 200, 300]
+      max_depth: [3, 5, 10, null]  # null = None in yaml
+      criterion: ['gini', 'log_loss', 'entropy']
+
+genomic:
+  hyperparameters:
+    logistic_ridge:
+      C: [0.001, 0.01, 0.1, 1, 10, 100, 1000]
+    logistic_lasso:
+      C: [0.001, 0.01, 0.1, 1, 10, 100, 1000]
+    logistic:
+      C: [0.001, 0.01, 0.1, 1, 10, 100, 1000]
+    LDA:
+      {}
+    random_forest:
+      n_estimators: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 200, 300]
+      max_depth: [3, 5, 10, null]  # null = None in yaml
+      criterion: ['gini', 'log_loss', 'entropy']
+
+combined:
+  hyperparameters:
+    logistic_ridge:
+      C: [0.001, 0.01, 0.1, 1, 10, 100, 1000]
+    logistic_lasso:
+      C: [0.001, 0.01, 0.1, 1, 10, 100, 1000]
+    logistic:
+      C: [0.001, 0.01, 0.1, 1, 10, 100, 1000]
+    LDA:
+      {}
+    random_forest:
+      n_estimators: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 200, 300]
+      max_depth: [3, 5, 10, null]  # null = None in yaml
+      criterion: ['gini', 'log_loss', 'entropy']
+
+# Data Paths
+paths:
+  X_clinical: data/processed/X_clinical.csv
+  X_genomic: data/processed/X_genomic.csv
+  X_combined: data/processed/X_combined.csv
+  y: data/processed/y.csv
+
+# Training Configuration  
+training:
+  test_size: 0.2
+  random_state: 42
+  num_trials: 10
+  n_inner_splits: 5
+  n_outer_splits: 5
