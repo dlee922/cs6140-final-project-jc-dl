@@ -73,9 +73,9 @@ def get_entrez_ids(gene_symbols):
 
     found = len(gene_map)
     missing = [g for g in gene_symbols if g not in gene_map]
-    print(f"   ✓ Found Entrez IDs for {found}/{len(gene_symbols)} genes")
+    print(f"Found Entrez IDs for {found}/{len(gene_symbols)} genes")
     if missing:
-        print(f"   Genes not found: {missing}")
+        print(f"Genes not found: {missing}")
 
     return gene_map
 
@@ -128,9 +128,9 @@ def get_mutations(molecular_profile_id, sample_list_id, entrez_ids):
                 lambda x: x.get('hugoGeneSymbol', '') if isinstance(x, dict) else x
             )
 
-        print(f"   ✓ Downloaded {len(df):,} mutations")
-        print(f"   ✓ Unique samples with mutations: {df['sampleId'].nunique():,}")
-        print(f"   ✓ Unique genes: {df['gene_symbol'].nunique():,}")
+        print(f"Downloaded {len(df):,} mutations")
+        print(f"Unique samples with mutations: {df['sampleId'].nunique():,}")
+        print(f"Unique genes: {df['gene_symbol'].nunique():,}")
 
         return df
 
@@ -176,7 +176,7 @@ def get_clinical_sample_data(study_id):
         aggfunc='first'
     ).reset_index()
 
-    print(f"   ✓ {df_wide.shape[0]} samples × {df_wide.shape[1]} columns")
+    print(f"{df_wide.shape[0]} samples × {df_wide.shape[1]} columns")
 
     return df_wide
 
@@ -216,7 +216,7 @@ def get_clinical_patient_data(study_id):
         aggfunc='first'
     ).reset_index()
 
-    print(f"   ✓ {df_wide.shape[0]} patients × {df_wide.shape[1]} columns")
+    print(f"{df_wide.shape[0]} patients × {df_wide.shape[1]} columns")
 
     return df_wide
 
@@ -228,7 +228,7 @@ if __name__ == "__main__":
         gene_map = get_entrez_ids(GENE_PANEL)
 
         if not gene_map:
-            print("\n✗ Could not fetch gene IDs. Exiting.")
+            print("\nCould not fetch gene IDs. Exiting.")
             exit(1)
 
         entrez_ids = list(gene_map.values())
@@ -237,7 +237,7 @@ if __name__ == "__main__":
         mutations_df = get_mutations(MOLECULAR_PROFILE_ID, SAMPLE_LIST_ID, entrez_ids)
 
         if mutations_df.empty:
-            print("\n✗ No mutations downloaded. Check the error messages above.")
+            print("\nNo mutations downloaded. Check the error messages above.")
             exit(1)
 
         # Step 3: Download sample-level clinical data
@@ -252,21 +252,21 @@ if __name__ == "__main__":
         print("="*70)
 
         mutations_df.to_csv('data/raw/mutations.csv', index=False)
-        print(f"✓ Saved: mutations.csv ({len(mutations_df):,} rows)")
+        print(f"Saved: mutations.csv ({len(mutations_df):,} rows)")
 
         clinical_sample_df.to_csv('data/raw/clinical_sample.csv', index=False)
-        print(f"✓ Saved: clinical_sample.csv "
-              f"({clinical_sample_df.shape[0]} samples × {clinical_sample_df.shape[1]} cols)")
+        print(f"Saved: clinical_sample.csv "
+              f"({clinical_sample_df.shape[0]} samples x {clinical_sample_df.shape[1]} cols)")
 
         clinical_patient_df.to_csv('data/raw/clinical_patient.csv', index=False)
-        print(f"✓ Saved: clinical_patient.csv "
-              f"({clinical_patient_df.shape[0]} patients × {clinical_patient_df.shape[1]} cols)")
+        print(f"Saved: clinical_patient.csv "
+              f"({clinical_patient_df.shape[0]} patients x {clinical_patient_df.shape[1]} cols)")
 
         pd.DataFrame(
             list(gene_map.items()),
             columns=['hugo_symbol', 'entrez_id']
         ).to_csv('data/raw/gene_map.csv', index=False)
-        print(f"✓ Saved: gene_map.csv ({len(gene_map)} genes)")
+        print(f"Saved: gene_map.csv ({len(gene_map)} genes)")
 
         print("\n" + "="*70)
         print("Summary")
@@ -274,9 +274,9 @@ if __name__ == "__main__":
         print(f"Mutations downloaded:  {len(mutations_df):,} variants across {len(entrez_ids)} genes")
         print(f"Samples (clinical):    {clinical_sample_df.shape[0]:,}")
         print(f"Patients (clinical):   {clinical_patient_df.shape[0]:,}")
-        print(f"\n✓ Download complete. Next: run scripts/02_process_data.py")
+        print(f"\nDownload complete.")
 
     except Exception as e:
-        print(f"\n✗ Error occurred: {e}")
+        print(f"\nError occurred: {e}")
         import traceback
         traceback.print_exc()
