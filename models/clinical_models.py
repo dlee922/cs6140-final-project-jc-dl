@@ -1,15 +1,10 @@
 import sys
 from sklearn.linear_model import LogisticRegression
 from sklearn.dummy import DummyClassifier
-from sklearn.discriminant_analysis import LinearDiscriminantAnalysis, QuadraticDiscriminantAnalysis
+from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.model_selection import cross_val_score, train_test_split, GridSearchCV
-from sklearn.metrics import accuracy_score, f1_score
 from sklearn.multioutput import ClassifierChain
-import pandas as pd
 import numpy as np
-from utils.model_utils import nested_cv, load_train_test
-
 
 sys.path.append('../') 
 
@@ -19,10 +14,10 @@ def dummy(strategy):
     return ClassifierChain(DummyClassifier(strategy='most_frequent'), order=ORDER)
 
 def logistic_regression(l1_ratio, solver):
-    return ClassifierChain(LogisticRegression(l1_ratio=l1_ratio, solver= solver, class_weight='balanced', max_iter=2000), order=ORDER)
+    return ClassifierChain(LogisticRegression(l1_ratio=l1_ratio, solver= solver, class_weight='balanced', max_iter=5000), order=ORDER)
 
 def logistic_regression_no_penalty():
-    return ClassifierChain(LogisticRegression(C=np.inf, class_weight='balanced', max_iter=2000), order=ORDER)
+    return ClassifierChain(LogisticRegression(C=np.inf, class_weight='balanced', max_iter=5000), order=ORDER)
 
 def LDA():
     return ClassifierChain(LinearDiscriminantAnalysis(shrinkage='auto', solver='lsqr', priors=[0.5,0.5]), order=ORDER)

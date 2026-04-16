@@ -1,5 +1,5 @@
 from sklearn.metrics import accuracy_score, f1_score
-from utils.model_utils import nested_cv, load_train_test, train_model
+from utils.model_utils import nested_cv, load_train_test, train_model, scale_features
 from utils.display import print_step, print_success, print_info
 from models.clinical_models import dummy, logistic_regression, logistic_regression_no_penalty, LDA, SVM, random_forest, MLP
 import yaml
@@ -35,7 +35,6 @@ def main():
     # save all fitted models
     for model_name, model in models.items():
         joblib.dump(model, f'models/fitted_models/{model_name}_clinical.pkl')
-
 
 
 def train_models(X_train, y_train, feature_set, model_name) -> dict:
