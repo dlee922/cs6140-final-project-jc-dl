@@ -15,6 +15,7 @@ from models.genomic_models import (
     random_forest as genomic_rf,
     SVM as genomic_SVM
 )
+
 import yaml
 import argparse
 import warnings
@@ -54,7 +55,7 @@ def main():
     X_filepath = feature_set_paths[args.feature_set]
 
     # genomic & combined feature sets scaled for continuous summary features
-    scale = args.feature_set in ['genomic', 'combined']
+    scale = args.feature_set in ['clinical','genomic', 'combined']
     X_train, X_test, y_train, y_test = load_train_test(X_filepath, y_filepath, scale=scale) # applied on training data only
 
     # select model registry based on feature set

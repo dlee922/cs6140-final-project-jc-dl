@@ -228,7 +228,7 @@ def plot_fairness_audit(feature_set: str):
     genomic_fairness = {
         'overall': 0.339,
         'subgroups': {
-            'Race: Black\n(n=76)': 0.327,
+            'Race: White\n(n=76)': 0.327,
             'Sex: Male\n(n=24)': 0.357,
             'Sex: Female\n(n=67)': 0.341,
         }

@@ -6,12 +6,23 @@ from sklearn.metrics import f1_score
 from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.multioutput import ClassifierChain
 
-# Load data
 X_full = pd.read_csv('data/processed/X_combined.csv')
 y = pd.read_csv('data/processed/y.csv')
 y = y.drop(columns=['sampleId', 'patientId']).astype(int)
 
-# keep demographic columns before dropping from X
+# racial breakdown of full dataset before splitting
+# White is dominant (84.8%) reflecting MSK patient population
+# Black (3.1%) and Other (2.2%) are underpowered for subgroup analysis
+race_cols = [c for c in X_full.columns if 'RACE' in c]
+print('Full dataset racial breakdown:')
+print(f"  White: {int(X_full['RACE_White'].sum())} ({X_full['RACE_White'].mean()*100:.1f}%)")
+print(f"  Black: {int(X_full['RACE_Black'].sum())} ({X_full['RACE_Black'].mean()*100:.1f}%)")
+print(f"  Other: {int(X_full['RACE_Other'].sum())} ({X_full['RACE_Other'].mean()*100:.1f}%)")
+n_dropped = len(X_full) - int(X_full[race_cols].sum(axis=1).gt(0).sum())
+print(f"  Dropped category: {n_dropped} patients")
+print(f"  Total: {len(X_full)}")
+
+# demographics split alongside X and y to guarantee alignment
 demo_cols = ['RACE_Black', 'RACE_White', 'RACE_Other', 'SEX_Male']
 demographics = X_full[demo_cols].copy()
 
@@ -23,7 +34,6 @@ LABEL_NAMES = ['Adrenal', 'Bone', 'CNS', 'Liver', 'LN', 'Lung', 'Pleura']
 CHAIN_ORDER = [2, 1, 3, 0, 5, 6, 4]
 MIN_SAMPLES = 10
 
-# Train/test split
 X_train, X_test, y_train, y_test, demo_train, demo_test = train_test_split(
     X, y, demographics.values, test_size=0.2, random_state=42
 )
@@ -32,7 +42,7 @@ scaler = StandardScaler()
 X_train_scaled = scaler.fit_transform(X_train)
 X_test_scaled = scaler.transform(X_test)
 
-# Fit best model — Ridge with GridSearchCV
+# Ridge with GridSearchCV — best performing genomic model
 lr_param_grid = {'estimator__C': np.logspace(-2, 2, 5)}
 model = ClassifierChain(
     LogisticRegression(
@@ -49,16 +59,15 @@ clf.fit(X_train_scaled, y_train)
 best_model = clf.best_estimator_
 y_pred = best_model.predict(X_test_scaled)
 
-# Overall performance
 overall_macro = f1_score(y_test, y_pred, average='macro', zero_division=0)
-print(f'Overall Macro F1: {overall_macro:.3f}')
+print(f'\nOverall Macro F1: {overall_macro:.3f}')
 
-# Subgroup analysis
+# col 0: RACE_Black, col 1: RACE_White, col 2: RACE_Other, col 3: SEX_Male
 subgroups = {
-    'Race: White': 0,
-    'Race: Black': 1,
+    'Race: White': 1,
+    'Race: Black': 0,
     'Race: Other': 2,
-    'Sex: Male': 3,
+    'Sex: Male':   3,
 }
 
 print('\n' + '='*60)
@@ -90,7 +99,7 @@ for group_name, col_idx in subgroups.items():
         print(f'    {label:<10} {score:.3f}')
     print()
 
-# female as complement of male
+# female inferred as complement of SEX_Male=0
 male_mask = demo_test[:, 3] == 1
 female_mask = ~male_mask
 n_female = female_mask.sum()
@@ -110,7 +119,6 @@ if n_female >= MIN_SAMPLES:
         print(f'    {label:<10} {score:.3f}')
     print()
 
-# Summary 
 print('='*60)
 print('SUMMARY')
 print('='*60)
