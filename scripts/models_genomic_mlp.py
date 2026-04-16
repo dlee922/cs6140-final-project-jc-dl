@@ -7,7 +7,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import f1_score, accuracy_score
 from sklearn.model_selection import train_test_split
 
-# ── 1. Load data ──────────────────────────────────────────────────────────────
+# Load data
 X = pd.read_csv('data/processed/X_combined.csv')
 y = pd.read_csv('data/processed/y.csv')
 y = y.drop(columns=['sampleId', 'patientId']).astype(int)
@@ -25,7 +25,7 @@ AUGMENTED_DIM = INPUT_DIM + N_LABELS
 print(f'X shape: {X.shape}, y shape: {y.shape}')
 print(f'Augmented input dim: {AUGMENTED_DIM}')
 
-# ── 2. Train/test split — consistent with Jason's pipeline ───────────────────
+# Train/test split
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42
 )
@@ -34,18 +34,18 @@ print(f'Train size: {len(X_train)} | Test size: {len(X_test)}')
 print(f'Positives per label (train): {y_train.sum(axis=0)}')
 print(f'Positives per label (test):  {y_test.sum(axis=0)}')
 
-# ── 3. Scale features ─────────────────────────────────────────────────────────
+# Scale features 
 scaler = StandardScaler()
 X_train_scaled = scaler.fit_transform(X_train)
 X_test_scaled = scaler.transform(X_test)
 
-# ── 4. Pos weights for class imbalance ────────────────────────────────────────
+# Pos weights for class imbalance
 def compute_pos_weights(y_train):
     pos = y_train.sum(axis=0)
     neg = len(y_train) - pos
     return torch.tensor(neg / (pos + 1e-6), dtype=torch.float32)
 
-# ── 5. MLP architecture ───────────────────────────────────────────────────────
+# MLP architecture
 class ChainMLP(nn.Module):
     def __init__(self, input_dim, hidden1=64, hidden2=32, n_labels=7):
         super(ChainMLP, self).__init__()
@@ -64,7 +64,7 @@ class ChainMLP(nn.Module):
     def forward(self, x):
         return self.network(x)
 
-# ── 6. Training function ──────────────────────────────────────────────────────
+# Training function
 def train_model(model, loader, optimizer, criterion):
     model.train()
     total_loss = 0
@@ -77,11 +77,11 @@ def train_model(model, loader, optimizer, criterion):
         total_loss += loss.item()
     return total_loss / len(loader)
 
-# ── 7. Augmented input builder ────────────────────────────────────────────────
+# Augmented input builder 
 def build_augmented_input(X, y_partial):
     return np.concatenate([X, y_partial], axis=1).astype(np.float32)
 
-# ── 8. Build augmented training inputs via teacher forcing ────────────────────
+# Build augmented training inputs via teacher forcing 
 pos_weights = compute_pos_weights(y_train)
 criterion = nn.BCEWithLogitsLoss(pos_weight=pos_weights)
 
@@ -106,7 +106,7 @@ dummy_mask = torch.zeros(len(X_aug))
 dataset = TensorDataset(X_aug_tensor, y_aug_tensor, dummy_mask)
 loader = DataLoader(dataset, batch_size=32, shuffle=True)
 
-# ── 9. Train ──────────────────────────────────────────────────────────────────
+# Train 
 EPOCHS = 200
 LEARNING_RATE = 1e-3
 
@@ -123,7 +123,7 @@ for epoch in range(EPOCHS):
     if (epoch + 1) % 20 == 0:
         print(f'  Epoch {epoch+1}/{EPOCHS} | Loss: {loss:.4f}')
 
-# ── 10. Evaluate on test set ──────────────────────────────────────────────────
+# Evaluate on test set 
 model.eval()
 with torch.no_grad():
     y_pred_binary = np.zeros_like(y_test, dtype=int)
@@ -143,7 +143,7 @@ with torch.no_grad():
         target_idx = CHAIN_ORDER[k]
         y_pred_binary[:, target_idx] = (probs[:, target_idx] > 0.5).astype(int)
 
-# ── 11. Evaluate on train set (overfitting check) ─────────────────────────────
+# Evaluate on train set (overfitting check)
 model.eval()
 with torch.no_grad():
     y_train_pred_binary = np.zeros((len(y_train), N_LABELS), dtype=int)
@@ -163,7 +163,7 @@ with torch.no_grad():
         target_idx = CHAIN_ORDER[k]
         y_train_pred_binary[:, target_idx] = (probs[:, target_idx] > 0.5).astype(int)
 
-# ── 12. Results ───────────────────────────────────────────────────────────────
+# Results 
 test_f1 = f1_score(y_test, y_pred_binary, average='macro', zero_division=0)
 train_f1 = f1_score(y_train, y_train_pred_binary, average='macro', zero_division=0)
 per_label_f1 = f1_score(y_test, y_pred_binary, average=None, zero_division=0)
