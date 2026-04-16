@@ -1,44 +1,15 @@
-# Cancer Genomics Analysis Pipeline Configuration
-# ================================================
-# Modify this file to analyze different cancer types from TCGA
+# Pipeline Configuration
 
 # Study Configuration
 study:
   # Study ID from cBioPortal (find IDs at: https://www.cbioportal.org/datasets)
-  # Examples:
-  #   - luad_tcga_pan_can_atlas_2018 (Lung Adenocarcinoma)
-  #   - brca_tcga_pan_can_atlas_2018 (Breast Cancer)
-  #   - coadread_tcga_pan_can_atlas_2018 (Colorectal Cancer)
-  #   - gbm_tcga_pan_can_atlas_2018 (Glioblastoma)
   study_id: "luad_mskcc_2023_met_organotropism"
   
   # Cancer type name (for display in plots)
   cancer_name: "Lung Adenocarcinoma"
   cancer_abbreviation: "LUAD"
 
-# Analysis Parameters
-analysis:
-  # Number of top genes to analyze
-  top_genes: 20
-  
-  # TMB clinical cutoff (mutations per megabase)
-  tmb_cutoff: 10
-  
-  # Exome size for TMB calculation (megabases)
-  exome_size_mb: 38
-  
-  # Number of genes to display in visualizations
-  genes_to_plot: 15
-
-# Output Configuration
-output:
-  # DPI for saved figures (higher = better quality, larger file)
-  figure_dpi: 300
-  
-  # Create timestamped output folders
-  use_timestamp: false
-
-############# Model Configuration ############
+# Model Configuration
 clinical:
   hyperparameters:
     logistic_ridge:
@@ -61,13 +32,15 @@ genomic:
     logistic_lasso:
       C: [0.001, 0.01, 0.1, 1, 10, 100, 1000]
     logistic:
-      C: [0.001, 0.01, 0.1, 1, 10, 100, 1000]
+      {}
     LDA:
       {}
     random_forest:
       n_estimators: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 200, 300]
       max_depth: [3, 5, 10, null]  # null = None in yaml
       criterion: ['gini', 'log_loss', 'entropy']
+    SVM:
+      {}  
 
 combined:
   hyperparameters:
@@ -76,13 +49,15 @@ combined:
     logistic_lasso:
       C: [0.001, 0.01, 0.1, 1, 10, 100, 1000]
     logistic:
-      C: [0.001, 0.01, 0.1, 1, 10, 100, 1000]
+      {}
     LDA:
       {}
     random_forest:
       n_estimators: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 200, 300]
       max_depth: [3, 5, 10, null]  # null = None in yaml
       criterion: ['gini', 'log_loss', 'entropy']
+    SVM:
+      {}
 
 # Data Paths
 paths:

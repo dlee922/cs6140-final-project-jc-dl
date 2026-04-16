@@ -65,27 +65,33 @@ def nested_cv(model, p_grid, X, y,
     
     return nested_scores
 
-
-def load_train_test(X_path: str, y_path: str) -> tuple: 
+def load_train_test(X_path: str, y_path: str, scale: bool = False) -> tuple:
     '''Loads train and test data'''
-    X = pd.read_csv(X_path,  sep=',')
+    X = pd.read_csv(X_path, sep=',')
     y = pd.read_csv(y_path, sep=',')
 
-    # drop sampleId, patientId, and GENE_PANEL
-    X = X.drop(columns=['sampleId', 'patientId', 'GENE_PANEL'])
-    y = y.drop(columns=['sampleId', 'patientId'])
+    # drop identifiers — only drop columns that actually exist in this dataset
+    id_cols = ['sampleId', 'patientId', 'GENE_PANEL']
+    X = X.drop(columns=[c for c in id_cols if c in X.columns])
+    y = y.drop(columns=[c for c in id_cols if c in y.columns])
 
-    assert(len(X) == len(y))
+    assert len(X) == len(y)
 
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-    
+    X_train, X_test, y_train, y_test = train_test_split(
+        X.values, y.values, test_size=0.2, random_state=42
+    )
+    if scale: # applies StandardScaler fit on training data only, fitting on full = leakage
+        from sklearn.preprocessing import StandardScaler
+        scaler = StandardScaler()
+        X_train = scaler.fit_transform(X_train)
+        X_test = scaler.transform(X_test)
     return (X_train, X_test, y_train, y_test)
 
 
 def train_model(model, X_train, y_train, scoring_method = 'f1_macro', param_grid=None, tune_params=True):
     '''Trains a given model from sklearn given X and y training data and labels. 
     Also performs grid search CV to find the best hyperparameters for the given model by default'''
-    if tune_params:
+    if tune_params: # wrap model in GridSearchCV with cv=5
         model = GridSearchCV(estimator=model, param_grid=param_grid, 
                                 cv=5, scoring=scoring_method) #searches for best params
         model.fit(X_train, y_train) # fit data on training data

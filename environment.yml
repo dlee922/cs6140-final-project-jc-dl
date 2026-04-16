@@ -1,0 +1,17 @@
+name: luad-met
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - pandas
+  - numpy
+  - scikit-learn
+  - matplotlib
+  - requests
+  - pyyaml
+  - jupyter
+  - pip
+  - pip:
+      - torch
+      - iterative-stratification

@@ -1,3 +1,7 @@
+'''
+loads fitted models from disk and evalutes them on test set
+run via CLI: python -m scripts.evaluate -f [clinical/genomic/combined]
+'''
 from sklearn.metrics import accuracy_score, f1_score
 from utils.model_utils import load_train_test
 from pathlib import Path
@@ -12,21 +16,21 @@ feature_set_paths = {
 }
 
 def main():
-
     args = get_cli_args()
     y_filepath = "data/processed/y.csv"
     X_filepath = feature_set_paths[args.feature_set]
-    X_train, X_test, y_train, y_test = load_train_test(X_filepath, y_filepath)
+    scale = args.feature_set in ['genomic', 'combined']
+    X_train, X_test, y_train, y_test = load_train_test(X_filepath, y_filepath, scale=scale)
 
-    # load
-    path = Path('models/fitted_models')
+    # load from feature-set specific subfolder
+    path = Path(f'models/fitted_models/{args.feature_set}')
     models = {}
     for item in path.iterdir():
-        if item.is_file():
+        if item.is_file() and item.suffix == '.pkl':
             model = joblib.load(str(item))
-            model_name = str(item).split('/')[-1].replace(f'_{args.feature_set}.pkl', '')
+            model_name = item.stem.replace(f'_{args.feature_set}', '')
             models[model_name] = model
-            
+
     # evaluate
     eval_results = {}
     for model_name, model in models.items():
@@ -34,7 +38,9 @@ def main():
 
     # save results
     df_eval = pd.DataFrame(eval_results)
-    df_eval.to_csv(f"results/evaluation_{args.feature_set}.csv") 
+    df_eval.to_csv(f"results/evaluation_{args.feature_set}.csv")
+    print(f'✓ Saved: results/evaluation_{args.feature_set}.csv')
+    print(df_eval)
 
 def evaluate_model(model, data: tuple) -> dict:
     X_train, X_test, y_train, y_test = data
