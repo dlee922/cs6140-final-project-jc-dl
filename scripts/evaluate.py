@@ -32,9 +32,11 @@ def main():
             models[model_name] = model
 
     # evaluate
+    LABEL_NAMES = ['Adrenal', 'Bone', 'CNS', 'Liver', 'LN', 'Lung', 'Pleura']
+
     eval_results = {}
     for model_name, model in models.items():
-        eval_results[model_name] = evaluate_model(model, (X_train, X_test, y_train, y_test))
+        eval_results[model_name] = evaluate_model(model, (X_train, X_test, y_train, y_test), label_names=LABEL_NAMES)
 
     # save results
     df_eval = pd.DataFrame(eval_results)
@@ -42,18 +44,38 @@ def main():
     print(f'✓ Saved: results/evaluation_{args.feature_set}.csv')
     print(df_eval)
 
-def evaluate_model(model, data: tuple) -> dict:
+# def evaluate_model(model, data: tuple) -> dict:
+#     X_train, X_test, y_train, y_test = data
+#     y_pred_test = model.predict(X_test)
+#     y_pred_train = model.predict(X_train)
+
+#     return {
+#         'test_f1': f1_score(y_test, y_pred_test, average='macro', zero_division=0),
+#         'test_accuracy': accuracy_score(y_test, y_pred_test),
+#         'train_f1': f1_score(y_train, y_pred_train, average='macro', zero_division=0),
+#         'train_accuracy': accuracy_score(y_train, y_pred_train)
+#     }
+
+
+def evaluate_model(model, data, label_names):
     X_train, X_test, y_train, y_test = data
-    y_pred_test = model.predict(X_test)
-    y_pred_train = model.predict(X_train)
-
-    return {
-        'test_f1': f1_score(y_test, y_pred_test, average='macro', zero_division=0),
-        'test_accuracy': accuracy_score(y_test, y_pred_test),
-        'train_f1': f1_score(y_train, y_pred_train, average='macro', zero_division=0),
-        'train_accuracy': accuracy_score(y_train, y_pred_train)
+    y_pred = model.predict(X_test)
+    y_train_pred = model.predict(X_train)
+    
+    per_label_f1 = f1_score(y_test, y_pred, average=None, zero_division=0)
+    
+    results = {
+        'test_f1': f1_score(y_test, y_pred, average='macro', zero_division=0),
+        'test_accuracy': accuracy_score(y_test, y_pred),
+        'train_f1': f1_score(y_train, y_train_pred, average='macro', zero_division=0),
+        'train_accuracy': accuracy_score(y_train, y_train_pred),
     }
-
+    
+    # add per label f1
+    for label, score in zip(label_names, per_label_f1):
+        results[f'test_f1_{label.lower()}'] = score
+    
+    return results
 
 def get_cli_args():
     parser = argparse.ArgumentParser(description='Description')

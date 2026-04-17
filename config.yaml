@@ -24,6 +24,8 @@ clinical:
       # n_estimators: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 200, 300]
       max_depth: [3, 5, 10, null]  # null = None in yaml
       criterion: ['gini', 'log_loss', 'entropy']
+    SVM:
+      C: [0.01, 0.1, 1, 10, 100]  
 
 genomic:
   hyperparameters:
@@ -40,7 +42,7 @@ genomic:
       max_depth: [3, 5, 10, null]  # null = None in yaml
       criterion: ['gini', 'log_loss', 'entropy']
     SVM:
-      {}  
+      C: [0.01, 0.1, 1, 10, 100]  
 
 combined:
   hyperparameters:
@@ -53,12 +55,11 @@ combined:
     LDA:
       {}
     random_forest:
-      n_estimators: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 200, 300]
+      n_estimators: [20, 50, 80, 100, 200, 300]
       max_depth: [3, 5, 10, null]  # null = None in yaml
       criterion: ['gini', 'log_loss', 'entropy']
     SVM:
-      {}
-
+      C: [0.01, 0.1, 1, 10, 100]  
 # Data Paths
 paths:
   X_clinical: data/processed/X_clinical.csv

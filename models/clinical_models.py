@@ -1,5 +1,6 @@
 import sys
 from sklearn.linear_model import LogisticRegression
+from sklearn.svm import SVC
 from sklearn.dummy import DummyClassifier
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 from sklearn.ensemble import RandomForestClassifier
@@ -14,7 +15,7 @@ def dummy(strategy):
     return ClassifierChain(DummyClassifier(strategy='most_frequent'), order=ORDER)
 
 def logistic_regression(l1_ratio, solver):
-    return ClassifierChain(LogisticRegression(l1_ratio=l1_ratio, solver= solver, class_weight='balanced', max_iter=5000), order=ORDER)
+    return ClassifierChain(LogisticRegression(l1_ratio=l1_ratio, solver= solver, class_weight='balanced', max_iter=10000), order=ORDER)
 
 def logistic_regression_no_penalty():
     return ClassifierChain(LogisticRegression(C=np.inf, class_weight='balanced', max_iter=5000), order=ORDER)
@@ -26,8 +27,13 @@ def random_forest(random_state=42):
     return ClassifierChain(RandomForestClassifier(class_weight='balanced', random_state=random_state, n_jobs=-1), order=ORDER)
 
 def SVM():
-    pass
-
-def MLP():
-    pass
-
+    return ClassifierChain(
+        SVC(
+            kernel='linear',
+            class_weight='balanced',
+            probability=True,
+            random_state=42
+        ),
+        order=ORDER,
+        random_state=42
+    )

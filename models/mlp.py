@@ -7,13 +7,12 @@ from torch.utils.data import DataLoader, TensorDataset
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import f1_score, accuracy_score
 from sklearn.model_selection import train_test_split
-
 # Load data 
-X = pd.read_csv('data/processed/X_combined.csv')
+X = pd.read_csv('data/processed/X_genomic.csv')
 y = pd.read_csv('data/processed/y.csv')
 y = y.drop(columns=['sampleId', 'patientId']).astype(int)
 
-X = X.drop(columns=['patientId', 'sampleId', 'GENE_PANEL'])
+X = X.drop(columns=['sampleId'])
 X = X.values.astype(np.float32)
 y = y.values.astype(np.float32)
 
@@ -119,6 +118,7 @@ per_label_f1 = f1_score(y_test.astype(int), y_pred_binary, average=None, zero_di
 test_acc = accuracy_score(y_test.astype(int), y_pred_binary)
 train_acc = accuracy_score(y_train.astype(int), y_train_pred_binary)
 
+
 # Print results 
 print('\n' + '='*60)
 print('MLP RESULTS')
@@ -126,20 +126,22 @@ print('='*60)
 print(f'Train F1: {train_f1:.3f} | Test F1: {test_f1:.3f} | Gap: {train_f1 - test_f1:+.3f}')
 print(f'Test Accuracy: {test_acc:.3f} | Train Accuracy: {train_acc:.3f}')
 print('\nPer-label F1:')
+
+
+mlp_results = {
+    'test_f1': test_f1,
+    'test_accuracy': test_acc,
+    'train_f1': train_f1,
+    'train_accuracy': train_acc,
+}
+
 for label, score in zip(LABEL_NAMES, per_label_f1):
     print(f'  {label:<10} {score:.3f}')
+    mlp_results[f'test_f1_{label.lower()}'] = score
 
 # Save results
 os.makedirs('results', exist_ok=True)
 
-mlp_results = pd.DataFrame({
-    'MLP': {
-        'test_f1': test_f1,
-        'test_accuracy': test_acc,
-        'train_f1': train_f1,
-        'train_accuracy': train_acc
-    }
-})
-
-mlp_results.to_csv('results/evaluation_genomic_mlp.csv')
+mlp_df = pd.DataFrame({'MLP': mlp_results})
+mlp_df.to_csv('results/evaluation_genomic_mlp.csv')
 print('\nSaved: results/evaluation_genomic_mlp.csv')

@@ -17,6 +17,16 @@ from matplotlib.colors import LinearSegmentedColormap
 # config
 LABEL_NAMES = ['Adrenal', 'Bone', 'CNS', 'Liver', 'LN', 'Lung', 'Pleura']
 
+label_map = {
+    'test_f1_adrenal': 'Adrenal',
+    'test_f1_bone': 'Bone',
+    'test_f1_cns': 'CNS',
+    'test_f1_liver': 'Liver',
+    'test_f1_ln': 'LN',
+    'test_f1_lung': 'Lung',
+    'test_f1_pleura': 'Pleura'
+}
+
 # clean display names for models
 MODEL_DISPLAY_NAMES = {
     'logistic': 'Baseline LR',
@@ -50,11 +60,10 @@ def load_eval(feature_set: str) -> pd.DataFrame:
     df = pd.read_csv(path, index_col=0)
 
     # need to merge MLP results if genomic pipeline since in separate script
-    if feature_set == 'genomic':
-        mlp_path = 'results/evaluation_genomic_mlp.csv'
-        if os.path.exists(mlp_path):
-            mlp = pd.read_csv(mlp_path, index_col=0)
-            df = pd.concat([df, mlp], axis=1)
+    mlp_path = f'results/evaluation_{feature_set}_mlp.csv'
+    if os.path.exists(mlp_path):
+        mlp = pd.read_csv(mlp_path, index_col=0)
+        df = pd.concat([df, mlp], axis=1)
 
     # rename columns to clean display names
     df.columns = [MODEL_DISPLAY_NAMES.get(c, c) for c in df.columns]
@@ -76,11 +85,11 @@ def plot_model_comparison(df: pd.DataFrame, feature_set: str):
     Side by side bar chart of test F1 and train F1 per model.
     Sorted by test F1 descending. Overfitting gap visible as difference between bars.
     """
-    # sort by test F1 descending before extracting arrays
     df = df[df.loc['test_f1'].sort_values(ascending=False).index]
 
     models = df.columns.tolist()
     test_f1 = df.loc['test_f1'].values
+    train_f1 = df.loc['train_f1'].values
 
     x = np.arange(len(models))
     width = 0.35
@@ -89,8 +98,14 @@ def plot_model_comparison(df: pd.DataFrame, feature_set: str):
 
     bars_test = ax.bar(x - width/2, test_f1, width,
                        label='Test F1', color=COLORS['test'], alpha=0.9)
+    bars_train = ax.bar(x + width/2, train_f1, width,
+                        label='Train F1', color=COLORS['train'], alpha=0.9)
 
     for bar, val in zip(bars_test, test_f1):
+        ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.005,
+                f'{val:.3f}', ha='center', va='bottom', fontsize=8, fontweight='bold')
+
+    for bar, val in zip(bars_train, train_f1):
         ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.005,
                 f'{val:.3f}', ha='center', va='bottom', fontsize=8, fontweight='bold')
 
@@ -118,28 +133,29 @@ def plot_per_label_heatmap(feature_set: str):
     Heatmap of per-label F1 scores across all models.
     Built from the known results dict for now.
     """
+
     # per-label F1 data from final runs
     # genomic pipeline results
-    genomic_per_label = {
-        'Baseline LR': [0.000, 0.348, 0.222, 0.211, 0.483, 0.432, 0.222],
-        'Ridge (L2)':  [0.250, 0.429, 0.250, 0.160, 0.600, 0.435, 0.250],
-        'Lasso (L1)':  [0.111, 0.400, 0.267, 0.182, 0.552, 0.421, 0.267],
-        'LDA':         [0.133, 0.250, 0.133, 0.100, 0.250, 0.300, 0.133],
-        'Random Forest':[0.050, 0.337, 0.288, 0.184, 0.445, 0.354, 0.288],
-        'SVM':         [0.200, 0.350, 0.240, 0.150, 0.480, 0.400, 0.240],
-        'MLP':         [0.111, 0.429, 0.231, 0.000, 0.556, 0.424, 0.231],
-    }
 
-    # clinical pipeline results [NEED TO FILL IN]
-    clinical_per_label = {
-        'Baseline LR':  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-        'Ridge (L2)':   [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-        'Lasso (L1)':   [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-        'LDA':          [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-        'Random Forest':[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-    }
+    genomic_per_label = load_eval('genomic')
+    genomic_per_label = genomic_per_label[genomic_per_label.index.str.startswith('test_f1_')]
+    genomic_per_label.index = genomic_per_label.index.map(label_map)
 
-    data = genomic_per_label if feature_set == 'genomic' else clinical_per_label
+    clinical_per_label = load_eval('clinical')
+    clinical_per_label = clinical_per_label[clinical_per_label.index.str.startswith('test_f1_')]
+    clinical_per_label.index = clinical_per_label.index.map(label_map)
+
+    combined_per_label = load_eval('combined')
+    combined_per_label = combined_per_label[combined_per_label.index.str.startswith('test_f1_')]
+    combined_per_label.index = combined_per_label.index.map(label_map)
+
+
+    per_label_data = {
+    'clinical': clinical_per_label,
+    'genomic': genomic_per_label,
+    'combined': combined_per_label}
+
+    data = per_label_data[feature_set]
     df = pd.DataFrame(data, index=LABEL_NAMES)
 
     # custom colormap: white at 0, deep blue at 1

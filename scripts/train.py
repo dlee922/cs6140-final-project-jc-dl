@@ -6,7 +6,7 @@ to train single model: python -m scripts.train -f genomic -m logistic_ridge
 from sklearn.metrics import accuracy_score, f1_score
 from utils.model_utils import nested_cv, load_train_test, train_model
 from utils.display import print_step, print_success, print_info
-from models.clinical_models import dummy, logistic_regression, logistic_regression_no_penalty, LDA, SVM, random_forest, MLP
+from models.clinical_models import dummy, logistic_regression, logistic_regression_no_penalty, LDA, SVM, random_forest
 from models.genomic_models import (
     logistic_regression_no_penalty as genomic_logistic,
     logistic_regression_ridge as genomic_ridge,
@@ -30,7 +30,8 @@ name_to_model = {
                  'logistic_ridge': logistic_regression(l1_ratio=0, solver='lbfgs'),
                  'logistic_lasso': logistic_regression(l1_ratio=1, solver='liblinear'),
                  'LDA': LDA(),
-                 'random_forest': random_forest()
+                 'random_forest': random_forest(),
+                 'SVM': SVM()
                  }
 
 genomic_name_to_model = {
@@ -82,16 +83,16 @@ def train_models(X_train, y_train, feature_set, model_name, model_registry) -> d
             print_step(i, len(model_registry), f'Training {model_} model')
             print_info(f"Using parameters: {param_grid}", indent=True)
             if param_grid:
-                best_model = train_model(model, X_train, y_train, param_grid=param_grid)
+                best_model = train_model(model, model_, X_train, y_train, param_grid=param_grid)
             else:
-                best_model = train_model(model, X_train, y_train, tune_params=False)
+                best_model = train_model(model, model_, X_train, y_train, tune_params=False)
             tuned_models[model_] = best_model
     else:
         print_step(1, 1, f'Running {model_name} model')
         model = model_registry[model_name]
         params = config[feature_set]['hyperparameters'][model_name]
         param_grid = {f'estimator__{k}': v for k, v in params.items()}
-        best_model = train_model(model=model, X_train=X_train, y_train=y_train, param_grid=param_grid)
+        best_model = train_model(model=model, model_name= model_name, X_train=X_train, y_train=y_train, param_grid=param_grid)
         tuned_models[model_name] = best_model
     print_success("Done!")
     return tuned_models
