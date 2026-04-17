@@ -233,79 +233,81 @@ def plot_class_distribution():
 
 
 # Figure 4: Fairness audit
-def plot_fairness_audit(feature_set: str):
+def plot_fairness_audit_comparison():
     """
-    Bar chart of macro F1 by demographic subgroup.
-    Overall performance shown as reference line.
-    Only meaningful subgroups (n >= MIN_SAMPLES) included.
+    Combined fairness visualization showing:
+    1. Overall F1 across all three pipelines per subgroup
+    2. Gap from overall as a secondary view
     """
-    # results from fairness_audit.py output
-    # genomic pipeline
-    genomic_fairness = {
-        'overall': 0.339,
-        'subgroups': {
-            'Race: Black\n(n=76)': 0.327,
-            'Sex: Male\n(n=24)': 0.357,
-            'Sex: Female\n(n=67)': 0.341,
-        }
+    # results from fairness_audit_all.py
+    data = {
+        'Clinical':  {'overall': 0.348, 'Race: White': 0.360, 'Sex: Male': 0.397, 'Sex: Female': 0.325},
+        'Genomic':   {'overall': 0.240, 'Race: White': 0.235, 'Sex: Male': 0.274, 'Sex: Female': 0.226},
+        'Combined':  {'overall': 0.339, 'Race: White': 0.327, 'Sex: Male': 0.357, 'Sex: Female': 0.341},
     }
 
-    # clinical pipeline - NEED TO FILL IN
-    clinical_fairness = {
-        'overall': 0.0,
-        'subgroups': {}
-    }
+    subgroups = ['Race: White', 'Sex: Male', 'Sex: Female']
+    pipelines = list(data.keys())
+    x = np.arange(len(subgroups))
+    width = 0.25
+    pipeline_colors = ['#2C7BB6', '#74ADD1', '#ABD9E9']
 
-    data = genomic_fairness if feature_set == 'genomic' else clinical_fairness
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 6))
 
-    if not data['subgroups']:
-        print(f'No fairness data available for {feature_set}, skipping.')
-        return
+    # ── Left: absolute F1 per subgroup per pipeline ───────────────────────────
+    for i, (pipeline, color) in enumerate(zip(pipelines, pipeline_colors)):
+        vals = [data[pipeline][s] for s in subgroups]
+        bars = ax1.bar(x + i*width, vals, width, label=pipeline,
+                       color=color, alpha=0.9, edgecolor='white')
+        for bar, val in zip(bars, vals):
+            ax1.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.005,
+                     f'{val:.3f}', ha='center', va='bottom', fontsize=8, fontweight='bold')
 
-    overall = data['overall']
-    subgroups = data['subgroups']
-    names = list(subgroups.keys())
-    values = list(subgroups.values())
-    gaps = [v - overall for v in values]
+    # overall F1 reference lines per pipeline
+    for pipeline, color, ls in zip(pipelines, pipeline_colors, ['-', '--', ':']):
+        ax1.axhline(y=data[pipeline]['overall'], color=color, linewidth=1.5,
+                    linestyle=ls, alpha=0.7, label=f'{pipeline} overall ({data[pipeline]["overall"]:.3f})')
 
-    # color bars by direction of gap
-    bar_colors = [COLORS['positive'] if g >= 0 else COLORS['negative'] for g in gaps]
+    ax1.set_xlabel('Demographic Subgroup', fontsize=11)
+    ax1.set_ylabel('Macro F1 Score', fontsize=11)
+    ax1.set_title('Subgroup F1 by Feature Set', fontsize=12)
+    ax1.set_xticks(x + width)
+    ax1.set_xticklabels(subgroups, fontsize=10)
+    ax1.set_ylim(0, 0.55)
+    ax1.legend(fontsize=8, loc='upper right')
+    ax1.grid(axis='y', alpha=0.3, linestyle='--')
+    ax1.spines['top'].set_visible(False)
+    ax1.spines['right'].set_visible(False)
 
-    fig, ax = plt.subplots(figsize=(9, 5))
-    bars = ax.bar(names, values, color=bar_colors, alpha=0.85,
-                  edgecolor='white', linewidth=0.8)
+    # ── Right: gap from overall per subgroup per pipeline ─────────────────────
+    for i, (pipeline, color) in enumerate(zip(pipelines, pipeline_colors)):
+        gaps = [data[pipeline][s] - data[pipeline]['overall'] for s in subgroups]
+        bars = ax2.bar(x + i*width, gaps, width, label=pipeline,
+                       color=[COLORS['positive'] if g >= 0 else COLORS['negative'] for g in gaps],
+                       alpha=0.85, edgecolor='white')
+        for bar, gap in zip(bars, gaps):
+            ax2.text(bar.get_x() + bar.get_width()/2,
+                     bar.get_height() + (0.003 if gap >= 0 else -0.008),
+                     f'{gap:+.3f}', ha='center', va='bottom', fontsize=8, fontweight='bold')
 
-    # overall reference line
-    ax.axhline(y=overall, color=COLORS['overall'], linewidth=2,
-               linestyle='--', label=f'Overall F1: {overall:.3f}')
+    ax2.axhline(y=0, color='black', linewidth=1.2, linestyle='-')
+    ax2.set_xlabel('Demographic Subgroup', fontsize=11)
+    ax2.set_ylabel('Gap from Overall F1', fontsize=11)
+    ax2.set_title('Fairness Gap by Feature Set\n(positive = above overall, negative = below)', fontsize=12)
+    ax2.set_xticks(x + width)
+    ax2.set_xticklabels(subgroups, fontsize=10)
+    ax2.legend(pipelines, fontsize=9, loc='upper right')
+    ax2.grid(axis='y', alpha=0.3, linestyle='--')
+    ax2.spines['top'].set_visible(False)
+    ax2.spines['right'].set_visible(False)
 
-    # annotate bars
-    for bar, val, gap in zip(bars, values, gaps):
-        ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.005,
-                f'{val:.3f}\n({gap:+.3f})', ha='center', va='bottom',
-                fontsize=10, fontweight='bold')
-
-    ax.set_xlabel('Demographic Subgroup', fontsize=12)
-    ax.set_ylabel('Macro F1 Score', fontsize=12)
-    ax.set_title(f'Fairness Audit — Model Performance by Subgroup\n'
-                 f'{feature_set.capitalize()} Features (Ridge, best model)',
-                 fontsize=13)
-    ax.set_ylim(0, min(1.0, max(values) * 1.25))
-    ax.legend(fontsize=11)
-    ax.grid(axis='y', alpha=0.3, linestyle='--')
-    ax.spines['top'].set_visible(False)
-    ax.spines['right'].set_visible(False)
-
-    # legend for bar colors
-    pos_patch = mpatches.Patch(color=COLORS['positive'], label='Above overall')
-    neg_patch = mpatches.Patch(color=COLORS['negative'], label='Below overall')
-    ax.legend(handles=[pos_patch, neg_patch] +
-              [mpatches.Patch(color=COLORS['overall'],
-               label=f'Overall F1: {overall:.3f}')],
-              fontsize=10)
+    # summary annotation
+    fig.suptitle('Fairness Audit — Model Performance Across Demographic Subgroups\n'
+                 'Ridge (L2) evaluated on Clinical, Genomic, and Combined Feature Sets',
+                 fontsize=13, y=1.02)
 
     fig.tight_layout()
-    save_figure(fig, 'fairness_audit', feature_set)
+    save_figure(fig, 'fairness_audit_comparison', 'all')
 
 
 # Figure 5: Gene mutation frequency (genomic only)
@@ -386,7 +388,8 @@ def main():
         plot_class_distribution()
 
     # Figure 4 — fairness audit
-    plot_fairness_audit(feature_set)
+    if feature_set == 'genomic':  # only generate once
+        plot_fairness_audit_comparison()
 
     # Figure 5 — gene frequency (genomic only)
     if feature_set == 'genomic':
