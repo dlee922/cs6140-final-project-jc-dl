@@ -3,7 +3,7 @@ Shared visualization script for genomic and clinical pipelines.
 Generates model comparison, per-label F1 heatmap, fairness audit,
 and class distribution figures.
 
-To use: python scripts/visualize.py -f [genomic/clinical]
+To use: python scripts/visualize.py -f [genomic/clinical/combined]
 """
 
 import argparse

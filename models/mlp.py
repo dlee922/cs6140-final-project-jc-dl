@@ -7,6 +7,8 @@ from torch.utils.data import DataLoader, TensorDataset
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import f1_score, accuracy_score
 from sklearn.model_selection import train_test_split
+
+
 # Load data 
 X = pd.read_csv('data/processed/X_genomic.csv')
 y = pd.read_csv('data/processed/y.csv')
@@ -145,3 +147,5 @@ os.makedirs('results', exist_ok=True)
 mlp_df = pd.DataFrame({'MLP': mlp_results})
 mlp_df.to_csv('results/evaluation_genomic_mlp.csv')
 print('\nSaved: results/evaluation_genomic_mlp.csv')
+
+

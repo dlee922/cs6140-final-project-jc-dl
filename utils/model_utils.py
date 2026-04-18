@@ -3,6 +3,7 @@ from sklearn.preprocessing import StandardScaler
 import numpy as np
 import pandas as pd
 import joblib
+import os
 
 def nested_cv(model, p_grid, X, y, 
               num_trials=10, 
@@ -88,16 +89,14 @@ def load_train_test(X_path: str, y_path: str, scale: bool = False) -> tuple:
     return (X_train, X_test, y_train, y_test)
 
 
-def train_model(model, model_name, X_train, y_train, scoring_method = 'f1_macro', param_grid=None, tune_params=True):
+def train_model(model, X_train, y_train, scoring_method = 'f1_macro', param_grid=None, tune_params=True):
     '''Trains a given model from sklearn given X and y training data and labels. 
     Also performs grid search CV to find the best hyperparameters for the given model by default'''
     if tune_params: # wrap model in GridSearchCV with cv=5
         model = GridSearchCV(estimator=model, param_grid=param_grid, 
                                 cv=5, scoring=scoring_method) #searches for best params
         model.fit(X_train, y_train) # fit data on training data
-        joblib.dump(model, f'models/fitted_models/gridsearch_{str(model_name)}.pkl')  # save full clf
-
-        return model.best_estimator_
+        return model
     else:
         model.fit(X_train, y_train)
         return model

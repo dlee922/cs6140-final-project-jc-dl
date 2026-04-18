@@ -65,13 +65,17 @@ def main():
     else:
         model_registry = genomic_name_to_model
 
-    models = train_models(X_train, y_train, args.feature_set, args.model, model_registry)
-    
-    # create subfolder if it doesn't exist
-    os.makedirs(f'models/fitted_models/{args.feature_set}', exist_ok=True)
+    models = train_models(X_train, y_train, args.feature_set, args.model, model_registry) 
+    # extract best model if grid search else just return the single model
+    best_models = {model_name: model.best_estimator_ if hasattr(model, 'best_estimator_') else model for model_name, model in models.items()}
+    # save grid 
+    os.makedirs(f'models/fitted_models/{args.feature_set}', exist_ok=True) # create subfolder if it doesn't exist
+    for model_name, model in models.items():
+        if hasattr(model, 'cv_results_'):
+            joblib.dump(model, f'models/fitted_models/{args.feature_set}/gridsearch_{model_name}.pkl')  # save full clf
 
     # save all fitted models
-    for model_name, model in models.items():
+    for model_name, model in best_models.items():
         joblib.dump(model, f'models/fitted_models/{args.feature_set}/{model_name}_{args.feature_set}.pkl')
 
 
@@ -84,9 +88,9 @@ def train_models(X_train, y_train, feature_set, model_name, model_registry) -> d
             print_step(i, len(model_registry), f'Training {model_} model')
             print_info(f"Using parameters: {param_grid}", indent=True)
             if param_grid:
-                best_model = train_model(model, model_, X_train, y_train, param_grid=param_grid)
+                best_model = train_model(model,  X_train, y_train, param_grid=param_grid)
             else:
-                best_model = train_model(model, model_, X_train, y_train, tune_params=False)
+                best_model = train_model(model, X_train, y_train, tune_params=False)
             tuned_models[model_] = best_model
     else:
         print_step(1, 1, f'Running {model_name} model')
