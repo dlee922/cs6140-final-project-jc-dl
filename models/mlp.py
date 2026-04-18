@@ -3,18 +3,25 @@ import pandas as pd
 import numpy as np
 import torch
 import torch.nn as nn
+from argparse import ArgumentParser
 from torch.utils.data import DataLoader, TensorDataset
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import f1_score, accuracy_score
 from sklearn.model_selection import train_test_split
 
+parser = ArgumentParser()
+parser.add_argument('--feature_set', '-f', type=str,
+                    choices=['genomic', 'clinical', 'combined'],
+                    required=True)
+args = parser.parse_args()
 
 # Load data 
-X = pd.read_csv('data/processed/X_genomic.csv')
+X = pd.read_csv(f'data/processed/X_{args.feature_set}.csv')
 y = pd.read_csv('data/processed/y.csv')
-y = y.drop(columns=['sampleId', 'patientId']).astype(int)
+id_cols = ['sampleId', 'patientId', 'GENE_PANEL']
+X = X.drop(columns=[c for c in id_cols if c in X.columns])
+y = y.drop(columns=[c for c in id_cols if c in y.columns])
 
-X = X.drop(columns=['sampleId'])
 X = X.values.astype(np.float32)
 y = y.values.astype(np.float32)
 
@@ -145,7 +152,5 @@ for label, score in zip(LABEL_NAMES, per_label_f1):
 os.makedirs('results', exist_ok=True)
 
 mlp_df = pd.DataFrame({'MLP': mlp_results})
-mlp_df.to_csv('results/evaluation_genomic_mlp.csv')
-print('\nSaved: results/evaluation_genomic_mlp.csv')
-
-
+mlp_df.to_csv(f'results/evaluation/evaluation_{args.feature_set}_mlp.csv')
+print(f'\nSaved: results/evaluation/evaluation_{args.feature_set}_mlp.csv')

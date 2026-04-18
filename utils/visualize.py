@@ -5,7 +5,6 @@ and class distribution figures.
 
 To use: python scripts/visualize.py -f [genomic/clinical/combined]
 """
-
 import argparse
 import os
 import pandas as pd
@@ -56,11 +55,11 @@ OUTPUT_DIR = 'results/figures'
 # helper function
 def load_eval(feature_set: str) -> pd.DataFrame:
     """Load evaluation CSV and add MLP results if genomic."""
-    path = f'results/evaluation_{feature_set}.csv'
+    path = f'results/evaluation/evaluation_{feature_set}.csv'
     df = pd.read_csv(path, index_col=0)
 
     # need to merge MLP results if genomic pipeline since in separate script
-    mlp_path = f'results/evaluation_{feature_set}_mlp.csv'
+    mlp_path = f'results/evaluation/evaluation_{feature_set}_mlp.csv'
     if os.path.exists(mlp_path):
         mlp = pd.read_csv(mlp_path, index_col=0)
         df = pd.concat([df, mlp], axis=1)
@@ -72,8 +71,12 @@ def load_eval(feature_set: str) -> pd.DataFrame:
 
 def save_figure(fig, name: str, feature_set: str):
     """Save figure to results/figures/."""
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
-    path = f'{OUTPUT_DIR}/{feature_set}_{name}.png'
+    if feature_set not in ['clinical', 'genomic', 'combined']:
+        dir = f'{OUTPUT_DIR}/other'
+
+    else: dir = f'{OUTPUT_DIR}/{feature_set}'
+    os.makedirs(dir, exist_ok=True)
+    path = os.path.join(dir, f'{feature_set}_{name}.png')
     fig.savefig(path, dpi=FIGURE_DPI, bbox_inches='tight')
     print(f'Saved: {path}')
     plt.close(fig)
@@ -360,7 +363,6 @@ def plot_gene_frequency():
 
     fig.tight_layout()
     save_figure(fig, 'gene_frequency', 'genomic')
-
 
 # Main
 def main():

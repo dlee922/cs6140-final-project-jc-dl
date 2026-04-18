@@ -8,6 +8,7 @@ from pathlib import Path
 import argparse
 import joblib
 import pandas as pd
+import os
 
 feature_set_paths = {
     'clinical': 'data/processed/X_clinical.csv',
@@ -39,23 +40,11 @@ def main():
         eval_results[model_name] = evaluate_model(model, (X_train, X_test, y_train, y_test), label_names=LABEL_NAMES)
 
     # save results
+    os.makedirs(f'results/evaluation/', exist_ok=True) # create subfolder if it doesn't exist
+
     df_eval = pd.DataFrame(eval_results)
-    df_eval.to_csv(f"results/evaluation_{args.feature_set}.csv")
-    print(f'✓ Saved: results/evaluation_{args.feature_set}.csv')
-    print(df_eval)
-
-# def evaluate_model(model, data: tuple) -> dict:
-#     X_train, X_test, y_train, y_test = data
-#     y_pred_test = model.predict(X_test)
-#     y_pred_train = model.predict(X_train)
-
-#     return {
-#         'test_f1': f1_score(y_test, y_pred_test, average='macro', zero_division=0),
-#         'test_accuracy': accuracy_score(y_test, y_pred_test),
-#         'train_f1': f1_score(y_train, y_pred_train, average='macro', zero_division=0),
-#         'train_accuracy': accuracy_score(y_train, y_pred_train)
-#     }
-
+    df_eval.to_csv(f'results/evaluation/evaluation_{args.feature_set}.csv')
+    print(f'✓ Saved: results/evaluation/evaluation_{args.feature_set}.csv')
 
 def evaluate_model(model, data, label_names):
     X_train, X_test, y_train, y_test = data

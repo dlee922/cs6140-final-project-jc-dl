@@ -21,6 +21,8 @@ import argparse
 import warnings
 import joblib
 import os
+import subprocess
+import sys
     
 warnings.filterwarnings('ignore', message='Setting penalty=None')
 with open('config.yaml', 'r') as f:
@@ -65,9 +67,15 @@ def main():
     else:
         model_registry = genomic_name_to_model
 
+    # train models other than mlp
     models = train_models(X_train, y_train, args.feature_set, args.model, model_registry) 
+
+    # train mlp
+    run_mlp(args.feature_set)
+    
     # extract best model if grid search else just return the single model
     best_models = {model_name: model.best_estimator_ if hasattr(model, 'best_estimator_') else model for model_name, model in models.items()}
+    
     # save grid 
     os.makedirs(f'models/fitted_models/{args.feature_set}', exist_ok=True) # create subfolder if it doesn't exist
     for model_name, model in models.items():
@@ -101,6 +109,16 @@ def train_models(X_train, y_train, feature_set, model_name, model_registry) -> d
         tuned_models[model_name] = best_model
     print_success("Done!")
     return tuned_models
+
+def run_mlp(feature_set):
+    result = subprocess.run(
+        [sys.executable, 'models/mlp.py', 
+         '--feature_set', feature_set,],
+        text=True
+    )
+    if result.returncode != 0:
+        print(f"MLP failed:\n{result.stderr}")
+    return result.returncode == 0
 
 def get_cli_args():
     parser = argparse.ArgumentParser(description='Description')
