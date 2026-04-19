@@ -28,6 +28,9 @@ target_cols = ['EVER_MET_SITE_ADRENAL',
                'EVER_MET_SITE_PLEURA']
 
 
+df_clean[target_cols] = df_clean[target_cols].astype(int)
+df_clean['EVER_MET'] = (df_clean[target_cols].sum(axis=1) > 0).astype(int)
+
 # remove metadata other than patientId, sampleId, and GENE_PANEL
 metadata_cols = [
     'GROUP_NO',
@@ -62,8 +65,8 @@ genomic_cols = [
     'CELL_CYCLE']
 
 # Drop all columns that are metadata, can cause potential leakage, and exclude genomic features as well. Separate the target from the features
-y = df_clean[['patientId', 'sampleId'] + target_cols]
-X = df_clean.drop(columns=target_cols + metadata_cols + leak_cols + multicollinearity + genomic_cols)
+y = df_clean[['patientId', 'sampleId', 'EVER_MET']]
+X = df_clean.drop(columns=target_cols + metadata_cols + leak_cols + multicollinearity + genomic_cols + ['EVER_MET'])
 
 # Drop any column with one unique value, does not contribute to model
 X = X.loc[:, X.nunique() > 1] 
@@ -89,7 +92,7 @@ assert(len(X_genomic_enc) == len(y))
 assert (len(X_ENCODED) == len(y))
 
 #save to csv
-y.to_csv('data/processed/y.csv', index=False)
+y.to_csv('data/processed/y_single_label.csv', index=False)
 X_ENCODED.to_csv('data/processed/X_clinical.csv', index=False)
 X_genomic_enc.insert(0, 'sampleId', df_clean['sampleId'].values)
 X_genomic_enc.to_csv('data/processed/X_genomic_0.csv', index=False)

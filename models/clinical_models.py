@@ -4,7 +4,6 @@ from sklearn.svm import SVC
 from sklearn.dummy import DummyClassifier
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.multioutput import ClassifierChain
 import numpy as np
 
 sys.path.append('../') 
@@ -12,28 +11,23 @@ sys.path.append('../')
 ORDER = [2,1,3,0,5,6,4]
 
 def dummy(strategy):
-    return ClassifierChain(DummyClassifier(strategy='most_frequent'), order=ORDER)
+    return DummyClassifier(strategy='most_frequent')
 
 def logistic_regression(l1_ratio, solver):
-    return ClassifierChain(LogisticRegression(l1_ratio=l1_ratio, solver= solver, class_weight='balanced', max_iter=10000), order=ORDER)
-
+    return LogisticRegression(l1_ratio=l1_ratio, solver= solver, class_weight='balanced', max_iter=6000)
 def logistic_regression_no_penalty():
-    return ClassifierChain(LogisticRegression(C=np.inf, class_weight='balanced', max_iter=5000), order=ORDER)
+    return LogisticRegression(C=np.inf, class_weight='balanced', max_iter=5000)
 
 def LDA():
-    return ClassifierChain(LinearDiscriminantAnalysis(shrinkage='auto', solver='lsqr', priors=[0.5,0.5]), order=ORDER)
+    return LinearDiscriminantAnalysis(shrinkage='auto', solver='lsqr', priors=[0.5,0.5])
 
 def random_forest(random_state=42):
-    return ClassifierChain(RandomForestClassifier(class_weight='balanced', random_state=random_state, n_jobs=-1), order=ORDER)
+    return RandomForestClassifier(class_weight='balanced', random_state=random_state, n_jobs=-1)
 
 def SVM():
-    return ClassifierChain(
-        SVC(
+    return SVC( 
             kernel='linear',
             class_weight='balanced',
             probability=True,
             random_state=42
-        ),
-        order=ORDER,
-        random_state=42
-    )
+        )

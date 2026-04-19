@@ -13,11 +13,16 @@ parser = ArgumentParser()
 parser.add_argument('--feature_set', '-f', type=str,
                     choices=['genomic', 'clinical', 'combined'],
                     required=True)
+
+parser.add_argument('--task', '-t', type=str,
+                    choices=['binary', 'multilabel'],
+                    required=True)
 args = parser.parse_args()
 
 # Load data 
 X = pd.read_csv(f'data/processed/X_{args.feature_set}.csv')
-y = pd.read_csv('data/processed/y.csv')
+y = pd.read_csv(f'data/processed/y_{args.task}.csv')
+
 id_cols = ['sampleId', 'patientId', 'GENE_PANEL']
 X = X.drop(columns=[c for c in id_cols if c in X.columns])
 y = y.drop(columns=[c for c in id_cols if c in y.columns])
@@ -25,8 +30,13 @@ y = y.drop(columns=[c for c in id_cols if c in y.columns])
 X = X.values.astype(np.float32)
 y = y.values.astype(np.float32)
 
-LABEL_NAMES = ['Adrenal', 'Bone', 'CNS', 'Liver', 'LN', 'Lung', 'Pleura']
-N_LABELS = 7
+if args.task == 'multilabel':
+    LABEL_NAMES = ['Adrenal', 'Bone', 'CNS', 'Liver', 'LN', 'Lung', 'Pleura']
+    N_LABELS = 7
+else:
+    LABEL_NAMES = ['never_met', 'ever_met']
+    N_LABELS = 1
+
 INPUT_DIM = X.shape[1]  # 69
 
 print(f'X shape: {X.shape}, y shape: {y.shape}')
@@ -53,7 +63,7 @@ def compute_pos_weights(y_train):
 
 # MLP architecture 
 class MLP(nn.Module):
-    def __init__(self, input_dim, hidden1=64, hidden2=32, n_labels=7):
+    def __init__(self, input_dim, hidden1=64, hidden2=32, n_labels=N_LABELS):
         super(MLP, self).__init__()
         self.network = nn.Sequential(
             nn.Linear(input_dim, hidden1),
@@ -149,8 +159,8 @@ for label, score in zip(LABEL_NAMES, per_label_f1):
     mlp_results[f'test_f1_{label.lower()}'] = score
 
 # Save results
-os.makedirs('results', exist_ok=True)
+os.makedirs(f'results/evaluation/{args.task}', exist_ok=True)
 
 mlp_df = pd.DataFrame({'MLP': mlp_results})
-mlp_df.to_csv(f'results/evaluation/evaluation_{args.feature_set}_mlp.csv')
-print(f'\nSaved: results/evaluation/evaluation_{args.feature_set}_mlp.csv')
+mlp_df.to_csv(f'results/evaluation/{args.task}/evaluation_{args.feature_set}_mlp.csv')
+print(f'\nSaved: results/evaluation/{args.task}/evaluation_{args.feature_set}_mlp.csv')
