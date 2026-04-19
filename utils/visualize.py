@@ -53,13 +53,13 @@ OUTPUT_DIR = 'results/figures'
 
 
 # helper function
-def load_eval(feature_set: str) -> pd.DataFrame:
+def load_eval(feature_set: str, task) -> pd.DataFrame:
     """Load evaluation CSV and add MLP results if genomic."""
-    path = f'results/evaluation/evaluation_{feature_set}.csv'
+    path = f'results/evaluation/{task}/evaluation_{feature_set}.csv'
     df = pd.read_csv(path, index_col=0)
 
     # need to merge MLP results if genomic pipeline since in separate script
-    mlp_path = f'results/evaluation/evaluation_{feature_set}_mlp.csv'
+    mlp_path = f'results/evaluation/{task}/evaluation_{feature_set}_mlp.csv'
     if os.path.exists(mlp_path):
         mlp = pd.read_csv(mlp_path, index_col=0)
         df = pd.concat([df, mlp], axis=1)
@@ -74,7 +74,7 @@ def save_figure(fig, name: str, feature_set: str):
     if feature_set not in ['clinical', 'genomic', 'combined']:
         dir = f'{OUTPUT_DIR}/other'
 
-    else: dir = f'{OUTPUT_DIR}/{feature_set}'
+    else: dir = f'{OUTPUT_DIR}/{feature_set}/'
     os.makedirs(dir, exist_ok=True)
     path = os.path.join(dir, f'{feature_set}_{name}.png')
     fig.savefig(path, dpi=FIGURE_DPI, bbox_inches='tight')
@@ -140,15 +140,15 @@ def plot_per_label_heatmap(feature_set: str):
     # per-label F1 data from final runs
     # genomic pipeline results
 
-    genomic_per_label = load_eval('genomic')
+    genomic_per_label = load_eval('genomic', 'multilabel')
     genomic_per_label = genomic_per_label[genomic_per_label.index.str.startswith('test_f1_')]
     genomic_per_label.index = genomic_per_label.index.map(label_map)
 
-    clinical_per_label = load_eval('clinical')
+    clinical_per_label = load_eval('clinical', 'multilabel')
     clinical_per_label = clinical_per_label[clinical_per_label.index.str.startswith('test_f1_')]
     clinical_per_label.index = clinical_per_label.index.map(label_map)
 
-    combined_per_label = load_eval('combined')
+    combined_per_label = load_eval('combined', 'multilabel')
     combined_per_label = combined_per_label[combined_per_label.index.str.startswith('test_f1_')]
     combined_per_label.index = combined_per_label.index.map(label_map)
 
@@ -198,7 +198,7 @@ def plot_class_distribution():
     Shared across both pipelines — same dataset.
     Only generated once.
     """
-    y = pd.read_csv('data/processed/y.csv')
+    y = pd.read_csv('data/processed/y_multilabel.csv')
     y = y.drop(columns=[c for c in ['sampleId', 'patientId'] if c in y.columns])
 
     counts = y.sum().values
@@ -370,14 +370,19 @@ def main():
     parser.add_argument('--feature_set', '-f', type=str,
                         choices=['genomic', 'clinical', 'combined'],
                         required=True)
+    
+    parser.add_argument('--task', '-t', type=str,
+                        choices=['binary', 'multilabel'],
+                        required=True)
     args = parser.parse_args()
     feature_set = args.feature_set
+    task = args.task
 
     print(f'\nGenerating visualizations for: {feature_set}')
     print('=' * 50)
 
     # load evaluation results
-    df = load_eval(feature_set)
+    df = load_eval(feature_set, task)
 
     # Figure 1 — model comparison
     plot_model_comparison(df, feature_set)
