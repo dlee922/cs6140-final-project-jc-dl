@@ -8,52 +8,69 @@ from pathlib import Path
 import argparse
 import joblib
 import pandas as pd
+import os
 
 feature_set_paths = {
     'clinical': 'data/processed/X_clinical.csv',
     'genomic': 'data/processed/X_genomic.csv',
     'combined': 'data/processed/X_combined.csv'
 }
-
 def main():
     args = get_cli_args()
-    y_filepath = "data/processed/y.csv"
+    y_filepath = f'data/processed/y_{args.task}.csv'
     X_filepath = feature_set_paths[args.feature_set]
     scale = args.feature_set in ['genomic', 'combined']
     X_train, X_test, y_train, y_test = load_train_test(X_filepath, y_filepath, scale=scale)
-
+    
     # load from feature-set specific subfolder
-    path = Path(f'models/fitted_models/{args.feature_set}')
+    path = Path(f'models/fitted_models/{args.feature_set}/{args.task}')
     models = {}
     for item in path.iterdir():
-        if item.is_file() and item.suffix == '.pkl':
+        if item.is_file() and item.suffix == '.pkl' and not item.stem.startswith('gridsearch'):
             model = joblib.load(str(item))
+            print(f"Loading: {item}")
+
             model_name = item.stem.replace(f'_{args.feature_set}', '')
             models[model_name] = model
 
     # evaluate
+
     eval_results = {}
     for model_name, model in models.items():
-        eval_results[model_name] = evaluate_model(model, (X_train, X_test, y_train, y_test))
+        eval_results[model_name] = evaluate_model(model, (X_train, X_test, y_train, y_test), args.task)
 
     # save results
+    os.makedirs(f'results/evaluation/{args.task}', exist_ok=True) # create subfolder if it doesn't exist
+
     df_eval = pd.DataFrame(eval_results)
-    df_eval.to_csv(f"results/evaluation_{args.feature_set}.csv")
-    print(f'✓ Saved: results/evaluation_{args.feature_set}.csv')
-    print(df_eval)
+    df_eval.to_csv(f'results/evaluation/{args.task}/evaluation_{args.feature_set}.csv')
+    print(f'✓ Saved: results/evaluation/{args.task}/evaluation_{args.feature_set}.csv')
 
-def evaluate_model(model, data: tuple) -> dict:
+def evaluate_model(model, data, task):
     X_train, X_test, y_train, y_test = data
-    y_pred_test = model.predict(X_test)
-    y_pred_train = model.predict(X_train)
-
-    return {
-        'test_f1': f1_score(y_test, y_pred_test, average='macro', zero_division=0),
-        'test_accuracy': accuracy_score(y_test, y_pred_test),
-        'train_f1': f1_score(y_train, y_pred_train, average='macro', zero_division=0),
-        'train_accuracy': accuracy_score(y_train, y_pred_train)
+    y_pred = model.predict(X_test)
+    y_train_pred = model.predict(X_train)
+    print(model.classes_)
+    
+    results = {
+        'test_f1': f1_score(y_test, y_pred, average='macro', zero_division=0),
+        'test_accuracy': accuracy_score(y_test, y_pred),
+        'train_f1': f1_score(y_train, y_train_pred, average='macro', zero_division=0),
+        'train_accuracy': accuracy_score(y_train, y_train_pred),
     }
 
+    if task == 'multilabel':
+        LABEL_NAMES = ['Adrenal', 'Bone', 'CNS', 'Liver', 'LN', 'Lung', 'Pleura']
+        per_label_f1 = f1_score(y_test, y_pred, average=None, zero_division=0)
+        for label, score in zip(LABEL_NAMES, per_label_f1):
+            results[f'test_f1_{label.lower()}'] = score
+    else:
+        per_label_f1 = f1_score(y_test, y_pred, average=None, zero_division=0)
+        for label, score in zip(['never_met', 'ever_met'], per_label_f1):
+            results[f'test_f1_{label}'] = score
+    
+    
+    return results
 
 def get_cli_args():
     parser = argparse.ArgumentParser(description='Description')
@@ -68,6 +85,12 @@ def get_cli_args():
                         help='select which model to run',
                         required=False,
                         default='All')
+    parser.add_argument('--task',
+                        '-t',
+                        type=str,
+                        help='select binary or multilabel prediction',
+                        choices =['binary', 'multilabel'],
+                        required=True)
     return parser.parse_args()
 
 if __name__ == "__main__":

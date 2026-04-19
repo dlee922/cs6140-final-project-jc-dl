@@ -1,7 +1,9 @@
 from sklearn.model_selection import cross_val_score, train_test_split, KFold, GridSearchCV
+from sklearn.preprocessing import StandardScaler
 import numpy as np
 import pandas as pd
-
+import joblib
+import os
 
 def nested_cv(model, p_grid, X, y, 
               num_trials=10, 
@@ -94,7 +96,7 @@ def train_model(model, X_train, y_train, scoring_method = 'f1_macro', param_grid
         model = GridSearchCV(estimator=model, param_grid=param_grid, 
                                 cv=5, scoring=scoring_method) #searches for best params
         model.fit(X_train, y_train) # fit data on training data
-        return model.best_estimator_
+        return model
     else:
         model.fit(X_train, y_train)
         return model
