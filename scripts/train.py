@@ -53,7 +53,8 @@ genomic_name_to_model = {
 feature_set_paths = {
     'clinical': 'data/processed/X_clinical.csv',
     'genomic': 'data/processed/X_genomic.csv',
-    'combined': 'data/processed/X_combined.csv'
+    'combined': 'data/processed/X_combined.csv',
+    'combined_interact': 'data/processed/X_combined_interact.csv'
 }
 
 def main():
@@ -63,7 +64,7 @@ def main():
     X_filepath = feature_set_paths[args.feature_set]
 
     # genomic & combined feature sets scaled for continuous summary features
-    scale = args.feature_set in ['clinical','genomic', 'combined']
+    scale = args.feature_set in ['clinical','genomic', 'combined', 'combined_interact']
     X_train, X_test, y_train, y_test = load_train_test(X_filepath, y_filepath, scale=scale) # applied on training data only
     print(y_train.shape)
     if args.task == 'binary':
@@ -72,7 +73,7 @@ def main():
 
 
     # select model registry based on feature set
-    if args.feature_set == 'clinical' or args.feature_set == 'combined':
+    if args.feature_set == 'clinical' or args.feature_set == 'combined' or args.feature_set == 'combined_interact':
         model_registry = name_to_model
     else:
         model_registry = genomic_name_to_model
@@ -87,10 +88,6 @@ def main():
     # extract best model if grid search else just return the single model
     best_models = {model_name: model.best_estimator_ if hasattr(model, 'best_estimator_') else model for model_name, model in models.items()}
     
-    # test_logistic_model = best_models['logistic_lasso']
-    # print(f"train pred distribution: {np.unique(test_logistic_model.predict(X_train), return_counts=True)}")
-    # print(f"test pred distribution: {np.unique(test_logistic_model.predict(X_test), return_counts=True)}")
-    # save grid 
     os.makedirs(f'models/fitted_models/{args.feature_set}/{args.task}', exist_ok=True) # create subfolder if it doesn't exist
     for model_name, model in models.items():
         if hasattr(model, 'cv_results_'):
@@ -152,7 +149,7 @@ def get_cli_args():
     parser.add_argument('--feature_set',
                         '-f',
                         type=str,
-                        choices = ['clinical', 'genomic', 'combined'],
+                        choices = ['clinical', 'genomic', 'combined', 'combined_interact'],
                         help='select clinical, genomic, or combined',
                         required=True)
     parser.add_argument('--model',

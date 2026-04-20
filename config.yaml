@@ -59,7 +59,24 @@ combined:
       max_depth: [3, 5, 10, null]  # null = None in yaml
       criterion: ['gini', 'log_loss', 'entropy']
     SVM:
-      C: [0.001, 0.01, 0.1, 1, 10, 100, 1000]  
+      C: [0.001, 0.01, 0.1, 1, 10, 100, 1000] 
+
+combined_interact:
+  hyperparameters:
+    logistic_ridge:
+      C: [0.001, 0.01, 0.1, 1, 10, 100, 1000]
+    logistic_lasso:
+      C: [0.001, 0.01, 0.1, 1, 10, 100, 1000]
+    logistic:
+      {}
+    LDA:
+      {}
+    random_forest:
+      n_estimators: [1, 20, 40, 60, 80, 100, 200, 300]
+      max_depth: [3, 5, 10, null]  # null = None in yaml
+      criterion: ['gini', 'log_loss', 'entropy']
+    SVM:
+      C: [0.001, 0.01, 0.1, 1, 10, 100, 1000]   
 # Data Paths
 paths:
   X_clinical: data/processed/X_clinical.csv

@@ -11,7 +11,7 @@ from sklearn.model_selection import train_test_split
 
 parser = ArgumentParser()
 parser.add_argument('--feature_set', '-f', type=str,
-                    choices=['genomic', 'clinical', 'combined'],
+                    choices=['genomic', 'clinical', 'combined', 'combined_interact'],
                     required=True)
 
 parser.add_argument('--task', '-t', type=str,

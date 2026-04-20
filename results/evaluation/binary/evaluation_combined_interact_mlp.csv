@@ -1,0 +1,7 @@
+,MLP
+test_f1,0.6448780487804878
+test_accuracy,0.6483516483516484
+train_f1,1.0
+train_accuracy,1.0
+test_f1_never_met,0.68
+test_f1_ever_met,0.6097560975609756

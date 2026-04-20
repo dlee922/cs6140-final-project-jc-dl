@@ -19,7 +19,7 @@ os.makedirs('data/processed', exist_ok=True)
 BASE_URL = "https://www.cbioportal.org/api"
 
 # Load configuration
-with open('config.yaml', 'r') as f:
+with open('../config.yaml', 'r') as f:
     config = yaml.safe_load(f)
 
 STUDY_ID = config['study']['study_id']

@@ -13,13 +13,14 @@ import os
 feature_set_paths = {
     'clinical': 'data/processed/X_clinical.csv',
     'genomic': 'data/processed/X_genomic.csv',
-    'combined': 'data/processed/X_combined.csv'
+    'combined': 'data/processed/X_combined.csv',
+    'combined_interact': 'data/processed/X_combined_interact.csv'
 }
 def main():
     args = get_cli_args()
     y_filepath = f'data/processed/y_{args.task}.csv'
     X_filepath = feature_set_paths[args.feature_set]
-    scale = args.feature_set in ['genomic', 'combined']
+    scale = args.feature_set in ['clinical', 'genomic', 'combined', 'combined_interact']
     X_train, X_test, y_train, y_test = load_train_test(X_filepath, y_filepath, scale=scale)
     
     # load from feature-set specific subfolder
