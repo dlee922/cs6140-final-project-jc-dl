@@ -26,12 +26,13 @@ def main():
     # load from feature-set specific subfolder
     path = Path(f'models/fitted_models/{args.feature_set}/{args.task}')
     models = {}
-    for item in path.iterdir():
+    for item in sorted(path.iterdir()):
         if item.is_file() and item.suffix == '.pkl' and not item.stem.startswith('gridsearch'):
             model = joblib.load(str(item))
             print(f"Loading: {item}")
 
             model_name = item.stem.replace(f'_{args.feature_set}', '')
+            print(model_name)
             models[model_name] = model
 
     # evaluate
@@ -51,7 +52,6 @@ def evaluate_model(model, data, task):
     X_train, X_test, y_train, y_test = data
     y_pred = model.predict(X_test)
     y_train_pred = model.predict(X_train)
-    print(model.classes_)
     
     results = {
         'test_f1': f1_score(y_test, y_pred, average='macro', zero_division=0),

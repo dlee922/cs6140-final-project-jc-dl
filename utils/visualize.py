@@ -9,10 +9,11 @@ import argparse
 import os
 import pandas as pd
 import numpy as np
+from pathlib import Path
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 from matplotlib.colors import LinearSegmentedColormap
-
+from sklearn.metrics import roc_curve, auc
 # config
 LABEL_NAMES = ['Adrenal', 'Bone', 'CNS', 'Liver', 'LN', 'Lung', 'Pleura']
 
@@ -53,13 +54,13 @@ OUTPUT_DIR = 'results/figures'
 
 
 # helper function
-def load_eval(feature_set: str, task) -> pd.DataFrame:
+def load_eval(feature_set: str) -> pd.DataFrame:
     """Load evaluation CSV and add MLP results if genomic."""
-    path = f'results/evaluation/{task}/evaluation_{feature_set}.csv'
+    path = f'results/evaluation/multilabel/evaluation_{feature_set}.csv'
     df = pd.read_csv(path, index_col=0)
 
     # need to merge MLP results if genomic pipeline since in separate script
-    mlp_path = f'results/evaluation/{task}/evaluation_{feature_set}_mlp.csv'
+    mlp_path = f'results/evaluation/multilabel/evaluation_{feature_set}_mlp.csv'
     if os.path.exists(mlp_path):
         mlp = pd.read_csv(mlp_path, index_col=0)
         df = pd.concat([df, mlp], axis=1)
@@ -67,7 +68,6 @@ def load_eval(feature_set: str, task) -> pd.DataFrame:
     # rename columns to clean display names
     df.columns = [MODEL_DISPLAY_NAMES.get(c, c) for c in df.columns]
     return df
-
 
 def save_figure(fig, name: str, feature_set: str):
     """Save figure to results/figures/."""
@@ -83,12 +83,19 @@ def save_figure(fig, name: str, feature_set: str):
 
 
 # Figure 1: Model comparison bar chart
-def plot_model_comparison(df: pd.DataFrame, feature_set: str):
+def plot_model_comparison(df: pd.DataFrame, feature_set: str, ax=None):
     """
     Side by side bar chart of test F1 and train F1 per model.
     Sorted by test F1 descending. Overfitting gap visible as difference between bars.
     """
-    df = df[df.loc['test_f1'].sort_values(ascending=False).index]
+
+    if ax is None:
+        fig, ax = plt.subplots(figsize=(12, 6))
+    else:
+        fig = ax.figure
+
+    # sort by test F1
+    # df = df[df.loc['test_f1'].sort_values(ascending=False).index]
 
     models = df.columns.tolist()
     test_f1 = df.loc['test_f1'].values
@@ -97,79 +104,102 @@ def plot_model_comparison(df: pd.DataFrame, feature_set: str):
     x = np.arange(len(models))
     width = 0.35
 
-    fig, ax = plt.subplots(figsize=(12, 6))
-
+    # bars
     bars_test = ax.bar(x - width/2, test_f1, width,
                        label='Test F1', color=COLORS['test'], alpha=0.9)
     bars_train = ax.bar(x + width/2, train_f1, width,
                         label='Train F1', color=COLORS['train'], alpha=0.9)
 
+    # ---- value labels ----
+
     for bar, val in zip(bars_test, test_f1):
-        ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.005,
-                f'{val:.3f}', ha='center', va='bottom', fontsize=8, fontweight='bold')
-
+        ax.text(
+            bar.get_x() + bar.get_width()/2,
+            bar.get_height() - 0.03,
+            f'{val:.3f}',
+            ha='center',
+            va='top',
+            fontsize=8,
+            fontweight='bold',
+            color='black',
+            rotation=90
+        )
     for bar, val in zip(bars_train, train_f1):
-        ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.005,
-                f'{val:.3f}', ha='center', va='bottom', fontsize=8, fontweight='bold')
+        ax.text(
+            bar.get_x() + bar.get_width()/2,
+            bar.get_height() - 0.03,
+            f'{val:.3f}',
+            ha='center',
+            va='top',
+            fontsize=8,
+            fontweight='bold',
+            color='black',
+            rotation=90
+        )
 
-    ax.set_xlabel('Model', fontsize=12)
-    ax.set_ylabel('Macro F1 Score', fontsize=12)
-    ax.set_title(f'Model Performance Comparison — {feature_set.capitalize()} Features\n'
-                 f'(bars show test F1 / train F1; gap indicates overfitting)', fontsize=13)
+    # styling
+    # ax.set_ylabel('Macro F1 Score', fontsize=11)
+    ax.set_title(f'{feature_set.capitalize()} Features', fontsize=12)
+
     ax.set_xticks(x)
-    ax.set_xticklabels(models, rotation=15, ha='right', fontsize=10)
+    ax.set_xticklabels(models, rotation=15, ha='right', fontsize=9)
     ax.set_ylim(0, 1.0)
-    ax.axhline(y=0, color='black', linewidth=0.5)
-    ax.legend(fontsize=11)
+
+    ax.axhline(y=0, linewidth=0.5)
     ax.grid(axis='y', alpha=0.3, linestyle='--')
+
     ax.spines['top'].set_visible(False)
     ax.spines['right'].set_visible(False)
 
-    fig.tight_layout()
-    save_figure(fig, 'model_comparison', feature_set)
-
+    return ax
 
 # Figure 2: Per-label F1 heatmap
 # NEED TO UPDATE ONCE WE GET FULL RESULTS
-def plot_per_label_heatmap(feature_set: str):
+def plot_per_label_heatmap(feature_set: str, ax=None):
     """
     Heatmap of per-label F1 scores across all models.
-    Built from the known results dict for now.
     """
 
-    # per-label F1 data from final runs
-    # genomic pipeline results
+    if ax is None:
+        fig, ax = plt.subplots(figsize=(12, 5))
+    else:
+        fig = ax.figure  # get parent figure
 
-    genomic_per_label = load_eval('genomic', 'multilabel')
+    # --- Load data ---
+    genomic_per_label = load_eval('genomic')
     genomic_per_label = genomic_per_label[genomic_per_label.index.str.startswith('test_f1_')]
     genomic_per_label.index = genomic_per_label.index.map(label_map)
 
-    clinical_per_label = load_eval('clinical', 'multilabel')
+    clinical_per_label = load_eval('clinical')
     clinical_per_label = clinical_per_label[clinical_per_label.index.str.startswith('test_f1_')]
     clinical_per_label.index = clinical_per_label.index.map(label_map)
 
-    combined_per_label = load_eval('combined', 'multilabel')
+    combined_per_label = load_eval('combined')
     combined_per_label = combined_per_label[combined_per_label.index.str.startswith('test_f1_')]
     combined_per_label.index = combined_per_label.index.map(label_map)
 
+    combined_interact_per_label = load_eval('combined_interact')
+    combined_interact_per_label = combined_interact_per_label[combined_interact_per_label.index.str.startswith('test_f1_')]
+    combined_interact_per_label.index = combined_interact_per_label.index.map(label_map)
 
     per_label_data = {
     'clinical': clinical_per_label,
     'genomic': genomic_per_label,
-    'combined': combined_per_label}
+    'combined': combined_per_label,
+    'combined_interact': combined_interact_per_label}
 
     data = per_label_data[feature_set]
     df = pd.DataFrame(data, index=LABEL_NAMES)
 
-    # custom colormap: white at 0, deep blue at 1
+    # --- Colormap ---
     cmap = LinearSegmentedColormap.from_list(
         'f1_cmap', ['#FFFFFF', '#ABD9E9', '#2C7BB6', '#08306B']
     )
 
-    fig, ax = plt.subplots(figsize=(12, 5))
+    # --- Plot ---
     im = ax.imshow(df.values, aspect='auto', cmap=cmap, vmin=0, vmax=0.7)
 
-    # annotate each cell
+    # annotate cells
     for i in range(len(LABEL_NAMES)):
         for j in range(len(df.columns)):
             val = df.values[i, j]
@@ -179,17 +209,16 @@ def plot_per_label_heatmap(feature_set: str):
 
     ax.set_xticks(range(len(df.columns)))
     ax.set_xticklabels(df.columns, rotation=15, ha='right', fontsize=10)
-    ax.set_yticks(range(len(LABEL_NAMES)))
-    ax.set_yticklabels(LABEL_NAMES, fontsize=10)
-    ax.set_title(f'Per-Label F1 Score Heatmap — {feature_set.capitalize()} Features',
-                 fontsize=13, pad=15)
+    # ax.set_yticks(range(len(LABEL_NAMES)))
+    # ax.set_yticklabels(LABEL_NAMES, fontsize=10)
+    ax.set_yticklabels([])
+    ax.set_yticks([])
+    ax.set_title(f'{feature_set.capitalize()} Features', fontsize=12)
 
-    cbar = fig.colorbar(im, ax=ax, shrink=0.8)
-    cbar.set_label('F1 Score', fontsize=10)
+    # --- Colorbar (important tweak for panels) ---
+    fig.colorbar(im, ax=ax, fraction=0.046, pad=0.04)
 
-    fig.tight_layout()
-    save_figure(fig, 'per_label_heatmap', feature_set)
-
+    return ax
 
 # Figure 3: Class distribution
 def plot_class_distribution():
@@ -364,26 +393,22 @@ def plot_gene_frequency():
     fig.tight_layout()
     save_figure(fig, 'gene_frequency', 'genomic')
 
+
 # Main
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--feature_set', '-f', type=str,
-                        choices=['genomic', 'clinical', 'combined'],
+                        choices=['genomic', 'clinical', 'combined', 'combined_interact'],
                         required=True)
     
-    parser.add_argument('--task', '-t', type=str,
-                        choices=['binary', 'multilabel'],
-                        required=True)
     args = parser.parse_args()
     feature_set = args.feature_set
-    task = args.task
 
     print(f'\nGenerating visualizations for: {feature_set}')
     print('=' * 50)
 
     # load evaluation results
-    df = load_eval(feature_set, task)
-
+    df = load_eval(feature_set)
     # Figure 1 — model comparison
     plot_model_comparison(df, feature_set)
 
