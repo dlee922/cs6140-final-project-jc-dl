@@ -1,17 +1,26 @@
 name: luad-met
+
 channels:
+  - pytorch
   - conda-forge
   - defaults
+
 dependencies:
   - python=3.11
-  - pandas
-  - numpy
-  - scikit-learn
-  - matplotlib
-  - requests
-  - pyyaml
-  - jupyter
+
+  # Core scientific stack
+  - numpy=2.4.4
+  - pandas=3.0.2
+  - matplotlib=3.10.8
+  - seaborn=0.13.2
+  - scikit-learn=1.8.0
+
+  # Utilities
+  - joblib=1.5.3
+  - pyyaml=6.0.3
+  - requests=2.33.1
+
+  # PyTorch
   - pip
   - pip:
-      - torch
-      - iterative-stratification
+      - torch==2.11.0

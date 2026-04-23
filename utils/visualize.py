@@ -7,16 +7,23 @@ To use: python scripts/visualize.py -f [genomic/clinical/combined]
 """
 import argparse
 import os
+import sys
+import seaborn as sns
 import pandas as pd
 import numpy as np
-from pathlib import Path
+import joblib
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
+from pathlib import Path
 from matplotlib.colors import LinearSegmentedColormap
 from sklearn.metrics import roc_curve, auc
+from sklearn.decomposition import PCA
+from model_utils import load_train_test
 # config
 LABEL_NAMES = ['Adrenal', 'Bone', 'CNS', 'Liver', 'LN', 'Lung', 'Pleura']
-
+target_cols = ['EVER_MET_SITE_ADRENAL', 'EVER_MET_SITE_BONE', 'EVER_MET_SITE_CNS',
+               'EVER_MET_SITE_LIVER_BILIARY_TRACT', 'EVER_MET_SITE_LN', 
+               'EVER_MET_SITE_LUNG', 'EVER_MET_SITE_PLEURA']
 label_map = {
     'test_f1_adrenal': 'Adrenal',
     'test_f1_bone': 'Bone',
@@ -69,6 +76,19 @@ def load_eval(feature_set: str) -> pd.DataFrame:
     df.columns = [MODEL_DISPLAY_NAMES.get(c, c) for c in df.columns]
     return df
 
+
+def load_models(feature_set: str) -> dict:
+    '''loads a fitted model'''
+    # load from feature-set specific subfolder
+    path = Path(f'models/fitted_models/{feature_set}/binary')
+    models = {}
+    for item in sorted(path.iterdir()):
+        if item.is_file() and item.suffix == '.pkl' and not item.stem.startswith('gridsearch'):
+            model = joblib.load(str(item))
+            model_name = item.stem.replace(f'_{feature_set}', '')
+            models[model_name] = model
+    return models
+
 def save_figure(fig, name: str, feature_set: str):
     """Save figure to results/figures/."""
     if feature_set not in ['clinical', 'genomic', 'combined']:
@@ -94,9 +114,6 @@ def plot_model_comparison(df: pd.DataFrame, feature_set: str, ax=None):
     else:
         fig = ax.figure
 
-    # sort by test F1
-    # df = df[df.loc['test_f1'].sort_values(ascending=False).index]
-
     models = df.columns.tolist()
     test_f1 = df.loc['test_f1'].values
     train_f1 = df.loc['train_f1'].values
@@ -111,7 +128,6 @@ def plot_model_comparison(df: pd.DataFrame, feature_set: str, ax=None):
                         label='Train F1', color=COLORS['train'], alpha=0.9)
 
     # ---- value labels ----
-
     for bar, val in zip(bars_test, test_f1):
         ax.text(
             bar.get_x() + bar.get_width()/2,
@@ -136,9 +152,6 @@ def plot_model_comparison(df: pd.DataFrame, feature_set: str, ax=None):
             color='black',
             rotation=90
         )
-
-    # styling
-    # ax.set_ylabel('Macro F1 Score', fontsize=11)
     ax.set_title(f'{feature_set.capitalize()} Features', fontsize=12)
 
     ax.set_xticks(x)
@@ -153,8 +166,7 @@ def plot_model_comparison(df: pd.DataFrame, feature_set: str, ax=None):
 
     return ax
 
-# Figure 2: Per-label F1 heatmap
-# NEED TO UPDATE ONCE WE GET FULL RESULTS
+# Figure 1: Per-label F1 heatmap
 def plot_per_label_heatmap(feature_set: str, ax=None):
     """
     Heatmap of per-label F1 scores across all models.
@@ -220,7 +232,7 @@ def plot_per_label_heatmap(feature_set: str, ax=None):
 
     return ax
 
-# Figure 3: Class distribution
+# Figure 2: Class distribution
 def plot_class_distribution():
     """
     Bar chart of label distribution in y.csv.
@@ -264,7 +276,7 @@ def plot_class_distribution():
     save_figure(fig, 'class_distribution', 'shared')
 
 
-# Figure 4: Fairness audit
+# Figure 3: Fairness audit
 def plot_fairness_audit_comparison():
     """
     Combined fairness visualization showing:
@@ -342,7 +354,7 @@ def plot_fairness_audit_comparison():
     save_figure(fig, 'fairness_audit_comparison', 'all')
 
 
-# Figure 5: Gene mutation frequency (genomic only)
+# Figure 4: Gene mutation frequency (genomic only)
 def plot_gene_frequency():
     """
     Horizontal bar chart of mutation frequency per gene across 455 samples.
@@ -393,6 +405,213 @@ def plot_gene_frequency():
     fig.tight_layout()
     save_figure(fig, 'gene_frequency', 'genomic')
 
+def plot_cooccurence():
+    df = pd.read_csv('data/processed/y_multilabel.csv')
+    fig, ax = plt.subplots(figsize=(8, 7))
+    # compute co-occurrence matrix
+    cooccurrence = df[target_cols].T.dot(df[target_cols])
+    cooccurrence_norm = cooccurrence.div(cooccurrence.values.diagonal(), axis=0)
+    # clean up labels
+    labels = [col.replace('EVER_MET_SITE_', '').replace('_', ' ').title() 
+            for col in target_cols]
+
+    sns.heatmap(cooccurrence_norm, 
+                annot=True, 
+                fmt='.2f',
+                xticklabels=labels,
+                yticklabels=labels,
+                cmap='Blues',
+                ax=ax)
+
+    ax.set_title('Metastatic Site Co-occurrence Matrix', fontsize=14)
+    plt.xticks(rotation=45, ha='right')
+    plt.yticks(rotation=0)
+    plt.tight_layout()
+    ax.set_xlabel('')
+    ax.set_ylabel('')
+    save_figure(fig, 'heatmap', 'cooccurence')
+
+def plot_pca(feature_set):
+    X_train, X_test, y_train, y_test = load_train_test(
+        'data/processed/X_combined.csv',
+        'data/processed/y_binary.csv',
+        scale=True
+    )
+    y_train = y_train.ravel()
+    y_test = y_test.ravel()
+
+    # Load actual fitted models
+    ridge_path = 'models/fitted_models/combined/binary/logistic_ridge_combined.pkl'
+    rf_path = 'models/fitted_models/combined/binary/random_forest_combined.pkl'
+    try:
+        ridge = joblib.load(ridge_path)
+        rf = joblib.load(rf_path)
+    except FileNotFoundError:
+        print("File Not Found")
+        sys.exit(1)
+
+    # PCA to 2D, fit on training data only
+    pca = PCA(n_components=2)
+    X_train_2d = pca.fit_transform(X_train)
+    X_test_2d = pca.transform(X_test)
+
+    # Refit loaded models on 2D PCA features
+    ridge_2d = ridge.__class__(**ridge.get_params())
+    rf_2d = rf.__class__(**rf.get_params())
+    ridge_2d.fit(X_train_2d, y_train)
+    rf_2d.fit(X_train_2d, y_train)
+
+    # Mesh grid
+    x_min, x_max = X_train_2d[:, 0].min() - 2, X_train_2d[:, 0].max() + 2
+    y_min, y_max = X_train_2d[:, 1].min() - 2, X_train_2d[:, 1].max() + 2
+    xx, yy = np.meshgrid(np.linspace(x_min, x_max, 300),
+                        np.linspace(y_min, y_max, 300))
+
+    fig, axes = plt.subplots(1, 2, figsize=(14, 6))
+
+    for ax, model_2d, title in zip(axes,
+                                    [ridge_2d, rf_2d],
+                                    ['Ridge (L2) — Linear Boundary',
+                                    'Random Forest — Nonlinear Boundary']):
+        Z = model_2d.predict(np.c_[xx.ravel(), yy.ravel()])
+        Z = Z.reshape(xx.shape)
+
+        ax.contourf(xx, yy, Z, alpha=0.3, cmap='RdBu')
+        scatter = ax.scatter(X_test_2d[:, 0], X_test_2d[:, 1],
+                            c=y_test, cmap='RdBu', edgecolors='k',
+                            linewidth=0.5, s=50)
+        ax.set_xlabel(f'PC1 ({pca.explained_variance_ratio_[0]:.1%} variance)')
+        ax.set_ylabel(f'PC2 ({pca.explained_variance_ratio_[1]:.1%} variance)')
+        ax.set_title(title)
+        ax.set_xlim(x_min, x_max)
+        ax.set_ylim(y_min, y_max)
+
+    # discrete legend instead of colorbar
+    from matplotlib.lines import Line2D
+    legend_elements = [Line2D([0], [0], marker='o', color='w', markerfacecolor='red', 
+                            markersize=10, label='Never Metastasized'),
+                    Line2D([0], [0], marker='o', color='w', markerfacecolor='blue', 
+                            markersize=10, label='Ever Metastasized')]
+    axes[1].legend(handles=legend_elements, loc='upper right')
+
+    plt.suptitle('Decision Boundaries in PCA Space — Binary Classification',
+                fontsize=13, fontweight='bold')
+    plt.tight_layout()
+    save_figure(fig, 'boundary_pca', 'decision')
+
+def plot_multilabel_panel():
+    df_clinical = load_eval('clinical')
+    df_genomic = load_eval('genomic')
+    df_combined = load_eval('combined')
+    df_combined_interact = load_eval('combined_interact')
+
+    fig, axes = plt.subplots(2, 4, figsize=(20,10))
+
+    # ---- Row 1: Model comparison ----
+    plot_model_comparison(df_clinical, 'clinical', ax=axes[0, 0])
+    plot_model_comparison(df_genomic, 'genomic', ax=axes[0, 1])
+    plot_model_comparison(df_combined, 'combined', ax=axes[0, 2])
+    plot_model_comparison(df_combined_interact, 'combined_interact', ax=axes[0, 3])
+    axes[0][0].set_ylabel('Macro F1 Score', fontsize=11) 
+
+    # ---- Row 2: Heatmaps ----
+    plot_per_label_heatmap('clinical', ax=axes[1, 0])
+    plot_per_label_heatmap('genomic', ax=axes[1, 1])
+    plot_per_label_heatmap('combined', ax=axes[1, 2])
+    plot_per_label_heatmap('combined_interact', ax=axes[1, 3])
+    axes[1,0].set_yticks(range(len(LABEL_NAMES)))
+    axes[1,0].set_yticklabels(LABEL_NAMES, fontsize=10)
+    # ---- Subplot labels ----
+    titles = [
+        "Clinical", "Genomic", "Combined", "Combined w/Interaction",
+        "", "", "", ""
+    ]
+
+    for i, (ax, title) in enumerate(zip(axes.flatten(), titles)):
+        ax.set_title(title, fontsize=12, fontweight='bold')
+        ax.text(
+            -0.12, 1.05,
+            f"({chr(65 + i)})",
+            transform=ax.transAxes,
+            fontsize=12,
+            fontweight='bold',
+            va='top',
+            ha='right'
+        )
+
+    handles, labels = axes[0, 0].get_legend_handles_labels()
+    fig.legend(handles, labels, loc='upper right', ncol=2)
+
+    plt.tight_layout(rect=[0, 0, 1, 0.95])  # leave space for title + legend
+    save_figure(fig, "panel", 'multilabel')
+
+def plot_ROC_panel(feature_sets: list, task: str, model_dicts: dict):
+
+    fig, axes = plt.subplots(
+        1, len(feature_sets),
+        figsize=(6 * len(feature_sets), 6),
+        sharex=True, sharey=True
+    )
+
+    if len(feature_sets) == 1:
+        axes = [axes]
+
+    for i, (ax, feature_set) in enumerate(zip(axes, feature_sets)):
+
+        x_path = f'data/processed/X_{feature_set}.csv'
+        y_path = f'data/processed/y_binary.csv'
+        _, X_test, _, y_test = load_train_test(x_path, y_path, scale=True)
+        if task != 'multilabel':
+            y_test = y_test.ravel()
+        models = model_dicts[feature_set]
+        for model_name, model in models.items():
+            try:
+                y_scores = model.predict_proba(X_test)[:, 1]
+            except AttributeError:
+                y_scores = model.decision_function(X_test)
+            fpr, tpr, _ = roc_curve(y_test, y_scores)
+            roc_auc = auc(fpr, tpr)
+            ax.plot(fpr, tpr, label=f"{model_name} (AUC={roc_auc:.2f})")
+        # diagonal baseline
+        ax.plot([0, 1], [0, 1], 'k--', linewidth=1)
+
+    titles = ['Clinical', 'Genomic', 'Combined', 'Combined w/ Interaction']
+    for i, (title, ax) in enumerate(zip(titles, axes)):
+        # title per subplot
+        ax.set_title(title, fontsize=11, fontweight='bold')
+        # axis limits per subplot
+        ax.set_xlim(0, 1)
+        ax.set_ylim(0, 1)
+
+        # panel label (A, B, C, D)
+        ax.text(
+            -0.12, 1.05,
+            f"({chr(65 + i)})",
+            transform=ax.transAxes,
+            fontsize=12,
+            fontweight='bold',
+            va='top',
+            ha='right'
+        )
+        ax.grid(alpha=0.3, linestyle='--')
+
+        ax.spines['top'].set_visible(False)
+        ax.spines['right'].set_visible(False)
+        ax.legend(
+            loc='lower right',
+            fontsize=7,
+            frameon=False,
+            handlelength=1.5,
+            labelspacing=0.4
+        )
+
+    # axis labels only on edges (cleaner panel style)
+    axes[0].set_ylabel("True Positive Rate", fontsize=10)
+    for ax in axes:
+        ax.set_xlabel("False Positive Rate", fontsize=10)
+
+    fig.tight_layout(rect=[0, 0, 1, 0.90])
+    save_figure(fig, 'panel_binary', 'roc')
 
 # Main
 def main():
@@ -409,21 +628,34 @@ def main():
 
     # load evaluation results
     df = load_eval(feature_set)
-    # Figure 1 — model comparison
-    plot_model_comparison(df, feature_set)
 
-    # Figure 2 — per-label heatmap
-    plot_per_label_heatmap(feature_set)
+    ### plot all figures ###
+    # supplementary figures
+    plot_cooccurence()
+    plot_pca(feature_set)
 
-    # Figure 3 — class distribution (shared, only generate once)
+    #  plot roc curves
+    model_dicts = {
+    'clinical': load_models('clinical'),
+    'genomic': load_models('genomic'),
+    'combined': load_models('combined'),
+    'combined_interact': load_models('combined_interact')
+    }
+
+    plot_ROC_panel(['clinical', 'genomic', 'combined', 'combined_interact'], 'binary', model_dicts)
+
+    # Figure 1 — model comparison and per label heat map
+    plot_multilabel_panel()
+
+    # Figure 2 — class distribution (shared, only generate once)
     if feature_set == 'genomic':
         plot_class_distribution()
 
-    # Figure 4 — fairness audit
+    # Figure 3 — fairness audit
     if feature_set == 'genomic':  # only generate once
         plot_fairness_audit_comparison()
 
-    # Figure 5 — gene frequency (genomic only)
+    # Figure 4 — gene frequency (genomic only)
     if feature_set == 'genomic':
         plot_gene_frequency()
 
