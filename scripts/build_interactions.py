@@ -17,4 +17,4 @@ X_combined['PSTAGE_x_SMARCA4'] = X_combined['PSTAGE'] * X_combined['SMARCA4']
 X_combined['PSTAGE_x_TP53'] = X_combined['PSTAGE'] * X_combined['TP53']
 X_combined['PSTAGE_x_neoadjuvant'] = X_combined['PSTAGE'] * X_combined['NEOADJUVANT_Yes']
 
-X_combined.to_csv('../data/processed/X_combined_interact.csv')
+X_combined.to_csv('data/processed/X_combined_interact.csv')
