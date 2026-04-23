@@ -77,17 +77,3 @@ combined_interact:
       criterion: ['gini', 'log_loss', 'entropy']
     SVM:
       C: [0.001, 0.01, 0.1, 1, 10, 100, 1000]   
-# Data Paths
-paths:
-  X_clinical: data/processed/X_clinical.csv
-  X_genomic: data/processed/X_genomic.csv
-  X_combined: data/processed/X_combined.csv
-  y: data/processed/y.csv
-
-# Training Configuration  
-training:
-  test_size: 0.2
-  random_state: 42
-  num_trials: 10
-  n_inner_splits: 5
-  n_outer_splits: 5
